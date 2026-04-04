@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  <title>NEON LOTUS | Contemporary Vietnamese Streetwear</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Kanit:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0f; --white: #f5f4f8; --cream: #e8e4ee;
+      --accent: #c084fc; --accent2: #a855f7; --accent-pink: #f472b6; --accent-blue: #60a5fa;
+      --grey: #16141e; --lightgrey: #9ca3af; --border: rgba(192,132,252,0.18);
+      --glass-bg: rgba(22,20,30,0.65); --glass-border: rgba(192,132,252,0.12);
+      --font-body: 'Inter', sans-serif; --font-display: 'Montserrat', sans-serif;
+      --font-headline: 'Syncopate', 'Montserrat', sans-serif;
+      --font-mono: 'Space Mono', 'Courier New', monospace;
+      --neon-pink: 0 0 10px rgba(244,114,182,0.4), 0 0 30px rgba(244,114,182,0.15);
+      --neon-purple: 0 0 10px rgba(168,85,247,0.4), 0 0 30px rgba(168,85,247,0.15);
+      --neon-blue: 0 0 10px rgba(96,165,250,0.4), 0 0 30px rgba(96,165,250,0.15);
+      --gradient-main: linear-gradient(135deg, #f472b6, #a855f7, #3b82f6);
+      --gradient-soft: linear-gradient(135deg, rgba(244,114,182,0.15), rgba(168,85,247,0.15), rgba(59,130,246,0.15));
+      --shadow-soft: 0 4px 24px rgba(168,85,247,0.08);
+      --shadow-glow: 0 0 40px rgba(168,85,247,0.12);
+      --transition-fast: 200ms ease;
+      --transition-normal: 300ms ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+    img { display: block; width: 100%; object-fit: cover; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+    .hidden { display: none !important; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+
+    /* ======== SVG ICON BASE ======== */
+    .icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-lg { width: 24px; height: 24px; }
+
+    /* ======== NAVBAR — Glassmorphism ======== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 2000;
+      background: rgba(10,10,15,0.72); backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      border-bottom: 1px solid var(--glass-border);
+      height: 68px; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 1px 24px rgba(168,85,247,0.06);
+    }
+
+    /* Logo area */
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      cursor: pointer; flex-shrink: 0;
+    }
+    .nav-logo-img {
+      height: 40px; width: auto; max-width: 160px;
+      object-fit: contain;
+    }
+    .nav-logo-text {
+      font-family: var(--font-headline);
+      font-size: 1.1rem; letter-spacing: 0.12em;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-logo-text span { -webkit-text-fill-color: var(--white); }
+    .nav-logo-img + .nav-logo-text { display: none; }
+
+    /* Nav center */
+    .nav-center {
+      display: flex; align-items: center; gap: 4px;
+      position: absolute; left: 50%; transform: translateX(-50%);
+    }
+
+    .nav-item { position: relative; }
+
+    /* Invisible bridge: eliminates gap between nav-btn and dropdown */
+    .nav-item::after {
+      content: ''; position: absolute; top: 100%; left: 0; right: 0;
+      height: 14px; /* transparent hover bridge */
+      pointer-events: none;
+    }
+    .nav-item.dropdown-open::after { pointer-events: all; }
+
+    .nav-btn {
+      display: flex; align-items: center; gap: 5px;
+      padding: 8px 16px;
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--lightgrey);
+      border-radius: 6px;
+      transition: color var(--transition-fast), background var(--transition-fast);
+      white-space: nowrap;
+    }
+    .nav-btn:hover, .nav-btn.active { color: var(--accent); }
+    .nav-btn .chevron {
+      font-size: 0.6rem; transition: transform var(--transition-normal);
+    }
+    .nav-item.dropdown-open .chevron { transform: rotate(180deg); }
+
+    /* BRANDS MEGA DROPDOWN — Glassmorphism */
+    .brands-dropdown {
+      position: absolute; top: 100%; left: 50%;
+      z-index: 9999;
+      background: rgba(10,8,18,0.99); backdrop-filter: blur(32px) saturate(1.3);
+      -webkit-backdrop-filter: blur(32px) saturate(1.3);
+      border: 1px solid var(--glass-border); border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 24px 28px 28px;
+      width: 520px; min-width: 200px; max-width: 96vw;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+      box-shadow: 0 16px 48px rgba(168,85,247,0.1);
+    }
+    .nav-item.dropdown-open .brands-dropdown {
+      opacity: 1; visibility: visible; pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-header {
+      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 18px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--glass-border);
+    }
+
+    /* Horizontal-scroll letter list for brands dropdown */
+    .dropdown-letters {
+      display: flex; flex-direction: column; gap: 0;
+      max-height: 60vh; overflow-y: auto;
+      scrollbar-width: none;
+    }
+    .dropdown-letters::-webkit-scrollbar { display: none; }
+    .letter-group { margin-bottom: 6px; }
+
+    .letter-heading {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+      color: rgba(168,85,247,0.5);
+      padding: 4px 0 2px;
+    }
+
+    .dropdown-brand-list {
+      display: flex; flex-wrap: wrap; gap: 2px;
+    }
+
+    /* Horizontal-scroll mode for long lists */
+    .dropdown-brand-list.h-scroll {
+      flex-wrap: nowrap;
+      overflow-x: auto; overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+    .dropdown-brand-list.h-scroll::-webkit-scrollbar { display: none; }
+
+    .dropdown-brand-btn {
+      display: block;
+      padding: 7px 14px;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
+      color: rgba(245,244,248,0.75);
+      border-radius: 6px;
+      transition: background var(--transition-fast), color var(--transition-fast);
+      text-align: left; white-space: nowrap;
+    }
+    .dropdown-brand-btn:hover {
+      background: rgba(168,85,247,0.12); color: var(--white);
+    }
+
+    .dropdown-view-all {
+      margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--glass-border);
+      display: flex; justify-content: flex-end;
+    }
+    .dropdown-view-all button {
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent);
+      display: flex; align-items: center; gap: 6px;
+      transition: gap var(--transition-fast);
+    }
+    .dropdown-view-all button:hover { gap: 10px; }
+
+    /* ── Mobile dropdown overrides ── */
+    @media (max-width:900px) {
+      .brands-dropdown {
+        position: fixed; top: 68px; left: 4vw !important; right: 4vw;
+        width: auto !important; max-width: 92vw;
+        transform: translateX(0) translateY(-8px);
+        border-radius: 0 0 12px 12px;
+        max-height: calc(100vh - 80px); overflow-y: auto;
+      }
+      .nav-item.dropdown-open .brands-dropdown {
+        transform: translateX(0) translateY(0);
+      }
+      .dropdown-letters { max-height: 50vh; }
+      .dropdown-brand-list { gap: 4px; }
+    }
+
+    /* Nav right */
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+
+    #lang-switch {
+      font-family:'Space Mono',monospace; font-size:0.72rem; font-weight:700;
+      letter-spacing:0.12em; padding:5px 16px; border-radius:6px;
+      color:var(--pink); border:1px solid rgba(236,72,153,0.45);
+      background:transparent; cursor:pointer;
+      transition:all var(--transition-fast);
+      text-transform:uppercase;
+    }
+    #lang-switch:hover {
+      border-color:var(--pink);
+      box-shadow:0 0 12px rgba(236,72,153,0.35), 0 0 24px rgba(236,72,153,0.15);
+      color:#fff;
+    }
+
+    /* ======== PAGES ======== */
+    .page { min-height: 100vh; padding-top: 68px; }
+
+    /* ======== HERO — Aurora gradient ======== */
+    .hero {
+      height: calc(100vh - 68px); position: relative;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #1a0520 0%, #0a0a0f 30%, #070a18 60%, #0d0820 100%);
+    }
+    .hero-aurora {
+      position: absolute; inset: 0; opacity: 0.4;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(244,114,182,0.25), transparent),
+        radial-gradient(ellipse 60% 80% at 80% 30%, rgba(96,165,250,0.2), transparent),
+        radial-gradient(ellipse 70% 50% at 50% 80%, rgba(168,85,247,0.2), transparent);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(168,85,247,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(168,85,247,0.04) 1px,transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; z-index: 1; text-align: center; padding: 0 24px; }
+    .hero-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: var(--font-headline); font-size: clamp(3rem,8vw,7rem); font-weight: 700;
+      line-height: 0.9; margin-bottom: 32px; letter-spacing: 0.08em; text-transform: uppercase;
+      -webkit-text-stroke: 1px rgba(192,132,252,0.3);
+      text-shadow: var(--neon-purple);
+    }
+    .hero-title .line2 {
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; font-style: italic;
+      -webkit-text-stroke: 0;
+      filter: drop-shadow(0 0 20px rgba(168,85,247,0.4));
+    }
+    .hero-sub {
+      font-family: var(--font-mono); font-size: clamp(0.78rem, 1.8vw, 1.05rem); font-weight: 700;
+      color: var(--lightgrey); max-width: 580px; margin: 0 auto 48px;
+      letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.8;
+    }
+    .btn-primary {
+      display: inline-block; padding: 16px 44px;
+      background: var(--gradient-main); color: var(--white);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      border-radius: 8px; transition: all var(--transition-normal);
+      box-shadow: 0 4px 20px rgba(168,85,247,0.3);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary::after {
+      content:''; position:absolute; inset:0; border-radius:8px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 50%);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(168,85,247,0.4), var(--neon-purple); }
+    .btn-outline {
+      display: inline-block; padding: 15px 44px;
+      border: 1px solid rgba(168,85,247,0.4); color: var(--accent);
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      border-radius: 8px; transition: all var(--transition-normal); margin-left: 14px;
+    }
+    .btn-outline:hover { background: rgba(168,85,247,0.1); border-color: var(--accent); }
+    .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .hero-scroll span { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--lightgrey); }
+    .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom,var(--accent),transparent); animation: scrollDown 1.5s ease-in-out infinite; }
+    @keyframes scrollDown { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+    /* ======== SECTION ======== */
+    .section { padding: 96px 0; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-eyebrow {
+      font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+    }
+    .section-title { font-family: var(--font-headline); font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    .section-line {
+      width: 52px; height: 2px;
+      background: var(--gradient-main);
+      margin: 20px auto 0; border-radius: 1px;
+    }
+
+    /* ======== BRAND CARDS GRID ======== */
+    .brands-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 1px; }
+    .brand-card {
+      position: relative; aspect-ratio: 4/5; overflow: hidden; cursor: pointer;
+      background: var(--grey); border-radius: 4px;
+      border: 1px solid rgba(168,85,247,0.08);
+      transition: box-shadow var(--transition-normal);
+    }
+    .brand-card:hover { box-shadow: 0 8px 32px rgba(168,85,247,0.18), var(--neon-purple); }
+    .brand-card-img {
+      position:absolute; inset:0;
+      background-size:cover; background-position:center; background-repeat:no-repeat;
+      filter: brightness(0.3) saturate(1.2);
+      transition: transform 0.6s ease, filter 0.5s ease;
+    }
+    .brand-card:hover .brand-card-img { transform: scale(1.1); filter: brightness(0.55) saturate(1.3); }
+    .brand-card-logo {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      max-width:55%; max-height:28%; object-fit:contain; z-index:2;
+      opacity:0.85; filter:brightness(1.1) drop-shadow(0 0 12px rgba(168,85,247,0.3));
+      transition: opacity var(--transition-normal), filter var(--transition-normal);
+    }
+    .brand-card:hover .brand-card-logo { opacity:1; filter:brightness(1.2) drop-shadow(0 0 18px rgba(168,85,247,0.5)); }
+    .brand-card-logo-text {
+      position:absolute; top:44%; left:50%; transform:translate(-50%,-50%);
+      font-family:var(--font-headline); font-size:clamp(0.9rem, 2.5vw, 1.4rem); font-weight:700;
+      letter-spacing:0.12em; text-transform:uppercase; color:var(--white);
+      text-shadow: var(--neon-purple); z-index:2;
+      text-align:center; width:85%; line-height:1.2;
+      opacity:0.7;
+    }
+    .brand-card:hover .brand-card-logo-text { opacity:1; }
+    .brand-card-initial {
+      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      font-family:var(--font-headline); font-size:5rem; font-weight:900;
+      opacity:0.08; user-select:none; color:var(--white);
+    }
+    .brand-card-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(10,10,15,0.92) 0%, rgba(10,10,15,0.2) 50%, transparent 100%);
+      transition: opacity var(--transition-normal);
+    }
+    .brand-card:hover .brand-card-overlay { opacity:0.7; }
+    .brand-card-info { position:absolute; bottom:0; left:0; right:0; padding:24px 22px; z-index:1; }
+    .brand-card-origin {
+      font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom:4px; line-height:1.3;
+    }
+    .brand-card-name {
+      font-family: var(--font-headline); font-size:1.5rem; font-weight:700;
+      line-height:1.05; margin-bottom:6px; letter-spacing:0.05em; text-transform:uppercase;
+      text-shadow: var(--neon-purple);
+    }
+    .brand-card-count {
+      font-family: var(--font-mono); font-size:0.62rem; font-weight:700;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color: rgba(245,244,248,0.45);
+      max-height:0; overflow:hidden; opacity:0;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+    }
+    .brand-card:hover .brand-card-count { max-height:30px; opacity:1; }
+    .brand-card-arrow {
+      position:absolute; top:18px; right:18px; width:36px; height:36px;
+      border:1px solid rgba(168,85,247,0.3); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--accent); font-size:1rem; z-index:1;
+      transition:all var(--transition-normal);
+    }
+    .brand-card:hover .brand-card-arrow { background:var(--gradient-main); color:var(--white); transform:rotate(45deg); border-color:transparent; }
+
+    /* ======== ABOUT STRIP ======== */
+    .about-strip { background:var(--grey); padding:90px 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
+    .about-inner { max-width:960px; margin:0 auto; }
+    .about-label {
+      font-size:0.68rem; letter-spacing:0.35em; text-transform:uppercase;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom:18px; text-align:center;
+    }
+    .about-title {
+      font-family:var(--font-mono); font-size:clamp(0.72rem,1.5vw,0.88rem); font-weight:400;
+      line-height:1.6; margin-bottom:28px; letter-spacing:0.22em; text-transform:uppercase;
+      color:rgba(245,244,248,0.4); text-align:center; display:none;
+    }
+    .about-container { position:relative; max-width:680px; margin:0 auto; padding:0 16px; overflow-wrap:break-word; word-wrap:break-word; }
+    .lang-content { display:none; animation: aboutFadeIn 0.45s ease; }
+    .lang-content.active { display:block; }
+    @keyframes aboutFadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    .electric-text {
+      font-family:var(--font-mono); font-size:0.75rem; font-weight:400;
+      letter-spacing:0.32em; text-transform:uppercase; line-height:1.8;
+      color:rgba(245,244,248,0.35); margin-bottom:32px; text-align:center;
+    }
+    .about-desc {
+      font-family:'Inter',sans-serif; font-size:0.9rem; font-weight:300;
+      color:rgba(245,244,248,0.88); line-height:1.5; text-align:center;
+    }
+    .about-desc.th {
+      font-family:'Kanit',sans-serif; line-height:1.6;
+      color:rgba(245,244,248,0.92);
+    }
+    .about-tagline-strip {
+      font-family:var(--font-mono); font-size:0.72rem; font-weight:700;
+      letter-spacing:0.22em; text-transform:uppercase; text-align:center;
+      margin-bottom:32px;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-strip-divider {
+      width:100%; height:1px; margin:48px 0;
+      background: linear-gradient(90deg, transparent, rgba(168,85,247,0.25), rgba(96,165,250,0.25), transparent);
+    }
+    .about-stats { display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center; }
+    .stat-num {
+      font-family:var(--font-mono);font-size:2.4rem;font-weight:700;line-height:1;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+    }
+    .stat-label { font-size:0.72rem;letter-spacing:0.1em;color:var(--lightgrey);margin-top:4px;text-transform:uppercase; }
+    @media (max-width:768px) {
+      .about-stats { grid-template-columns:1fr 1fr; gap:16px; padding:0 8px; }
+      .stat-num { font-size:clamp(1.4rem, 5vw, 1.8rem); }
+      .stat-label { font-size:0.58rem; letter-spacing:0.06em; }
+    }
+
+    /* ======== CONTACT CTA ======== */
+    .contact-section { padding:90px 0;text-align:center; }
+    .contact-inner { max-width:580px;margin:0 auto;padding:0 24px; }
+    .contact-title { font-family:var(--font-headline);font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase; }
+    .contact-sub { color:var(--lightgrey);margin-bottom:38px;font-size:0.92rem;line-height:1.6; }
+    .contact-links { display:flex;justify-content:center;gap:16px;flex-wrap:wrap; }
+    .contact-link {
+      display:flex;align-items:center;gap:12px;padding:14px 28px;
+      border:1px solid rgba(168,85,247,0.25);border-radius:8px;
+      font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);
+      transition:all var(--transition-normal);
+      background: rgba(168,85,247,0.04);
+      line-height:1.5;
+    }
+    .contact-link:hover { background:rgba(168,85,247,0.1);border-color:var(--accent);box-shadow: var(--shadow-soft), var(--neon-purple); }
+    @media (max-width:480px) {
+      .contact-links { flex-direction:column;gap:12px;align-items:stretch; }
+      .contact-link { justify-content:center;padding:14px 20px; }
+      .contact-section { padding:60px 0; }
+      #page-contact > div { padding:72px 24px !important; }
+    }
+
+    /* ======== FOOTER ======== */
+    footer {
+      border-top:1px solid var(--glass-border);padding:36px 40px;
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:0.72rem;color:var(--lightgrey);
+    }
+    .footer-logo {
+      font-family:var(--font-headline);font-size:0.95rem;letter-spacing:0.1em;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .footer-logo-img { height:28px;width:auto;object-fit:contain; }
+
+    /* ======== BRAND DETAIL PAGE ======== */
+    #page-brand { --brand-info-bg: var(--grey); }
+
+    /* Smooth accent-colour transitions when switching brands */
+    #page-brand .brand-back-btn,
+    #page-brand .brand-hero-label,
+    #page-brand .brand-meta-item,
+    #page-brand .filter-btn,
+    #page-brand .filter-count,
+    #page-brand .product-season,
+    #page-brand .price-carry,
+    #page-brand .size-chip:hover,
+    #page-brand .gallery-thumb.active,
+    #page-brand .brand-info-bar {
+      transition: color 0.45s ease, background-color 0.45s ease,
+                  border-color 0.45s ease, background 0.45s ease;
+    }
+
+    .brand-hero { height:58vh;position:relative;overflow:hidden;display:flex;align-items:flex-end; }
+    .brand-hero-bg { position:absolute;inset:0; }
+    .brand-hero-overlay { position:absolute;inset:0;background:linear-gradient(to top,var(--black) 0%,rgba(10,10,15,0.45) 60%,rgba(10,10,15,0.15) 100%); }
+    .brand-hero-content { position:relative;z-index:1;padding:52px 56px;width:100%; }
+    .brand-back-btn { display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;transition:gap var(--transition-fast); }
+    .brand-back-btn:hover { gap:12px; }
+    .brand-hero-label { font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:10px; }
+    .brand-hero-name {
+      font-family:var(--font-headline);font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:0.92;
+      letter-spacing:0.06em;text-transform:uppercase;
+      text-shadow: var(--neon-purple);
+    }
+
+    .brand-info-bar {
+      background:var(--brand-info-bg, var(--grey));padding:36px 56px;
+      display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;align-items:start;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .brand-desc-full { color:rgba(245,244,248,0.72);line-height:1.9;font-size:0.9rem; }
+    .brand-meta-item { border-left:2px solid var(--accent);padding-left:14px; }
+    .brand-meta-label { font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--lightgrey);margin-bottom:5px; }
+    .brand-meta-value { font-size:0.88rem;font-weight:600; }
+
+    /* ======== PRODUCTS ======== */
+    .products-section { padding:72px 56px; }
+    .products-header { display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;flex-wrap:wrap;gap:16px; }
+    .products-title { font-family:var(--font-headline);font-size:1.5rem;letter-spacing:0.06em;text-transform:uppercase; }
+    .products-filter { display:flex;gap:6px;flex-wrap:wrap; }
+    .filter-btn {
+      padding:7px 18px;border:1px solid rgba(168,85,247,0.15);border-radius:20px;
+      font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;
+      color:var(--lightgrey);transition:all var(--transition-fast);
+      background: rgba(168,85,247,0.04);
+    }
+    .filter-btn.active,.filter-btn:hover { border-color:var(--accent);color:var(--accent);background:rgba(168,85,247,0.1);box-shadow:0 0 8px rgba(168,85,247,0.15); }
+
+    .products-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px; }
+
+    .product-card {
+      background:var(--grey);border-radius:8px;overflow:hidden;cursor:pointer;
+      transition:transform var(--transition-normal),box-shadow var(--transition-normal);
+      border: 1px solid rgba(168,85,247,0.1);
+      position: relative;
+    }
+    .product-card::before {
+      content:''; position:absolute; inset:-1px; border-radius:9px; z-index:-1;
+      background: linear-gradient(135deg, rgba(244,114,182,0.3), rgba(168,85,247,0.3), rgba(96,165,250,0.3));
+      opacity:0; transition:opacity var(--transition-normal);
+    }
+    .product-card:hover::before { opacity:1; }
+    .product-card:hover { transform:translateY(-5px);box-shadow:0 16px 40px rgba(168,85,247,0.15), var(--neon-purple); }
+
+    .product-img-box { aspect-ratio:3/4;background:#12101a;position:relative;overflow:hidden; }
+    .product-img-box img { width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease; }
+    .product-card:hover .product-img-box img { transform:scale(1.04); }
+    .product-img-placeholder { width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:300px; }
+    .placeholder-icon { width:46px;height:46px;border:1px solid rgba(168,85,247,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem; }
+    .placeholder-text { font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--lightgrey); }
+
+    /* ── PHOTO COUNT BADGE ── */
+    .photo-count-badge {
+      position:absolute; bottom:10px; right:10px;
+      background:rgba(10,10,15,0.62); backdrop-filter:blur(4px);
+      color:#fff; font-size:0.63rem; font-weight:600;
+      padding:3px 9px; border-radius:20px; letter-spacing:0.08em;
+      display:flex; align-items:center; gap:4px; pointer-events:none;
+    }
+
+    /* ── LIGHTBOX ── */
+    #lightbox {
+      position:fixed; inset:0; z-index:9000;
+      background:rgba(10,10,15,0.95); backdrop-filter:blur(8px);
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; transition:opacity var(--transition-normal); pointer-events:none;
+    }
+    #lightbox.open { opacity:1; pointer-events:all; }
+    #lightbox-img-wrap {
+      display:flex; align-items:center; justify-content:center;
+      max-width:88vw; max-height:88vh;
+    }
+    #lightbox-img {
+      max-width:88vw; max-height:86vh;
+      object-fit:contain; border-radius:4px;
+      transition:opacity 0.15s; display:block;
+    }
+    #lightbox-img.fading { opacity:0; }
+    #lb-close {
+      position:fixed; top:18px; right:22px; z-index:9010;
+      width:44px; height:44px; border-radius:50%;
+      background:rgba(168,85,247,0.15); color:#fff; font-size:1.5rem;
+      display:flex; align-items:center; justify-content:center;
+      transition:background var(--transition-fast);
+      border: 1px solid rgba(168,85,247,0.2);
+    }
+    #lb-close:hover { background:rgba(168,85,247,0.3); }
+    .lb-arrow {
+      position:fixed; top:50%; transform:translateY(-50%);
+      width:54px; height:54px; border-radius:50%;
+      background:rgba(168,85,247,0.12); color:#fff; font-size:1.8rem;
+      display:flex; align-items:center; justify-content:center;
+      transition:background var(--transition-fast); z-index:9010;
+      border: 1px solid rgba(168,85,247,0.15);
+    }
+    .lb-arrow:hover { background:rgba(168,85,247,0.25); }
+    .lb-arrow.hidden { opacity:0; pointer-events:none; }
+    #lb-prev { left:18px; }
+    #lb-next { right:18px; }
+    #lb-counter {
+      position:fixed; top:24px; left:50%; transform:translateX(-50%);
+      color:rgba(255,255,255,0.5); font-size:0.75rem;
+      letter-spacing:0.18em; z-index:9010;
+    }
+    #lb-name {
+      position:fixed; bottom:52px; left:50%; transform:translateX(-50%);
+      color:rgba(255,255,255,0.65); font-size:0.75rem;
+      letter-spacing:0.12em; text-transform:uppercase;
+      z-index:9010; white-space:nowrap; max-width:90vw;
+      overflow:hidden; text-overflow:ellipsis;
+    }
+    #lb-dots {
+      position:fixed; bottom:22px; left:50%; transform:translateX(-50%);
+      display:flex; gap:8px; z-index:9010; padding:6px;
+    }
+    .lb-dot {
+      width:7px; height:7px; border-radius:50%;
+      background:rgba(255,255,255,0.3); cursor:pointer;
+      transition:background var(--transition-fast),transform var(--transition-fast);
+    }
+    .lb-dot.active { background:var(--accent-pink); transform:scale(1.4); }
+
+    .product-info { padding:16px 18px 20px; }
+    .product-season {
+      font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;
+    }
+    .product-name { font-size:0.94rem;font-weight:600;line-height:1.35;margin-bottom:12px; }
+
+    /* PRICE */
+    .product-price { font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:12px; }
+    .product-price .price-note { font-size:0.68rem;font-weight:400;color:var(--lightgrey);margin-left:6px; }
+
+    /* SIZES */
+    .product-sizes-label { font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lightgrey);margin-bottom:6px; }
+    .product-sizes { display:flex;flex-wrap:wrap;gap:5px; }
+    .size-chip {
+      padding:4px 11px;
+      border:1px solid rgba(168,85,247,0.15);
+      border-radius:6px;
+      font-family:var(--font-mono);
+      font-size:0.68rem;
+      font-weight:500;
+      letter-spacing:0.05em;
+      color:rgba(245,244,248,0.75);
+      transition:all var(--transition-fast);
+      cursor:pointer;
+    }
+    .size-chip:hover { border-color:var(--accent);color:var(--accent); }
+    .size-chip.sold-out { opacity:0.28;text-decoration:line-through;cursor:default; }
+    .size-chip.sold-out:hover { border-color:rgba(168,85,247,0.15);color:rgba(245,244,248,0.75); }
+
+    .product-tag { display:inline-block;margin-top:11px;padding:3px 10px;border:1px solid rgba(168,85,247,0.1);border-radius:20px;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--lightgrey); }
+
+    /* ======== ABOUT PAGE ======== */
+    .about-page { padding:90px 56px;max-width:900px;margin:0 auto; }
+    .about-page-title {
+      font-family:var(--font-headline);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;
+      margin-bottom:44px;line-height:1;letter-spacing:-0.02em;text-transform:uppercase;
+    }
+    .about-page-title em {
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; font-style:italic;
+    }
+    .about-page-body { font-size:0.9rem;color:rgba(245,244,248,0.82);line-height:1.6; }
+    .about-page-body p+p { margin-bottom:20px; }
+
+    /* ── About: dual-language blocks ────────────────────── */
+    .about-hero-title {
+      font-family: var(--font-headline); font-size: 1.2rem;
+      font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      line-height: 1.4; margin-bottom: 28px;
+      color: var(--accent-pink);
+    }
+    .about-hero-title .neon-stroke {
+      -webkit-text-stroke: 1.5px var(--accent-pink); -webkit-text-fill-color: transparent;
+      margin-right: 10px;
+    }
+    .about-lang-block { margin-bottom: 48px; }
+    .about-lang-block .about-tagline {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      margin-top: 0; margin-bottom: 24px; line-height: 1.6;
+      color: var(--accent-blue);
+      -webkit-text-fill-color: var(--accent-blue);
+    }
+    /* TH overrides for about page */
+    #page-about-th .about-hero-title {
+      font-family: 'Kanit', sans-serif; font-weight: 800;
+      font-size: 1.2rem; letter-spacing: 0.02em; text-transform: none;
+      -webkit-text-stroke: 1.5px var(--accent); -webkit-text-fill-color: transparent;
+    }
+    #page-about-th .about-page-body {
+      font-family: 'Kanit', sans-serif; line-height: 1.8;
+    }
+    #page-about-th .about-tagline {
+      font-family: 'Kanit', sans-serif; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: none;
+    }
+    .about-divider {
+      width: 80px; height: 2px; margin: 0 auto 48px;
+      background: var(--gradient-main); border-radius: 2px; opacity: 0.5;
+    }
+    .about-values { margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px; }
+    .value-card {
+      padding:28px;border:1px solid rgba(168,85,247,0.15);border-radius:12px;
+      background: rgba(168,85,247,0.03);
+      transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    .value-card:hover { border-color: rgba(168,85,247,0.3); box-shadow: var(--shadow-soft), var(--neon-purple); }
+    .value-num {
+      font-family:var(--font-headline);font-size:2.8rem;font-weight:700;line-height:1;margin-bottom:14px;
+      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; opacity: 0.25;
+    }
+    .value-title {
+      font-family:var(--font-mono);font-size:1.1rem;font-weight:700;letter-spacing:0.15em;
+      text-transform:uppercase;margin-bottom:9px;color:var(--accent);
+    }
+    .value-text { font-size:0.8rem;color:var(--lightgrey);line-height:1.7;opacity:0.7; }
+
+    /* ── About page: responsive ─────────────────────────── */
+    @media (max-width:768px) {
+      .about-hero-title { font-size:1rem; }
+      #page-about-th .about-hero-title { font-size:1rem; }
+      .about-page { padding:60px 24px; }
+    }
+
+    /* ======== FADE-IN ======== */
+    .fade-in { opacity:0;transform:translateY(22px);transition:all 0.7s ease; }
+    .fade-in.visible { opacity:1;transform:translateY(0); }
+
+    /* ======== RESPONSIVE ======== */
+    @media(max-width:900px) {
+      .nav-center {
+        position:static; transform:none;
+        gap:0; flex-shrink:1; min-width:0;
+        overflow-x:auto; -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+      }
+      .nav-center::-webkit-scrollbar { display:none; }
+      nav { padding:0 10px; gap:6px; }
+      .nav-btn { padding:6px 8px; font-size:0.62rem; letter-spacing:0.08em; }
+      .nav-logo-img { height:30px; }
+      .nav-right { gap:8px; flex-shrink:0; }
+      #lang-switch { padding:4px 10px; font-size:0.62rem; }
+      .brands-grid { grid-template-columns:1fr; }
+      .about-inner { grid-template-columns:1fr;gap:40px; }
+      .brand-info-bar { grid-template-columns:1fr;padding:28px 20px; }
+      .brand-hero-content { padding:36px 20px; }
+      .products-section { padding:40px 20px; }
+      .about-values { grid-template-columns:1fr; }
+      footer { flex-direction:column;gap:10px;text-align:center; }
+    }
+    @media(max-width:480px) {
+      .brands-grid { grid-template-columns:1fr; }
+      .hero-title { font-size: clamp(2.5rem,10vw,4rem); }
+    }
+
+    /* ── Gallery thumbnails ─────────────────────────────── */
+    .gallery-thumbs {
+      display:flex; gap:6px; padding:6px 0 0;
+      overflow-x:auto; scrollbar-width:none;
+    }
+    .gallery-thumbs::-webkit-scrollbar { display:none; }
+    .gallery-thumb {
+      width:52px; height:52px; object-fit:cover; flex-shrink:0;
+      border:2px solid transparent; cursor:pointer;
+      transition:border-color var(--transition-fast), opacity var(--transition-fast);
+      opacity:0.55; border-radius:4px;
+    }
+    .gallery-thumb:hover { opacity:0.85; }
+    .gallery-thumb.active { border-color:var(--accent,#c084fc); opacity:1; }
+
+    /* ── Sold-out overlay ───────────────────────────────── */
+    .sold-out-overlay {
+      position:absolute; inset:0;
+      background:rgba(10,10,15,0.55);
+      display:flex; align-items:center; justify-content:center;
+      pointer-events:none;
+    }
+    .sold-out-overlay span {
+      font-family:var(--font-body);
+      font-size:0.7rem; font-weight:700; letter-spacing:0.18em;
+      color:#fff; background:rgba(10,10,15,0.75);
+      padding:5px 14px; border:1px solid rgba(255,255,255,0.4);
+      border-radius:4px;
+    }
+    .product-card.is-sold-out .product-img-box img { filter:grayscale(40%); }
+
+    /* ── Lazy-load images ─────────────────────────────── */
+    .lazy-img { opacity: 0; transition: opacity 0.4s ease; }
+    .lazy-img.loaded { opacity: 1; }
+
+    /* ── Category filter — count badge ───────────────── */
+    .filter-count {
+      display: inline-block;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em;
+      background: rgba(168,85,247,0.14);
+      color: var(--accent);
+      padding: 1px 6px; border-radius: 9px;
+      margin-left: 5px; vertical-align: middle;
+    }
+    .filter-btn.active .filter-count {
+      background: rgba(0,0,0,0.25);
+      color: inherit;
+    }
+    /* ── Category filter — icon chip ─────────────────── */
+    .filter-icon { margin-right: 4px; }
+
+    /* ── Product grid filter-in animation ────────────── */
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    #products-grid.animating .product-card {
+      animation: cardIn 0.28s ease both;
+    }
+    #products-grid.animating .product-card:nth-child(1)  { animation-delay: 0ms; }
+    #products-grid.animating .product-card:nth-child(2)  { animation-delay: 30ms; }
+    #products-grid.animating .product-card:nth-child(3)  { animation-delay: 60ms; }
+    #products-grid.animating .product-card:nth-child(4)  { animation-delay: 90ms; }
+    #products-grid.animating .product-card:nth-child(5)  { animation-delay: 120ms; }
+    #products-grid.animating .product-card:nth-child(6)  { animation-delay: 150ms; }
+    #products-grid.animating .product-card:nth-child(n+7) { animation-delay: 180ms; }
+
+    /* ── Price two-row layout ─────────────────────────── */
+    .product-price-wrap { margin: 6px 0 4px; }
+    .price-row {
+      display: flex; align-items: baseline; gap: 7px;
+      line-height: 1.35;
+    }
+    .price-main {
+      font-family: var(--font-mono); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.02em;
+      color: var(--white);
+    }
+    .price-carry {
+      font-family: var(--font-mono); font-size: 0.88rem; font-weight: 600;
+      color: var(--accent);
+    }
+    .price-tag-pill {
+      display: inline-flex; flex-direction: column; align-items: center;
+      font-family: var(--font-mono); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.06em;
+      line-height: 1.2;
+      padding: 2px 7px; border-radius: 6px;
+      background: rgba(96,165,250,0.08); color: #7da8d4;
+      border: 1px solid rgba(96,165,250,0.18);
+      white-space: nowrap; vertical-align: middle;
+    }
+    .price-tag-pill .pill-sub {
+      font-size: 0.48rem; font-weight: 400; letter-spacing: 0.04em;
+      opacity: 0.75;
+    }
+    .price-tag-pill.carry {
+      background: rgba(168,85,247,0.12); color: var(--accent);
+      border-color: rgba(168,85,247,0.25);
+    }
+    /* ── Mobile price layout ──────────────────────────── */
+    @media (max-width: 480px) {
+      .price-row {
+        flex-wrap: wrap; align-items: center; gap: 5px;
+      }
+      .price-main, .price-carry {
+        font-size: 0.96rem;
+      }
+      .product-price-wrap { margin: 4px 0 3px; }
+    }
+    .price-sub {
+      font-size: 0.68rem; color: var(--lightgrey);
+      letter-spacing: 0.04em; margin-top: 2px;
+    }
+    /* Keep legacy .product-price for backward compat */
+    .product-price {
+      font-family: var(--font-mono); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.02em;
+      color: var(--white); margin: 6px 0 2px;
+    }
+    .price-note { font-size:0.7rem; font-weight:400; color:var(--lightgrey); letter-spacing:0.04em; }
+
+    /* ── Needs-review badge ──────────────────────────── */
+    .needs-review-badge {
+      display: inline-block;
+      font-size: 0.57rem; font-weight: 700; letter-spacing: 0.1em;
+      color: #c084fc;
+      border: 1px solid rgba(192,132,252,0.35);
+      background: rgba(192,132,252,0.07);
+      padding: 1px 7px; border-radius: 6px;
+      margin-bottom: 5px;
+    }
+    /* estimated VND (pale purple) vs real VND (normal grey) */
+    .vnd-est { color: #a78bfa; font-size: 0.68rem; }
+    .vnd-real { color: var(--lightgrey); font-size: 0.68rem; }
+    .vnd-q { font-size: 0.75em; opacity: 0.7; }
+    .price-note-text { font-size: 0.68rem; color: var(--lightgrey); }
+
+  </style>
+</head>
+<body>
+
+<!-- ======================================================
+     NAVBAR
+     ====================================================== -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    <img class="nav-logo-img" src="logo.PNG" alt="NEON LOTUS"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+    <div class="nav-logo-text" style="display:none">NEON <span>LOTUS</span></div>
+  </div>
+
+  <!-- CENTER NAV -->
+  <div class="nav-center">
+
+    <!-- BRANDS DROPDOWN -->
+    <div class="nav-item">
+      <button class="nav-btn">
+        <span data-en="BRANDS" data-th="แบรนด์">BRANDS</span>
+        <span class="chevron">▾</span>
+      </button>
+      <div class="brands-dropdown" id="brands-dropdown">
+        <div class="dropdown-header" data-en="ALL BRANDS A → Z" data-th="ทุกแบรนด์ A → Z">ALL BRANDS A → Z</div>
+        <div class="dropdown-letters" id="dropdown-letters"></div>
+        <div class="dropdown-view-all">
+          <button onclick="showPage('home'); document.getElementById('brands-section').scrollIntoView({behavior:'smooth'})">
+            <span data-en="View all brands" data-th="ดูแบรนด์ทั้งหมด">View all brands</span> →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE DROPDOWN -->
+    <div class="nav-item">
+      <button class="nav-btn">
+        <span data-en="STYLES" data-th="สไตล์">STYLES</span>
+        <span class="chevron">▾</span>
+      </button>
+      <div class="brands-dropdown" id="styles-dropdown" style="width:440px">
+        <div class="dropdown-header" data-en="FILTER BY STYLE" data-th="กรองตามสไตล์">FILTER BY STYLE</div>
+        <div class="dropdown-brand-list" id="style-filter-list" style="gap:4px">
+          <button class="dropdown-brand-btn" onclick="filterByStyle('Streetwear')">Streetwear</button>
+          <button class="dropdown-brand-btn" onclick="filterByStyle('Avant-Garde')">Avant-Garde</button>
+          <button class="dropdown-brand-btn" onclick="filterByStyle('Contemporary')">Contemporary</button>
+          <button class="dropdown-brand-btn" onclick="filterByStyle('Minimalist')">Minimalist</button>
+          <button class="dropdown-brand-btn" onclick="filterByStyle('Industrial')">Industrial</button>
+          <button class="dropdown-brand-btn" onclick="filterByStyle('Women')">Women's</button>
+          <button class="dropdown-brand-btn" onclick="filterByStyle('Accessories')">Accessories</button>
+          <button class="dropdown-brand-btn" onclick="filterByStyle('')">Show All</button>
+        </div>
+      </div>
+    </div>
+    <button class="nav-btn" onclick="showPage('about')">
+      <span data-en="ABOUT" data-th="เกี่ยวกับ">ABOUT</span>
+    </button>
+    <button class="nav-btn" onclick="showPage('contact')">
+      <span data-en="CONTACT" data-th="ติดต่อ">CONTACT</span>
+    </button>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+    <button id="lang-switch">TH</button>
+  </div>
+</nav>
+
+
+<!-- ======================================================
+     HOME PAGE
+     ====================================================== -->
+<div id="page-home" class="page">
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-aurora"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-en="STAY BRIGHT - STAY BOLD - STAY NEON" data-th="ฉายแสงให้สุด - มั่นใจให้สุด - เป็นนีออนให้สุด">STAY BRIGHT - STAY BOLD - STAY NEON</p>
+      <h1 class="hero-title">NEON <span class="line2">LOTUS</span></h1>
+      <p class="hero-sub" data-en="No basics here. Only street uniforms for the future. 100% Original Vietnam. 100% Trend Injected." data-th="ที่นี่ไม่มีเสื้อผ้าธรรมดา มีเพียงชุดยูนิฟอร์มสตรีทแห่งอนาคต ออริจินัลจากเวียดนาม 100% นำเข้าเทรนด์ 100%.">No basics here. Only street uniforms for the future. 100% Original Vietnam. 100% Trend Injected.</p>
+      <a class="btn-primary" href="#" onclick="document.getElementById('brands-section').scrollIntoView({behavior:'smooth'})">
+        <span data-en="EXPLORE BRANDS" data-th="สำรวจแบรนด์">EXPLORE BRANDS</span>
+      </a>
+      <a class="btn-outline" href="#" onclick="showPage('about')">
+        <span data-en="OUR STORY" data-th="เรื่องของเรา">OUR STORY</span>
+      </a>
+    </div>
+    <div class="hero-scroll"><span data-en="SCROLL" data-th="เลื่อน">SCROLL</span><div class="scroll-line"></div></div>
+  </div>
+
+  <section class="section" id="brands-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-eyebrow" data-en="BRAND COLLECTION" data-th="คอลเลกชันแบรนด์">BRAND COLLECTION</p>
+        <h2 class="section-title" data-en="Our Curated Labels" data-th="แบรนด์ที่เราคัดสรร">Our Curated Labels</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="brands-grid" id="brands-grid"></div>
+    </div>
+  </section>
+
+  <div class="about-strip">
+    <div class="container">
+      <div class="about-inner">
+        <div class="fade-in">
+          <p class="about-label" data-en="WHO WE ARE" data-th="เราคือใคร">WHO WE ARE</p>
+
+          <div class="about-container">
+            <div id="about-en" class="lang-content active">
+              <p class="electric-text">FROM SAIGON. FOR THE BOLD. TO THAILAND.</p>
+              <p class="about-tagline-strip">NEON LOTUS: THE PULSE OF VIETNAMESE STREETWEAR</p>
+              <p class="about-desc">We are more than just a select shop; we are the electric current connecting the streets of Saigon, Hanoi, and Bangkok.</p>
+              <p class="about-desc" style="margin-top:18px;">Navigating through neon-drenched alleys, NEON LOTUS curates the most subversive and original designer labels from Vietnam. From the rebellious aesthetics of Y2K to the pinnacle of underground tailoring, we exist for the bold, the fearless, and those who refuse to be ordinary.</p>
+            </div>
+
+            <div id="about-th" class="lang-content">
+              <p class="electric-text">ส่งตรงจากไซง่อน เพื่อคนกล้า สู่ประเทศไทย</p>
+              <p class="about-tagline-strip">NEON LOTUS: จังหวะใหม่ของสตรีทแวร์เวียดนาม</p>
+              <p class="about-desc th">เราเป็นมากกว่าร้าน Select Shop แต่เราคือกระแสไฟฟ้าที่เชื่อมต่อสตรีทแฟชั่นจากโฮจิมินห์ ฮานอย สู่กรุงเทพฯ</p>
+              <p class="about-desc th" style="margin-top:18px;">ท่ามกลางแสงนีออนในตรอกซอกซอย NEON LOTUS คัดสรรแบรนด์ดีไซเนอร์ที่เปี่ยมไปด้วยความคิดสร้างสรรค์และเอกลักษณ์ที่สุดจากเวียดนาม ตั้งแต่กลิ่นอายขบถของ Y2K ไปจนถึงงานตัดเย็บสายสตรีทระดับไฮเอนด์ เราเกิดมาเพื่อคนที่กล้าหาญ ไร้ความกลัว และปฏิเสธความธรรมดา</p>
+            </div>
+          </div>
+
+          <div class="about-strip-divider"></div>
+
+          <div class="about-stats">
+            <div><div class="stat-num">34</div><div class="stat-label" data-en="Brands" data-th="แบรนด์">Brands</div></div>
+            <div><div class="stat-num">4200+</div><div class="stat-label" data-en="Styles" data-th="สไตล์">Styles</div></div>
+            <div><div class="stat-num">3+</div><div class="stat-label" data-en="Years" data-th="ปี">Years</div></div>
+            <div><div class="stat-num">BKK</div><div class="stat-label" data-en="Based in Bangkok" data-th="กรุงเทพ">Based in Bangkok</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-inner fade-in">
+      <p class="section-eyebrow" data-en="CONTACT US" data-th="ติดต่อเรา">CONTACT US</p>
+      <h2 class="contact-title" data-en="Interested in a Style?" data-th="สนใจสไตล์ไหน?">Interested in a Style?</h2>
+      <p class="contact-sub" data-en="Browse our collections and reach out via Line or Instagram." data-th="เรียกดูคอลเลกชันและติดต่อเราผ่าน Line หรือ Instagram">Browse our collections and reach out via Line or Instagram.</p>
+      <div class="contact-links">
+        <a href="https://lin.ee/tmqO0EV" class="contact-link" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> LINE: @463fdlew</a>
+        <a href="https://www.instagram.com/neon.lotuss/" class="contact-link" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> IG: @neon_lotuss</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <img class="footer-logo-img" src="logo.PNG" alt="NEON LOTUS"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div class="footer-logo" style="display:none">NEON LOTUS</div>
+    </div>
+    <div data-en="&copy; 2025 NEON LOTUS. Bangkok, Thailand." data-th="&copy; 2025 NEON LOTUS. กรุงเทพมหานคร ประเทศไทย">&copy; 2025 NEON LOTUS. Bangkok, Thailand.</div>
+  </footer>
+</div>
+
+
+<!-- ======================================================
+     BRAND DETAIL PAGE
+     ====================================================== -->
+<div id="page-brand" class="page hidden">
+  <div class="brand-hero">
+    <div class="brand-hero-bg" id="brand-hero-bg"></div>
+    <div class="brand-hero-overlay"></div>
+    <div class="brand-hero-content">
+      <button class="brand-back-btn" onclick="showPage('home')"><svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> <span data-en="ALL BRANDS" data-th="ทุกแบรนด์">ALL BRANDS</span></button>
+      <p class="brand-hero-label" id="brand-hero-label"></p>
+      <h1 class="brand-hero-name" id="brand-hero-name"></h1>
+    </div>
+  </div>
+  <div class="brand-info-bar" id="brand-info-bar"></div>
+  <div class="products-section">
+    <div class="products-header">
+      <h2 class="products-title" data-en="Collection" data-th="คอลเลกชัน">Collection</h2>
+      <div class="products-filter" id="products-filter">
+        <button class="filter-btn active" data-tag="all">ALL / ทั้งหมด</button>
+        <button class="filter-btn" data-tag="Top">TOPS / เสื้อ</button>
+        <button class="filter-btn" data-tag="Bottom">BOTTOMS / กางเกง</button>
+        <button class="filter-btn" data-tag="Outerwear">OUTERWEAR / เสื้อคลุม</button>
+        <button class="filter-btn" data-tag="Bag">BAGS / กระเป๋า</button>
+        <button class="filter-btn" data-tag="Accessories">ACC / เครื่องประดับ</button>
+        <button class="filter-btn" data-tag="Headwear">HATS / หมวก</button>
+      </div>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</div>
+
+
+<!-- ======================================================
+     ABOUT PAGE
+     ====================================================== -->
+<div id="page-about" class="page hidden">
+  <div class="about-page">
+    <h1 class="about-page-title">Our <em>Story</em><br>& Mission</h1>
+
+    <!-- ── English Version ──────────────────────────── -->
+    <div class="about-lang-block lang-content active" id="page-about-en">
+      <h2 class="about-hero-title"><span class="neon-stroke">NEON LOTUS:</span>A fusion of industrial grit, functionality, and retro-futurism. Curated for the bold. </h2>
+      <div class="about-page-body">
+        <p class="about-tagline" style="margin-bottom:24px;">CURATED STYLE, BORDERLESS ATTITUDE.</p>
+        <p>Vietnamese design is rising on the global street stage. NEON LOTUS is dedicated to unearthing the high-end streetwear labels hidden within the alleys of Hanoi and Saigon</p>
+        <p>Each piece embodies the essence of contemporary Vietnamese youth culture—a fusion of industrial aesthetics, functionality, and retro-futurism. Through transparent logistics and precise pricing (International Shipping / Personal Carry-back), we connect Thai trendsetters directly with the pinnacle of Vietnamese design.</p>
+      </div>
+    </div>
+
+    <!-- ── Thai Version ─────────────────────────────── -->
+    <div class="about-lang-block lang-content" id="page-about-th">
+      <h2 class="about-hero-title" style="font-family:'Kanit',sans-serif;">NEON LOTUS:การผสมผสานระหว่างความดิบแบบอุตสาหกรรม ฟังก์ชันการใช้งาน และความล้ำสมัยสไตล์ Retro-futurism คัดสรรมาเพื่อผู้ที่กล้าจะแตกต่าง </h2>
+      <div class="about-page-body" style="font-family:'Kanit',sans-serif;">
+        <p class="about-tagline" style="margin-bottom:24px;">สไตล์ที่ถูกคัดสรร ทัศนคติที่ไร้พรมแดน</p>
+        <p>พลังแห่งดีไซน์จากเวียดนามกำลังเติบโตบนสตรีทแฟชั่นระดับโลก NEON LOTUS มุ่งมั่นที่จะค้นหาแบรนด์สตรีทไฮเอนด์ที่ซ่อนตัวอยู่ในฮานอยและไซง่อน</p>
+        <p>ทุกชิ้นงานคือตัวแทนจิตวิญญาณของวัฒนธรรมวัยรุ่นเวียดนามร่วมสมัย ที่ผสมผสานความดิบแบบอุตสาหกรรม ฟังก์ชันการใช้งาน และความล้ำสมัยแบบ Retro-futurism เข้าด้วยกัน ด้วยการขนส่งที่โปร่งใสและการกำหนดราคาที่แม่นยำ (ทั้งส่งตรงจากต่างประเทศและบริการฝากหิ้ว) เราพร้อมเชื่อมต่อสายสตรีทชาวไทยให้เข้าถึงที่สุดของดีไซน์เวียดนามได้ก่อนใคร</p>
+      </div>
+    </div>
+
+    <div class="about-values">
+      <div class="value-card fade-in">
+        <div class="value-num">01</div>
+        <div class="value-title" data-en="AUTHENTICITY" data-th="ความแท้จริง">AUTHENTICITY</div>
+        <p class="value-text" data-en="Every brand is sourced directly. No middlemen, no fakes." data-th="ทุกแบรนด์จัดหาโดยตรง ไม่มีคนกลาง ไม่มีของปลอม">Every brand is sourced directly. No middlemen, no fakes.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-num">02</div>
+        <div class="value-title" data-en="CURATION" data-th="การคัดสรร">CURATION</div>
+        <p class="value-text" data-en="Not every brand makes the cut. We choose quality over quantity." data-th="ไม่ใช่ทุกแบรนด์จะผ่านการคัดเลือก เราเลือกคุณภาพมากกว่าปริมาณ">Not every brand makes the cut. We choose quality over quantity.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-num">03</div>
+        <div class="value-title" data-en="COMMUNITY" data-th="ชุมชน">COMMUNITY</div>
+        <p class="value-text" data-en="A bridge between Vietnamese designers and Thai fashion lovers." data-th="สะพานเชื่อมระหว่างดีไซเนอร์เวียดนามและคนรักแฟชั่นชาวไทย">A bridge between Vietnamese designers and Thai fashion lovers.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ======================================================
+     CONTACT PAGE
+     ====================================================== -->
+<div id="page-contact" class="page hidden">
+  <div style="max-width:680px;margin:0 auto;padding:96px 40px">
+    <p class="section-eyebrow" data-en="CONTACT US" data-th="ติดต่อเรา">CONTACT US</p>
+    <h1 style="font-family:var(--font-headline);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;margin:16px 0 20px;letter-spacing:0.05em;text-transform:uppercase" data-en="Let's Talk" data-th="มาคุยกัน">Let's Talk</h1>
+    <p style="color:var(--lightgrey);font-size:0.92rem;line-height:1.9;margin-bottom:44px" data-en="We're a small, passionate team. Reach us on Line or Instagram for enquiries. We reply within 24 hours." data-th="เราเป็นทีมเล็กๆ ที่เต็มไปด้วยความหลงใหล ติดต่อเราทาง Line หรือ Instagram เราตอบภายใน 24 ชั่วโมง">We're a small, passionate team. Reach us on Line or Instagram for enquiries. We reply within 24 hours.</p>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <a href="https://lin.ee/tmqO0EV" class="contact-link" target="_blank" rel="noopener" style="justify-content:flex-start"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> <div><div style="font-weight:700">LINE</div><div style="font-size:0.78rem;opacity:0.65">@463fdlew</div></div></a>
+      <a href="https://www.instagram.com/neon.lotuss/" class="contact-link" target="_blank" rel="noopener" style="justify-content:flex-start"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> <div><div style="font-weight:700">INSTAGRAM</div><div style="font-size:0.78rem;opacity:0.65">@neon_lotuss</div></div></a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════ LIGHTBOX ═══════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button id="lb-close" aria-label="Close">&times;</button>
+  <div id="lb-counter"></div>
+  <button class="lb-arrow hidden" id="lb-prev" aria-label="Previous photo">&#8249;</button>
+  <div id="lightbox-img-wrap">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+  <button class="lb-arrow hidden" id="lb-next" aria-label="Next photo">&#8250;</button>
+  <div id="lb-name"></div>
+  <div id="lb-dots"></div>
+</div>
+
+<!-- data.js embeds brands_products.json as window.BRANDS_DATA — works with file:// -->
+<script src="data.js"></script>
+<!-- main.js: full app logic — uses window.BRANDS_DATA if available, else fetch() -->
+<script src="main.js" defer></script>
+</body>
+</html>
