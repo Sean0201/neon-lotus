@@ -633,15 +633,19 @@ function filterProducts(brandId, tag, btn) {
 function _buildProductCard(p) {
   const gallery  = p.images?.gallery || [];
 
-  // Prefer CDN URLs (http), fall back to original_cover_url, then any local path
-  const allUrls  = gallery.map(g => g.url).filter(Boolean);
-  const cdnUrls  = allUrls.filter(u => u.startsWith('http'));
-  const coverUrl = cdnUrls.find(u => u) // first CDN gallery url
-    || (p.images?.cover?.startsWith('http') ? p.images.cover : null)
-    || (p.original_cover_url?.startsWith('http') ? p.original_cover_url : null)
-    || allUrls[0]  // local path as last resort
-    || '';
-  const imgUrls  = cdnUrls.length ? cdnUrls : (coverUrl ? [coverUrl] : []);
+  // Prefer CDN URLs (http), fall back to original_cover_url, then local paths
+  const allUrls   = gallery.map(g => g.url).filter(Boolean);
+  const cdnUrls   = allUrls.filter(u => u.startsWith('http'));
+  const localUrls = allUrls.filter(u => !u.startsWith('http'));
+  const cdnCover  = p.original_cover_url?.startsWith('http') ? p.original_cover_url
+    : p.images?.cover?.startsWith('http') ? p.images.cover : '';
+  const coverUrl  = cdnUrls[0] || cdnCover || localUrls[0] || '';
+  // Build image list: CDN gallery → local paths (with CDN cover as fallback) → CDN cover only
+  const imgUrls   = cdnUrls.length ? cdnUrls
+    : localUrls.length ? localUrls
+    : (cdnCover ? [cdnCover] : []);
+  // onerror fallback for local images that may not exist on server
+  const imgFallback = cdnCover ? ` onerror="this.onerror=null;this.src='${cdnCover}'"` : '';
 
   const sizes     = p.sizes || [];
   const allOut    = sizes.length > 0 && sizes.every(s => !s.available);
@@ -654,7 +658,7 @@ function _buildProductCard(p) {
   const imgsAttr = JSON.stringify(imgUrls).replace(/"/g, '&quot;');
 
   const mainImg = coverUrl
-    ? `<img class="card-main-img lazy-img" data-src="${coverUrl}" src="" alt="${p.name}">`
+    ? `<img class="card-main-img lazy-img" data-src="${coverUrl}" src=""${imgFallback} alt="${p.name}">`
     : `<div class="product-img-placeholder">
          <div class="placeholder-icon">👕</div>
          <div class="placeholder-text">NO IMAGE</div>
@@ -670,7 +674,7 @@ function _buildProductCard(p) {
     ? `<div class="gallery-thumbs">
         ${imgUrls.slice(0, 5).map((url, i) => `
           <img class="gallery-thumb lazy-img${i === 0 ? ' active' : ''}"
-               data-src="${url}" src="" alt=""
+               data-src="${url}" src=""${imgFallback} alt=""
                onclick="switchThumb(this,'${url}',event)">
         `).join('')}
        </div>` : '';
