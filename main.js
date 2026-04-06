@@ -75,6 +75,7 @@ const BRAND_THEME = {
   tryst:            { accent: '#ec407a', infoBar: '#12060c' }, // Women's / hot pink
   aesirstudio:      { accent: '#5c6bc0', infoBar: '#080812' }, // Premium / indigo
   helios:           { accent: '#ffc107', infoBar: '#100e06' }, // Silver Jewelry / amber
+  'latui-atelier':  { accent: '#1a1a1a', infoBar: '#0e0c0a' }, // Avant-garde / earth
 };
 
 /** Category display meta (tag → display label + icon) */
