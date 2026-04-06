@@ -69,7 +69,7 @@ const BRAND_THEME = {
   '23september':    { accent: '#ef5350', infoBar: '#120608' }, // Art / crimson
   'niyu-archive':   { accent: '#90a4ae', infoBar: '#0a0c10' }, // Archive / cool grey
   'whenever-atelier':{ accent: '#d4a574', infoBar: '#120e08' }, // Vintage Americana / warm tan
-  bunnyhillconcept: { accent: '#f8bbd0', infoBar: '#120a0e' }, // Soft Minimalist / blush
+  bunnyhillconcept: { accent: '#f8bbd0', infoBar: '#120a0e' }, // Women's / blush
   'poison-fang':    { accent: '#00e676', infoBar: '#041208' }, // Ethereal / toxic green
   '2idiots-label':  { accent: '#8d6e63', infoBar: '#0e0a08' }, // Fabric Craft / earthy brown
   tryst:            { accent: '#ec407a', infoBar: '#12060c' }, // Women's / hot pink
