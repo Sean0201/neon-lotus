@@ -359,6 +359,11 @@ function setLang(lang) {
     // Re-observe fade-in elements so new cards become visible
     setTimeout(observeFadeIns, 50);
   }
+
+  // 5. Re-render product cards if a brand page is open (update price labels)
+  if (window.CURRENT_BRAND_PRODUCTS && window.CURRENT_BRAND_PRODUCTS.length) {
+    renderProducts('all');
+  }
 }
 
 /* ── Lang-switch button click ─────────────────────────── */
@@ -688,8 +693,8 @@ function _buildProductCard(p) {
 
   const priceHtml = `
     <div class="product-price-wrap">
-      ${thbShip  != null ? `<div class="price-row"><span class="price-main">${thbShip.toLocaleString()} THB</span><span class="price-tag-pill">SHIP<span class="pill-sub">INC.</span></span></div>` : ''}
-      ${thbCarry != null ? `<div class="price-row"><span class="price-carry">${thbCarry.toLocaleString()} THB</span><span class="price-tag-pill carry">CARRY<span class="pill-sub">BACK</span></span></div>` : ''}
+      ${thbShip  != null ? `<div class="price-row"><span class="price-main">${thbShip.toLocaleString()} THB</span><span class="price-tag-pill">${currentLang === 'th' ? 'ส่งกลับจากต่างประเทศค่ะ' : 'SHIP<span class="pill-sub">INC.</span>'}</span></div>` : ''}
+      ${thbCarry != null ? `<div class="price-row"><span class="price-carry">${thbCarry.toLocaleString()} THB</span><span class="price-tag-pill carry">${currentLang === 'th' ? 'นำกลับมาด้วยตัวเองค่ะ' : 'CARRY<span class="pill-sub">BACK</span>'}</span></div>` : ''}
     </div>`;
 
   return `
