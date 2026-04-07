@@ -651,8 +651,6 @@ function _buildProductCard(p) {
   const coverUrl = imgUrls[0] || '';
 
   const sizes     = p.sizes || [];
-  const allOut    = sizes.length > 0 && sizes.every(s => !s.available);
-  const isSoldOut = p.sold_out || allOut;
 
   const thbShip  = p.price?.thb_shipping;
   const thbCarry = p.price?.thb_carryback;
@@ -667,8 +665,7 @@ function _buildProductCard(p) {
          <div class="placeholder-text">NO IMAGE</div>
        </div>`;
 
-  const soldOverlay = isSoldOut
-    ? `<div class="sold-out-overlay"><span>SOLD OUT</span></div>` : '';
+  const soldOverlay = '';
 
   const countBadge = imgUrls.length > 1
     ? `<div class="photo-count-badge">📷 ${imgUrls.length}</div>` : '';
@@ -685,7 +682,7 @@ function _buildProductCard(p) {
   const sizesHtml = sizes.length
     ? `<div class="product-sizes-label">SIZE</div>
        <div class="product-sizes">
-         ${sizes.map(s => `<span class="size-chip${s.available ? '' : ' sold-out'}">${s.label}</span>`).join('')}
+         ${sizes.map(s => `<span class="size-chip">${s.label}</span>`).join('')}
        </div>` : '';
 
   const reviewBadge = p.needs_review
@@ -699,7 +696,7 @@ function _buildProductCard(p) {
     </div>`;
 
   return `
-    <div class="product-card${isSoldOut ? ' is-sold-out' : ''}">
+    <div class="product-card">
       <div class="product-img-box" data-imgs="${imgsAttr}" data-pname="${p.name}" onclick="lbOpen(this)">
         ${mainImg}${soldOverlay}${countBadge}
       </div>
