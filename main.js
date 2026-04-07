@@ -654,7 +654,6 @@ function _buildProductCard(p) {
 
   const thbShip  = p.price?.thb_shipping;
   const thbCarry = p.price?.thb_carryback;
-  const vnd      = p.price?.vnd;
 
   const imgsAttr = JSON.stringify(imgUrls).replace(/"/g, '&quot;');
 
@@ -689,9 +688,8 @@ function _buildProductCard(p) {
 
   const priceHtml = `
     <div class="product-price-wrap">
-      ${thbShip  != null ? `<div class="price-row"><span class="price-main">฿${thbShip.toLocaleString()}</span><span class="price-tag-pill">SHIP<span class="pill-sub">INC.</span></span></div>` : ''}
-      ${thbCarry != null ? `<div class="price-row"><span class="price-carry">฿${thbCarry.toLocaleString()}</span><span class="price-tag-pill carry">CARRY<span class="pill-sub">BACK</span></span></div>` : ''}
-      ${vnd      != null ? `<div class="price-sub ${p.price?.note ? 'vnd-est' : 'vnd-real'}">₫${vnd.toLocaleString()}${p.price?.note ? '<span class="vnd-q"> (?)</span>' : ''}</div>` : ''}
+      ${thbShip  != null ? `<div class="price-row"><span class="price-main">${thbShip.toLocaleString()} THB</span><span class="price-tag-pill">SHIP<span class="pill-sub">INC.</span></span></div>` : ''}
+      ${thbCarry != null ? `<div class="price-row"><span class="price-carry">${thbCarry.toLocaleString()} THB</span><span class="price-tag-pill carry">CARRY<span class="pill-sub">BACK</span></span></div>` : ''}
     </div>`;
 
   return `
