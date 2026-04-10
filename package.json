@@ -1,0 +1,11 @@
+{
+  "name": "neon-lotus",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/generate-data.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4"
+  }
+}
