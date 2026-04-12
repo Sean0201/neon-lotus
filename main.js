@@ -894,11 +894,13 @@ function filterByStyle(keyword) {
     const grid = document.getElementById('brands-grid');
     if (!grid) return;
     const cards = grid.querySelectorAll('.brand-card');
+    const activeBrands = BRANDS.filter(b => b.products.length > 0);
     cards.forEach((card, i) => {
-      const brand = BRANDS[i];
+      const brand = activeBrands[i];
       if (!brand) return;
+      const cat   = (brand.meta_category || '').toLowerCase();
       const style = (brand.style || '').toLowerCase();
-      if (!keyword || style.includes(keyword.toLowerCase())) {
+      if (!keyword || cat.includes(keyword.toLowerCase()) || style.includes(keyword.toLowerCase())) {
         card.style.display = '';
       } else {
         card.style.display = 'none';
