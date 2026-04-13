@@ -78,17 +78,33 @@ const BRAND_THEME = {
   'latui-atelier':  { accent: '#c9a96e', infoBar: '#0e0c0a' }, // Avant-garde / warm bronze
 };
 
-/** Category display meta (tag → display label + icon) */
-const CAT = {
-  ALL:         { label: '全部',    icon: '◻' },
-  Top:         { label: '上衣',    icon: '👕' },
-  Outerwear:   { label: '外套',    icon: '🧥' },
-  Bottom:      { label: '褲子',    icon: '👖' },
-  Accessories: { label: '飾品',   icon: '💍' },
-  Bag:         { label: '包包',    icon: '👜' },
-  Headwear:    { label: '帽子',    icon: '🧢' },
-  Set:         { label: 'SETS',    icon: '🩴' },
+/** Category display labels — used by dynamic filter buttons */
+const CAT_LABELS = {
+  ALL:         { tw: '全部',   en: 'ALL' },
+  TOPS:        { tw: '上衣',   en: 'TOPS' },
+  TEES:        { tw: 'T恤',    en: 'TEES' },
+  LONGSLEEVES: { tw: '長袖',   en: 'LONG SLEEVES' },
+  SHIRTS:      { tw: '襟衫',   en: 'SHIRTS' },
+  POLOS:       { tw: 'POLO',   en: 'POLOS' },
+  TANKS:       { tw: '背心',   en: 'TANKS' },
+  SWEATERS:    { tw: '毛衣',   en: 'SWEATERS' },
+  JERSEYS:     { tw: '球衣',   en: 'JERSEYS' },
+  OUTERWEAR:   { tw: '外套',   en: 'OUTERWEAR' },
+  JACKETS:     { tw: '夾克',   en: 'JACKETS' },
+  HOODIES:     { tw: '帽T',    en: 'HOODIES' },
+  BOTTOMS:     { tw: '褲款',   en: 'BOTTOMS' },
+  PANTS:       { tw: '長褲',   en: 'PANTS' },
+  SHORTS:      { tw: '短褲',   en: 'SHORTS' },
+  SKIRTS:      { tw: '裙款',   en: 'SKIRTS' },
+  DRESSES:     { tw: '洋裝',   en: 'DRESSES' },
+  SETS:        { tw: '套裝',   en: 'SETS' },
+  BAGS:        { tw: '包款',   en: 'BAGS' },
+  CAPS:        { tw: '帽款',   en: 'CAPS' },
+  ACCESSORIES: { tw: '配件',   en: 'ACCESSORIES' },
+  FOOTWEAR:    { tw: '鞋款',   en: 'FOOTWEAR' },
+  UNDERWEAR:   { tw: '內著',   en: 'UNDERWEAR' },
 };
+const CAT_ORDER = ['TOPS','TEES','LONGSLEEVES','SHIRTS','POLOS','TANKS','SWEATERS','JERSEYS','OUTERWEAR','JACKETS','HOODIES','BOTTOMS','PANTS','SHORTS','SKIRTS','DRESSES','SETS','BAGS','CAPS','ACCESSORIES','FOOTWEAR','UNDERWEAR'];
 
 /* ═══════════════════════════════════════════════════════════════
    § 1.  APP STATE
@@ -314,7 +330,7 @@ function renderBrandPage(brandId) {
   }
 
   renderFilters();
-  renderProducts('all');
+  renderProducts('ALL');
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -360,9 +376,10 @@ function setLang(lang) {
     setTimeout(observeFadeIns, 50);
   }
 
-  // 5. Re-render product cards if a brand page is open (update price labels)
+  // 5. Re-render filters + product cards if a brand page is open (update labels)
   if (window.CURRENT_BRAND_PRODUCTS && window.CURRENT_BRAND_PRODUCTS.length) {
-    renderProducts('all');
+    renderFilters();
+    renderProducts('ALL');
   }
 }
 
@@ -578,40 +595,35 @@ function renderDropdown() {
 function renderFilters() {
   const container = document.getElementById('products-filter');
   if (!container) return;
-
   const products = window.CURRENT_BRAND_PRODUCTS || [];
-  const buttons  = container.querySelectorAll('.filter-btn');
-
-  // Count products per tag and show/hide buttons + count badges
-  buttons.forEach(btn => {
-    const tag = btn.getAttribute('data-tag');
-    const count = tag === 'all'
-      ? products.length
-      : products.filter(p => p.tag === tag).length;
-
-    // Show/hide button (always keep 'all')
-    btn.style.display = (tag === 'all' || count > 0) ? '' : 'none';
-
-    // Update or add count badge
-    let badge = btn.querySelector('.filter-count');
-    if (!badge) {
-      badge = document.createElement('span');
-      badge.className = 'filter-count';
-      btn.appendChild(badge);
-    }
-    badge.textContent = count;
-
+  const catCounts = {};
+  products.forEach(p => {
+    const cat = (p.category || '').toUpperCase();
+    if (cat) catCounts[cat] = (catCounts[cat] || 0) + 1;
+  });
+  const sorted = Object.keys(catCounts).sort((a, b) => {
+    const ia = CAT_ORDER.indexOf(a), ib = CAT_ORDER.indexOf(b);
+    return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+  });
+  const getLabel = (cat) => {
+    const m = CAT_LABELS[cat];
+    return m ? (currentLang === 'tw' ? m.tw : m.en) : cat;
+  };
+  let html = '<button class="filter-btn active" data-cat="ALL"><span>' +
+    (currentLang === 'tw' ? '全部' : 'ALL') +
+    '</span><span class="filter-count">' + products.length + '</span></button>';
+  sorted.forEach(cat => {
+    html += '<button class="filter-btn" data-cat="' + cat + '"><span>' +
+      getLabel(cat) + '</span><span class="filter-count">' + catCounts[cat] + '</span></button>';
+  });
+  container.innerHTML = html;
+  container.querySelectorAll('.filter-btn').forEach(btn => {
     btn.onclick = () => {
-      buttons.forEach(b => b.classList.remove('active'));
+      container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderProducts(tag);
+      renderProducts(btn.getAttribute('data-cat'));
     };
   });
-
-  // Reset active to 'all'
-  buttons.forEach(b => b.classList.remove('active'));
-  const allBtn = container.querySelector('.filter-btn[data-tag="all"]');
-  if (allBtn) allBtn.classList.add('active');
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -705,11 +717,11 @@ function _buildProductCard(p) {
       ${thumbsHtml}
       <div class="product-info">
         ${reviewBadge}
-        <div class="product-season">${p.tag || ''}</div>
+        <div class="product-season">${p.category || p.tag || ''}</div>
         <div class="product-name">${p.name}</div>
         ${priceHtml}
         ${sizesHtml}
-        <span class="product-tag">${p.tag || ''}</span>
+        <span class="product-tag">${p.category || p.tag || ''}</span>
       </div>
     </div>`;
 }
@@ -717,26 +729,20 @@ function _buildProductCard(p) {
 /* ═══════════════════════════════════════════════════════════════
    § 10.  RENDER — PRODUCT CARDS (修正過濾版)
    ═══════════════════════════════════════════════════════════════ */
-function renderProducts(tag = 'all') {
+function renderProducts(cat) {
+  cat = cat || 'ALL';
   const grid = document.getElementById('products-grid');
   if (!grid) return;
-
-  // 從我們剛剛在上面 renderBrandPage 存好的暫存區拿資料
   const allProducts = window.CURRENT_BRAND_PRODUCTS || [];
-
-  // 根據標籤過濾 (對齊你 index.html 寫的大寫開頭標籤)
   const filtered = allProducts.filter(p => {
-    if (tag === 'all') return true;
-    return p.tag === tag; 
+    if (cat === 'ALL' || cat === 'all') return true;
+    return (p.category || '').toUpperCase() === cat.toUpperCase();
   });
-
-  // 印出卡片
   if (filtered.length === 0) {
     grid.innerHTML = '<p style="text-align:center; padding:50px;">No items found.</p>';
   } else {
     grid.innerHTML = filtered.map(p => _buildProductCard(p)).join('');
   }
-  
   if (typeof initImgLazy === 'function') initImgLazy();
 }
 
