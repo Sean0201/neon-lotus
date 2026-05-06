@@ -1,9 +1,11 @@
 {
-  "name": "neon-lotus",
+  "name": "neon-lotus-th",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "node scripts/generate-data.js"
+    "build": "node scripts/generate-data.js",
+    "translate-sizes": "node scripts/translate-vn-sizes.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4"

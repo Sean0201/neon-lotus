@@ -1,0 +1,1229 @@
+{
+  "brand": {
+    "id": "niyu",
+    "name": "NIYU ARCHIVE",
+    "style": "Vietnamese Streetwear",
+    "color_hex": "#1a1a1a",
+    "description": {
+      "en": "",
+      "th": "",
+      "zh": ""
+    },
+    "meta": {
+      "website": "https://shopee.vn/niyu_archive",
+      "location": "Vietnam",
+      "founded": "",
+      "category": "Streetwear"
+    }
+  },
+  "products": [
+    {
+      "id": "niyu-src-23115646914",
+      "brand_id": "niyu",
+      "name": "Áo Thun NIYUN \"F Fleur\" /Black",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 315000
+      },
+      "sizes": [
+        {
+          "label": "\bM",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv0m6j6t1re6",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv0m6j6t1re6",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv0m6j6t1re6"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-cntp08b0l1lva5",
+            "original_url": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-cntp08b0l1lva5"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv28x3705r74",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv28x3705r74"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv2vypgyhb59",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv2vypgyhb59"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv4fp2aykv12",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv4fp2aykv12"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-sb2sz8b0l1lv80",
+            "original_url": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-sb2sz8b0l1lv80"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-bbau85b0l1lv0c",
+            "original_url": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-bbau85b0l1lv0c"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-ocau85b0l1lvcd",
+            "original_url": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-ocau85b0l1lvcd"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0jv0m6j6t1re6",
+      "product_url": "https://shopee.vn/-i.296004908.23115646914",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://shopee.vn/-i.296004908.23115646914",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-20668189071",
+      "brand_id": "niyu",
+      "name": "Áo Khoác NIYUN Track Jacket/ 2 Colors",
+      "tag": "JACKETS",
+      "category": "JACKETS",
+      "price": {
+        "vnd": 210000
+      },
+      "sizes": [
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr6y631pb64k5c",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr6y631pb64k5c",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr6y631pb64k5c"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/sg-11134201-22120-8ufbi2oqzjlv20",
+            "original_url": "https://down-vn.img.susercontent.com/file/sg-11134201-22120-8ufbi2oqzjlv20"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/sg-11134201-22120-4apenz66jykve7",
+            "original_url": "https://down-vn.img.susercontent.com/file/sg-11134201-22120-4apenz66jykve7"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/sg-11134201-22120-s6wfty66jykved",
+            "original_url": "https://down-vn.img.susercontent.com/file/sg-11134201-22120-s6wfty66jykved"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/sg-11134201-22120-2q2a6266jykv31",
+            "original_url": "https://down-vn.img.susercontent.com/file/sg-11134201-22120-2q2a6266jykv31"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr6y6iy41io4ce",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr6y6iy41io4ce"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr6y6iye141w9b",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr6y6iye141w9b"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr6y631pb64k5c",
+      "product_url": "https://shopee.vn/-i.296004908.20668189071",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://shopee.vn/-i.296004908.20668189071",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-11599821549",
+      "brand_id": "niyu",
+      "name": "Quần Kaki Ngắn NIYUN /Basic Short",
+      "tag": "SHORTS",
+      "category": "SHORTS",
+      "price": {
+        "vnd": 180000
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lin2710kkiz077",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lin2710kkiz077",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lin2710kkiz077"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lik7xx43edxo8a",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lik7xx43edxo8a"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lizyfq883h1o95",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lizyfq883h1o95"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lie6aabdufo2b5",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lie6aabdufo2b5"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lie6aachdcek59",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lie6aachdcek59"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lie6aacrcyc2ed",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lie6aacrcyc2ed"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lin2710kkiz077",
+      "product_url": "https://shopee.vn/-i.296004908.11599821549",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://shopee.vn/-i.296004908.11599821549",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-23981433111",
+      "brand_id": "niyu",
+      "name": "Áo Thun NIYUN Being&Nothingness/ Trắng",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 192500
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm3cv6jucf6n8e",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm3cv6jucf6n8e",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm3cv6jucf6n8e"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lmafcslbmbbz85",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lmafcslbmbbz85"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lmafdnwxqs4fed",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lmafdnwxqs4fed"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lomnlx7w9ykw4e",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lomnlx7w9ykw4e"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lqc3f367w1xu01",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lqc3f367w1xu01"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lqc3f367xgiaef",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lqc3f367xgiaef"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm3emslr4o9r47",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm3emslr4o9r47"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm3cv6jucf6n8e",
+      "product_url": "https://shopee.vn/-i.296004908.23981433111",
+      "size_chart": {
+        "image_url": "https://down-vn.img.susercontent.com/file/sg-11134274-7rdvf-mbzc6o077x0s24",
+        "source_url": "https://shopee.vn/-i.296004908.23981433111",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-18091046974",
+      "brand_id": "niyu",
+      "name": "Quần Dài Túi Hộp NIYUN/ Ống Loe Nhẹ",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 225000
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lt84nl4relqxce",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lt84nl4relqxce",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lt84nl4relqxce"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lt84nl4rd76h57",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lt84nl4rd76h57"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lo1b2kirt56i70",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lo1b2kirt56i70"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lo1cb8ouerxp9e",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lo1cb8ouerxp9e"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lnx5rxp2cjcdb0",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lnx5rxp2cjcdb0"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lnx5rxp2b4rx2f",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lnx5rxp2b4rx2f"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-ljfpuqirsmhee6",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-ljfpuqirsmhee6"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-ljfpuqjbrsp85c",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-ljfpuqjbrsp85c"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lt84nl4relqxce",
+      "product_url": "https://shopee.vn/-i.296004908.18091046974",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://shopee.vn/-i.296004908.18091046974",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-27359261189",
+      "brand_id": "niyu",
+      "name": "Áo Thun NIYUN Pierced - Acid Wash màu Đen Xám",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 658000
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fo8bz5a9",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fo8bz5a9",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fo8bz5a9"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzjas1ckgeh930",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzjas1ckgeh930"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzjas1ckvuzl22",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzjas1ckvuzl22"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzkmb9qlw2ox76",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzkmb9qlw2ox76"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fnj1hp64",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fnj1hp64"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fnj1r5d1",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fnj1r5d1"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzjas1ckgeqp82",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzjas1ckgeqp82"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fdjg3x50",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fdjg3x50"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzkmb9qlxh9d2c",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzkmb9qlxh9d2c"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzgg52fo8bz5a9",
+      "product_url": "https://shopee.vn/-i.296004908.27359261189",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://shopee.vn/-i.296004908.27359261189",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-45204117977",
+      "brand_id": "niyu",
+      "name": "Áo Thun Dài Tay NIYUN X Long Sleeve / Đen Wash",
+      "tag": "LONGSLEEVES",
+      "category": "LONGSLEEVES",
+      "price": {
+        "vnd": 680000
+      },
+      "sizes": [
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2gpswlpqm8e0",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2gpswlpqm8e0",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2gpswlpqm8e0"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2gpswl39j502",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2gpswl39j502"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mja4xp4joves57",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mja4xp4joves57"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mja557fcbi0z4c",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mja557fcbi0z4c"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2fs8iumm8117",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2fs8iumm8117"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2fs8jdv47b50",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2fs8jdv47b50"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2fs8k220aue5",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2fs8k220aue5"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2fs8kse5msc8",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2fs8kse5msc8"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mja59zv4y0oy80",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mja59zv4y0oy80"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mj2gpswlpqm8e0",
+      "product_url": "https://shopee.vn/-i.296004908.45204117977",
+      "size_chart": {
+        "image_url": "https://down-vn.img.susercontent.com/file/vn-11134208-820l4-mj2fyn3beeipa3",
+        "source_url": "https://shopee.vn/-i.296004908.45204117977",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-52405246589",
+      "brand_id": "niyu",
+      "name": "Quần Jeans Ngắn NIYUN Hai Lưng Rách - Super Destroyed Jorts",
+      "tag": "PANTS",
+      "category": "PANTS",
+      "price": {
+        "vnd": 1750000
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjwxf7q60kxs09",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjwxf7q60kxs09",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjwxf7q60kxs09"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww0xvomhvm58",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww0xvomhvm58"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww01vj1mo270",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww01vj1mo270"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlcddshhhhj8c9",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mlcddshhhhj8c9"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjwvfx0cx7gi7e",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjwvfx0cx7gi7e"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjuw6nsr785ef3",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjuw6nsr785ef3"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww0rohk1za4e",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww0rohk1za4e"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww3q7u7g8x6b",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww3q7u7g8x6b"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww4yl6ugau59",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjww4yl6ugau59"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mjwxf7q60kxs09",
+      "product_url": "https://shopee.vn/-i.296004908.52405246589",
+      "size_chart": {
+        "image_url": "https://down-vn.img.susercontent.com/file/vn-11134208-820l4-mjuvld9tdybqee",
+        "source_url": "https://shopee.vn/-i.296004908.52405246589",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-54253526838",
+      "brand_id": "niyu",
+      "name": "Áo Thun NIYU Acid Washed Rách Tua Rua /Đen Wash",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 620000
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mipjd7g4q3gj23",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mipjd7g4q3gj23",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mipjd7g4q3gj23"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmum691m94aw99",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmum691m94aw99"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-miqpxy1s3dogf4",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-miqpxy1s3dogf4"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-miqpxy1rs54x67",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-miqpxy1rs54x67"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-miooafmyjtvq36",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-miooafmyjtvq36"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mioo5up9y1ag2b",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mioo5up9y1ag2b"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mioo5upf7ny8a2",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mioo5upf7ny8a2"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mioo5uq2s2yv3f",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mioo5uq2s2yv3f"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-820l4-mipjd7g4q3gj23",
+      "product_url": "https://shopee.vn/-i.296004908.54253526838",
+      "size_chart": {
+        "image_url": "https://down-vn.img.susercontent.com/file/vn-11134208-820l4-milx7pr42oef2c",
+        "source_url": "https://shopee.vn/-i.296004908.54253526838",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-53556335465",
+      "brand_id": "niyu",
+      "name": "Áo Khoác Denim NIYUN Distressed Wax",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1125000
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn0csj83uo0311",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn0csj83uo0311",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn0csj83uo0311"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14d9y8iz37d",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14d9y8iz37d"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml8tmlim5d6p0a",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml8tmlim5d6p0a"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14dadc4qw8c",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14dadc4qw8c"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml8tmlkobmrp55",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml8tmlkobmrp55"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14dacpnnq6f",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14dacpnnq6f"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14daq21vo60",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14daq21vo60"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn0csj83uo0311",
+      "product_url": "https://shopee.vn/-i.296004908.53556335465",
+      "size_chart": {
+        "image_url": "https://down-vn.img.susercontent.com/file/vn-11134208-81ztc-ml1kqyfffyme3f",
+        "source_url": "https://shopee.vn/-i.296004908.53556335465",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-45756338940",
+      "brand_id": "niyu",
+      "name": "Quần Jeans NIYUN Distressed Wax",
+      "tag": "PANTS",
+      "category": "PANTS",
+      "price": {
+        "vnd": 922500
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn0crm1ulmo428",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn0crm1ulmo428",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn0crm1ulmo428"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm2npqz2vpe87",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm2npqz2vpe87"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14dacpnnq6f",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mmm14dacpnnq6f"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml8tn3stkydk4b",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml8tn3stkydk4b"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml8tn3szjv9rc3",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml8tn3szjv9rc3"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0xtkthfthc9d",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0xtkthfthc9d"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0xvt5504jqf0",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0xvt5504jqf0"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mn0crm1ulmo428",
+      "product_url": "https://shopee.vn/-i.296004908.45756338940",
+      "size_chart": {
+        "image_url": "https://down-vn.img.susercontent.com/file/vn-11134208-81ztc-ml0yanikffgg80",
+        "source_url": "https://shopee.vn/-i.296004908.45756338940",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-41361826903",
+      "brand_id": "niyu",
+      "name": "Áo Thun Tay Dài NIYUN Vải Giấy / Scribble Long Sleeve - Oatmeal",
+      "tag": "LONGSLEEVES",
+      "category": "LONGSLEEVES",
+      "price": {
+        "vnd": 560500
+      },
+      "sizes": [
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md48q0197cjj02",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md48q0197cjj02",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md48q0197cjj02"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md48q0195xz3b3",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md48q0195xz3b3"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md485e4iz5wcce",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md485e4iz5wcce"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md48q0197cjj02",
+      "product_url": "https://shopee.vn/-i.296004908.41361826903",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://shopee.vn/-i.296004908.41361826903",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-24255177459",
+      "brand_id": "niyu",
+      "name": "Quần Dù NIYUN Ống Rộng - Quần Dù Túi Hộp",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 343000
+      },
+      "sizes": [
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr49yfxfnv7o89",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr49yfxfnv7o89",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr49yfxfnv7o89"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx9z2w7qvufvc8",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx9z2w7qvufvc8"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lsi4ukayu5dw5d",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lsi4ukayu5dw5d"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx9z2w7qug2hf7",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx9z2w7qug2hf7"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx9z2w7qufvf5b",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx9z2w7qufvf5b"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m899wei3gi9u89",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m899wei3gi9u89"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m899xgy3779ecc",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m899xgy3779ecc"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m899yiayj51g89",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m899yiayj51g89"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m899zb4yc60y1e",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m899zb4yc60y1e"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lr49yfxfnv7o89",
+      "product_url": "https://shopee.vn/-i.296004908.24255177459",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://shopee.vn/-i.296004908.24255177459",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-54556316013",
+      "brand_id": "niyu",
+      "name": "Áo Khoác NIYU Multi-Layer Distressed Cotton Washed Hoodie Zip",
+      "tag": "HOODIES",
+      "category": "HOODIES",
+      "price": {
+        "vnd": 1324000
+      },
+      "sizes": [
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkzjmahrcow577",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkzjmahrcow577",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkzjmahrcow577"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0dmyxafdhdfe",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0dmyxafdhdfe"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0cqolthc04e8",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0cqolthc04e8"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkzj4qkdzpc55e",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkzj4qkdzpc55e"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkzj4qk28wece6",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkzj4qk28wece6"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0cq137zbid1a",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0cq137zbid1a"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0cr9v27v9cfa",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0cr9v27v9cfa"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0cqoltocu888",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0cqoltocu888"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0ck0wbkhdy50",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ml0ck0wbkhdy50"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkzjmahrcow577",
+      "product_url": "https://shopee.vn/-i.296004908.54556316013",
+      "size_chart": {
+        "image_url": "https://down-vn.img.susercontent.com/file/vn-11134208-81ztc-mkzjk5ok12ps9e",
+        "source_url": "https://shopee.vn/-i.296004908.54556316013",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-46305962107",
+      "brand_id": "niyu",
+      "name": "Áo Thun Giấy NIYU Tay Ngắn Cho Nữ -  Form Crop",
+      "tag": "TOPS",
+      "category": "TOPS",
+      "price": {
+        "vnd": 421200
+      },
+      "sizes": [
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7saotjib1d",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7saotjib1d",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7saotjib1d"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7saiksnb06",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7saiksnb06"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7saketc44d",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7saketc44d"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7scoyrk0e5",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7scoyrk0e5"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mkfd7saotjib1d",
+      "product_url": "https://shopee.vn/-i.296004908.46305962107",
+      "size_chart": {
+        "image_url": "https://down-vn.img.susercontent.com/file/vn-11134208-81ztc-mkfewboeh1j9f4",
+        "source_url": "https://shopee.vn/-i.296004908.46305962107",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "niyu-src-29762274156",
+      "brand_id": "niyu",
+      "name": "Quần Tây NIYUN Ống Rộng - 3 Màu",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 270000
+      },
+      "sizes": [
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopl2ikv53",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopl2ikv53",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopl2ikv53"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopb2wvhcd",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopb2wvhcd"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m3rymxlyorsl9f",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m3rymxlyorsl9f"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m1pkxrjznpvjb1",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m1pkxrjznpvjb1"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopl3x5b53",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopl3x5b53"
+          },
+          {
+            "type": "detail",
+            "url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopb4bfx4e",
+            "original_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopb4bfx4e"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m0kcyopl2ikv53",
+      "product_url": "https://shopee.vn/-i.296004908.29762274156",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://shopee.vn/-i.296004908.29762274156",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    }
+  ]
+}

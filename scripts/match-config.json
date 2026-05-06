@@ -1,0 +1,261 @@
+{
+  "pairs": [
+    {
+      "source": "scripts/data/sptmbr_scrape.json",
+      "target_brand_id": "23september"
+    },
+    {
+      "source": "scripts/data/aastu_scrape.json",
+      "target_brand_id": "aastu"
+    },
+    {
+      "source": "scripts/data/aesir_scrape.json",
+      "target_brand_id": "aesirstudio"
+    },
+    {
+      "source": "scripts/data/badrabbit_scrape.json",
+      "target_brand_id": "badrabbit"
+    },
+    {
+      "source": "scripts/data/badhabits_scrape.json",
+      "target_brand_id": "badhabits"
+    },
+    {
+      "source": "scripts/data/bunnyhill_scrape.json",
+      "target_brand_id": "bunnyhillconcept"
+    },
+    {
+      "source": "scripts/data/dirtycoins_scrape.json",
+      "target_brand_id": "dirtycoins"
+    },
+    {
+      "source": "scripts/data/dimoir_scrape.json",
+      "target_brand_id": "dirmior"
+    },
+    {
+      "source": "scripts/data/devotus_scrape.json",
+      "target_brand_id": "devotus"
+    },
+    {
+      "source": "scripts/data/ceci_scrape.json",
+      "target_brand_id": "ceci"
+    },
+    {
+      "source": "scripts/data/goldie_scrape.json",
+      "target_brand_id": "goldie"
+    },
+    {
+      "source": "scripts/data/gamble_scrape.json",
+      "target_brand_id": "gamble"
+    },
+    {
+      "source": "scripts/data/fnos_scrape.json",
+      "target_brand_id": "fnos"
+    },
+    {
+      "source": "scripts/data/firefly_scrape.json",
+      "target_brand_id": "firefly"
+    },
+    {
+      "source": "scripts/data/hades_scrape.json",
+      "target_brand_id": "hades"
+    },
+    {
+      "source": "scripts/data/fragile_scrape.json",
+      "target_brand_id": "fragile"
+    },
+    {
+      "source": "scripts/data/latui_scrape.json",
+      "target_brand_id": "latui-atelier"
+    },
+    {
+      "source": "scripts/data/levents_scrape.json",
+      "target_brand_id": "levents"
+    },
+    {
+      "source": "scripts/data/lsoul_scrape.json",
+      "target_brand_id": "lsoul"
+    },
+    {
+      "source": "scripts/data/nowsaigon_scrape.json",
+      "target_brand_id": "nowsaigon"
+    },
+    {
+      "source": "scripts/data/mbi_scrape.json",
+      "target_brand_id": "mbi"
+    },
+    {
+      "source": "scripts/data/poisonfang_scrape.json",
+      "target_brand_id": "poison-fang"
+    },
+    {
+      "source": "scripts/data/rich_scrape.json",
+      "target_brand_id": "rich"
+    },
+    {
+      "source": "scripts/data/swe_scrape.json",
+      "target_brand_id": "swe"
+    },
+    {
+      "source": "scripts/data/tredx_scrape.json",
+      "target_brand_id": "tredx"
+    },
+    {
+      "source": "scripts/data/uniz_scrape.json",
+      "target_brand_id": "uniz-world"
+    },
+    {
+      "source": "scripts/data/whenever_scrape.json",
+      "target_brand_id": "whenever-atelier"
+    },
+    {
+      "source": "scripts/data/stressmama_scrape.json",
+      "target_brand_id": "stressmama"
+    },
+    {
+      "source": "scripts/data/intoeight_scrape.json",
+      "target_brand_id": "intoeight"
+    },
+    {
+      "source": "scripts/data/offonoff_scrape.json",
+      "target_brand_id": "offonoff-club"
+    },
+    {
+      "source": "scripts/data/blish_scrape.json",
+      "target_brand_id": "blish"
+    },
+    {
+      "source": "scripts/data/tryst_scrape.json",
+      "target_brand_id": "tryst"
+    },
+    {
+      "source": "scripts/data/phonchay_scrape.json",
+      "target_brand_id": "phonchay"
+    },
+    {
+      "source": "scripts/data/niyu_scrape.json",
+      "target_brand_id": "niyu"
+    },
+    {
+      "source": "scripts/data/lizardman_scrape.json",
+      "target_brand_id": "lizardman"
+    },
+    {
+      "source": "scripts/data/sly_scrape.json",
+      "target_brand_id": "sly"
+    }
+  ],
+  "_comment_brand_overrides": "覆寫 Supabase 端品牌欄位 (e.g. 名稱拼字錯誤、style 標籤). key 是 Supabase brand_id, value 是要覆寫的欄位. style 欄位影響 navbar dropdown filterByStyle() — keyword 必須是 style 子字串才會被選上.",
+  "brand_overrides": {
+    "dirmior": {
+      "name": "DIMOIR"
+    },
+
+    "_comment_womens": "Women's 篩選: 只有這 8 個品牌. 其中 bunnyhillconcept/ceci/devotus/firefly/tryst 已含 Women, 補 intoeight/laneci/lsoul.",
+    "intoeight": {
+      "style": "Women's, Feminine / Elegant"
+    },
+    "laneci": {
+      "style": "Women's, Minimalist / Effortless Chic"
+    },
+    "lsoul": {
+      "style": "Women's, Modern Feminine / Elegant"
+    },
+
+    "_comment_other_styles": "其餘品牌補上對應的 filter keyword 讓 dropdown 篩選找得到.",
+    "23september":      { "style": "Streetwear, Art / Stage Wear" },
+    "aastu":            { "style": "Streetwear, Visual Experimental" },
+    "badhabits":        { "style": "Streetwear, Graffiti / Hip-Hop" },
+    "blish":            { "style": "Contemporary, Futurism / Gorpcore" },
+    "fragile":          { "style": "Streetwear, Urban Essentials" },
+    "mbi":              { "style": "Streetwear, Silhouette / Layering" },
+    "phonchay":         { "style": "Streetwear, Visual Art / Urban Rebellion" },
+    "tuyen":            { "style": "Streetwear, Casual" },
+    "uniz-world":       { "style": "Avant-Garde, Rebellious Designer" },
+    "whenever-atelier": { "style": "Streetwear, Vintage Americana" }
+  },
+  "_comment_brand_defaults": "公版尺寸表 (brand-wide default). 當商品名/類別都沒有 match 時, 使用此 image_url. 圖片放在 assets/size-charts-default/ 資料夾.",
+  "_comment_brand_defaults_2": "可用 by_category 設定不同品類用不同公版圖. lookup 順序: by_category[<cat>] → image_url. category 名稱用 categoryOf() 的 key (tee, hoodie, pants, shorts, jacket, sweater, tank, longsleeve, polo, jersey, shirt, skirt, dress).",
+  "brand_defaults": {
+    "hades": {
+      "image_url": "",
+      "source_url": "",
+      "headers": [],
+      "rows": [],
+      "raw_vn": "",
+      "by_keyword": [
+        { "match": "baby tee",       "image_url": "/assets/size-charts-default/hades_baby%20tee.jpg" },
+        { "match": "flannel",        "image_url": "/assets/size-charts-default/hades_flannel.jpg" },
+        { "match": "leather jacket", "image_url": "/assets/size-charts-default/hades_leather%20jacket.jpg" },
+        { "match": "denim pants",    "image_url": "/assets/size-charts-default/hades_denim%20pants.jpg" },
+        { "match": "sweatpants",     "image_url": "/assets/size-charts-default/hades_sweatpants.jpg" },
+        { "match": "sweat pants",    "image_url": "/assets/size-charts-default/hades_sweatpants.jpg" },
+        { "match": "jeans short",    "image_url": "/assets/size-charts-default/hades_jeans%20short.jpg" },
+        { "match": "denim short",    "image_url": "/assets/size-charts-default/hades_jeans%20short.jpg" },
+        { "match": "sweater knit",   "image_url": "/assets/size-charts-default/hades_sweater%20knit.jpg" },
+        { "match": "tank top",       "image_url": "/assets/size-charts-default/hades_tank%20top.jpg" }
+      ],
+      "by_category": {
+        "tee":     { "image_url": "/assets/size-charts-default/hades_tee.jpg" },
+        "shirt":   { "image_url": "/assets/size-charts-default/hades_shirt.jpg" },
+        "hoodie":  { "image_url": "/assets/size-charts-default/hades_hoddie.jpg" },
+        "sweater": { "image_url": "/assets/size-charts-default/hades_sweater%20knit.jpg" },
+        "jacket":  { "image_url": "/assets/size-charts-default/hades_leather%20jacket.jpg" },
+        "tank":    { "image_url": "/assets/size-charts-default/hades_tank%20top.jpg" },
+        "pants":   { "image_url": "/assets/size-charts-default/hades_denim%20pants.jpg" },
+        "shorts":  { "image_url": "/assets/size-charts-default/hades_jeans%20short.jpg" }
+      }
+    },
+    "tuyen": {
+      "image_url": "/assets/size-charts-default/tuyen.jpg",
+      "source_url": "",
+      "headers": [],
+      "rows": [],
+      "raw_vn": "",
+      "by_category": {
+        "pants": {
+          "image_url": "",
+          "source_url": "",
+          "headers": ["腰圍", "褲長"],
+          "rows": [
+            { "size": "0", "values": { "腰圍": "70", "褲長": "100" } },
+            { "size": "1", "values": { "腰圍": "74", "褲長": "100" } },
+            { "size": "2", "values": { "腰圍": "80", "褲長": "100" } },
+            { "size": "3", "values": { "腰圍": "84", "褲長": "100" } }
+          ],
+          "raw_vn": "Size 0: Eo 70 / Dài 100 · Size 1: Eo 74 / Dài 100 · Size 2: Eo 80 / Dài 100 · Size 3: Eo 84 / Dài 100"
+        }
+      }
+    },
+    "laneci": {
+      "image_url": "",
+      "source_url": "",
+      "headers": ["胸圍", "腰圍", "臀圍"],
+      "rows": [
+        { "size": "S", "values": { "胸圍": "82-84", "腰圍": "62-64", "臀圍": "88-90" } },
+        { "size": "M", "values": { "胸圍": "86-88", "腰圍": "66-68", "臀圍": "92-94" } },
+        { "size": "L", "values": { "胸圍": "90-92", "腰圍": "70-72", "臀圍": "96-98" } }
+      ],
+      "raw_vn": "Size S: Ngực 82-84 · Eo 62-64 · Mông 88-90 | Size M: Ngực 86-88 · Eo 66-68 · Mông 92-94 | Size L: Ngực 90-92 · Eo 70-72 · Mông 96-98"
+    },
+    "dirmior": {
+      "image_url": "/assets/size-charts-default/dirmior.jpg",
+      "source_url": "",
+      "headers": [],
+      "rows": [],
+      "raw_vn": ""
+    },
+    "lsoul": {
+      "image_url": "",
+      "source_url": "https://lsoul.com",
+      "headers": ["胸圍", "腰圍", "臀圍"],
+      "rows": [
+        { "size": "S",  "values": { "胸圍": "84",  "腰圍": "64", "臀圍": "88"  } },
+        { "size": "M",  "values": { "胸圍": "88",  "腰圍": "68", "臀圍": "92"  } },
+        { "size": "L",  "values": { "胸圍": "92",  "腰圍": "72", "臀圍": "96"  } },
+        { "size": "XL", "values": { "胸圍": "96",  "腰圍": "76", "臀圍": "100" } }
+      ],
+      "raw_vn": "Bust 84/88/92/96 · Waist 64/68/72/76 · Hip 88/92/96/100 (S/M/L/XL)"
+    }
+  }
+}

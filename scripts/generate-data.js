@@ -79,6 +79,7 @@ async function main() {
     if (p.price_thb_shipping) product.price.thb_shipping = p.price_thb_shipping;
     if (p.price_thb_carryback) product.price.thb_carryback = p.price_thb_carryback;
     if (p.price_note) product.price.note = p.price_note;
+    // TH only — no description_zh in this branch
     product.sizes = sizesByProduct[p.id] || [];
     product.images = { cover: p.cover_image || "", gallery: galleryByProduct[p.id] || [] };
     product.sold_out = p.sold_out || false;

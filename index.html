@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="no-referrer" />
+  <!-- Preconnect to speed up Supabase data loading -->
+  <link rel="preconnect" href="https://shwirwvnwzxtqsfkwiqj.supabase.co" crossorigin />
+  <link rel="dns-prefetch" href="https://shwirwvnwzxtqsfkwiqj.supabase.co" />
+  <link rel="preconnect" href="https://cdn.hstatic.net" crossorigin />
   <title>NEON LOTUS | Vietnamese Streetwear Curated in Bangkok</title>
   <meta name="description" content="Neon Lotus curates 34+ Vietnamese streetwear brands — Dirtycoins, Gamble, Hades & more. 4200+ original pieces shipped from Bangkok. Shop the future of street fashion." />
   <meta name="keywords" content="Vietnamese streetwear, Bangkok fashion, Neon Lotus, Dirtycoins, Gamble, Hades, street fashion Thailand, เสื้อผ้าสตรีทแวร์เวียดนาม, แฟชั่นกรุงเทพ" />
@@ -356,9 +360,55 @@
 
     /* ======== HERO — Aurora gradient ======== */
     .hero {
-      height: calc(100vh - 68px); position: relative;
+      /* Desktop: 21:9 cinematic ratio */
+      aspect-ratio: 21 / 9;
+      max-height: calc(100vh - 68px);
+      position: relative;
       display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
+    @media (max-width: 768px) {
+      .hero {
+        /* Mobile: 9:16 portrait ratio */
+        aspect-ratio: 9 / 16;
+        max-height: 85vh;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+      }
+    }
+    /* Dynamic banner slides */
+    #hero-banners { position:absolute; inset:0; z-index:2; }
+    .hero-banner-slide {
+      position:absolute; inset:0;
+      background-size:cover; background-position:center;
+      display:flex; align-items:center; justify-content:center;
+      transition:opacity 0.45s ease, transform 0.45s ease;
+    }
+    .hero-banner-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+    }
+    .hero-banner-text {
+      position:relative; z-index:1; text-align:center; padding:2rem;
+    }
+    .hero-banner-title {
+      font-size:clamp(2rem,5vw,3.5rem); font-weight:800;
+      letter-spacing:0.04em; margin-bottom:0.5rem;
+      text-shadow:0 2px 20px rgba(0,0,0,0.5);
+    }
+    .hero-banner-subtitle {
+      font-size:clamp(1rem,2.5vw,1.3rem); opacity:0.9;
+      margin-bottom:1.5rem; text-shadow:0 1px 10px rgba(0,0,0,0.4);
+    }
+    .hero-banner-dots {
+      position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%);
+      display:flex; gap:0.5rem; z-index:3;
+    }
+    .hero-dot {
+      width:10px; height:10px; border-radius:50%;
+      background:rgba(255,255,255,0.4); cursor:pointer;
+      transition:background 0.3s;
+    }
+    .hero-dot.active { background:#fff; }
     .hero-bg {
       position: absolute; inset: 0;
       background: linear-gradient(135deg, #1a0520 0%, #0a0a0f 30%, #070a18 60%, #0d0820 100%);
@@ -484,11 +534,16 @@
     }
     .brand-card:hover .brand-card-overlay { opacity:0.7; }
     .brand-card-info { position:absolute; bottom:0; left:0; right:0; padding:24px 22px; z-index:1; }
-    .brand-card-origin {
-      font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase;
-      background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom:4px; line-height:1.3;
+    .brand-card-tags {
+      display:flex; flex-wrap:wrap; gap:5px; margin-bottom:6px;
+    }
+    .brand-card-tag {
+      display:inline-block; font-size:0.55rem; letter-spacing:0.12em; text-transform:uppercase;
+      padding:3px 9px; border-radius:20px;
+      background:rgba(180,120,255,0.18); border:1px solid rgba(180,120,255,0.35);
+      color:rgba(220,190,255,0.92); line-height:1.3;
+      backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+      white-space:nowrap;
     }
     .brand-card-name {
       font-family: var(--font-headline); font-size:1.5rem; font-weight:700;
@@ -531,30 +586,49 @@
     .lang-content.active { display:block; }
     @keyframes aboutFadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
     .electric-text {
-      font-family:var(--font-mono); font-size:0.75rem; font-weight:400;
-      letter-spacing:0.32em; text-transform:uppercase; line-height:1.8;
+      font-family:'Syncopate','Montserrat',sans-serif; font-size:0.75rem; font-weight:400;
+      letter-spacing:0.18em; text-transform:uppercase; line-height:1.8;
       color:rgba(245,244,248,0.35); margin-bottom:32px; text-align:center;
     }
     .about-desc {
       font-family:'Inter',sans-serif; font-size:0.9rem; font-weight:300;
-      color:rgba(245,244,248,0.88); line-height:1.5; text-align:center;
+      color:#dddddd; line-height:1.8; text-align:justify; letter-spacing:0.08rem;
     }
-    .about-desc.th {
-      font-family:'Kanit',sans-serif; line-height:1.6;
-      color:rgba(245,244,248,0.92);
+    .about-desc.about-desc--en {
+      font-family:'Space Mono',monospace; font-size:0.85rem; font-weight:300;
+      letter-spacing:0.02em; line-height:1.8; color:#dddddd;
+    }
+    .about-desc.tw {
+      font-family:'Kanit',sans-serif,sans-serif; line-height:1.8;
+      color:#dddddd; letter-spacing:0.08rem;
     }
     .about-tagline-strip {
-      font-family:var(--font-mono); font-size:0.72rem; font-weight:700;
+      font-family:'Syncopate','Montserrat',sans-serif; font-size:0.72rem; font-weight:700;
       letter-spacing:0.22em; text-transform:uppercase; text-align:center;
       margin-bottom:32px;
       background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .neon-keyword {
+      -webkit-text-fill-color: transparent;
+      background: linear-gradient(90deg, #e879f9, #60a5fa);
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .neon-blue-bold {
+      color: #60a5fa; font-weight: 700;
+      -webkit-text-fill-color: #60a5fa;
+      text-shadow: 0 0 8px rgba(96,165,250,0.4), 0 0 20px rgba(96,165,250,0.15);
+    }
+    .neon-glow {
+      color: #e879f9; font-weight: 600;
+      -webkit-text-fill-color: #e879f9;
+      text-shadow: 0 0 8px rgba(232,121,249,0.4), 0 0 20px rgba(232,121,249,0.15);
+    }
     .about-strip-divider {
       width:100%; height:1px; margin:48px 0;
       background: linear-gradient(90deg, transparent, rgba(168,85,247,0.25), rgba(96,165,250,0.25), transparent);
     }
-    .about-stats { display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center; }
+    .about-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:center; }
     .stat-num {
       font-family:var(--font-mono);font-size:2.4rem;font-weight:700;line-height:1;
       background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -568,20 +642,601 @@
       .stat-label { font-size:0.58rem; letter-spacing:0.06em; }
     }
 
+    /* ======== POLICY PAGES (purchase / shipping / returns) ======== */
+    .policy-page { padding: 90px 0 60px; }
+    .policy-container {
+      max-width: 820px; margin: 0 auto; padding: 0 24px;
+      color: #e8e6f0;
+    }
+    .policy-back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px; margin-bottom: 32px;
+      background: rgba(168,85,247,0.06); border: 1px solid rgba(168,85,247,0.25);
+      border-radius: 8px; cursor: pointer; color: var(--accent);
+      font-size: 0.78rem; letter-spacing: 0.1em;
+      transition: all var(--transition-normal);
+    }
+    .policy-back-btn:hover { background: rgba(168,85,247,0.15); border-color: var(--accent); }
+    .policy-back-btn svg { width: 14px; height: 14px; }
+    .policy-eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(244,114,182,0.85); margin: 0 0 8px 0;
+    }
+    .policy-title {
+      font-family: var(--font-headline);
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 600; letter-spacing: 0.04em;
+      margin: 0 0 32px 0; color: #fff;
+    }
+    .policy-body { font-size: 0.94rem; line-height: 1.8; }
+    .policy-body h3 {
+      margin: 28px 0 12px 0; font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.05em; color: #f9d4ff;
+      padding-left: 12px; border-left: 3px solid rgba(244,114,182,0.6);
+    }
+    .policy-body h3:first-child { margin-top: 0; }
+    .policy-body p { margin: 0 0 14px 0; }
+    .policy-body ul { margin: 0 0 16px 0; padding-left: 22px; }
+    .policy-body li { margin: 0 0 8px 0; }
+    .policy-body strong { color: #f9d4ff; font-weight: 600; }
+    .policy-body .accent {
+      color: #fcc4ff; background: rgba(168,85,247,0.10);
+      padding: 2px 8px; border-radius: 4px; font-weight: 500;
+    }
+    .policy-body .warn {
+      background: rgba(244,114,182,0.08);
+      border-left: 3px solid rgba(244,114,182,0.6);
+      padding: 14px 18px; margin: 16px 0;
+      border-radius: 0 8px 8px 0; color: #fce7f3;
+    }
+    .policy-body .lineid {
+      font-family: 'Inter','SF Mono',monospace;
+      background: rgba(168,85,247,0.18);
+      padding: 1px 7px; border-radius: 4px;
+      font-size: 0.85em; color: #fcc4ff;
+    }
+    @media (max-width: 600px) {
+      .policy-page { padding: 60px 0 40px; }
+      .policy-body { font-size: 0.88rem; }
+    }
+
+    /* ======== FOOTER POLICY LINKS ======== */
+    footer { flex-wrap: wrap; gap: 16px; }
+    .footer-policy-links {
+      display: flex; gap: 18px; flex-wrap: wrap; justify-content: center;
+      /* 桌面 (>768px):logo / links / copyright 三段同一列。
+         flex:1 + min-width:0 讓中間連結區自動撐滿剩餘空間並置中。 */
+      flex: 1; min-width: 0;
+    }
+    .footer-policy-link {
+      font-size: 0.74rem; letter-spacing: 0.08em;
+      color: var(--lightgrey); cursor: pointer;
+      background: transparent; border: 0; padding: 4px 8px;
+      transition: color var(--transition-normal);
+      font-family: inherit;
+    }
+    .footer-policy-link:hover { color: var(--accent); }
+    .footer-policy-divider { color: rgba(168,85,247,0.25); font-size: 0.7rem; }
+
+    /* ======== FEATURED PRODUCTS SECTION ======== */
+    .featured-section {
+      padding: 60px 0 30px;
+      background: linear-gradient(180deg, transparent, rgba(168,85,247,0.02));
+    }
+    .featured-inner { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+    .featured-header { text-align: center; margin-bottom: 36px; }
+    .featured-title {
+      font-family: var(--font-headline);
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      letter-spacing: 0.05em; text-transform: uppercase;
+      margin: 12px 0 10px;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .featured-card {
+      background: rgba(168,85,247,0.04);
+      border: 1px solid rgba(168,85,247,0.18);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+    .featured-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft), var(--neon-purple);
+    }
+    .featured-card-img {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      background: linear-gradient(135deg, #1a0520, #16141e);
+      display: block;
+    }
+    .featured-card-info { padding: 14px 16px 18px; }
+    .featured-brand {
+      font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(244,114,182,0.8); margin-bottom: 6px;
+    }
+    .featured-name {
+      font-size: 0.88rem; font-weight: 500; color: #fff;
+      margin-bottom: 12px; line-height: 1.4;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .featured-price {
+      display: flex; flex-direction: column; gap: 3px;
+      font-size: 0.85rem;
+    }
+    .featured-price-row { display: flex; justify-content: space-between; align-items: center; }
+    .featured-price-row .label {
+      font-size: 0.66rem; letter-spacing: 0.1em; color: var(--lightgrey);
+    }
+    .featured-price-row .amount {
+      font-weight: 600; color: var(--accent);
+    }
+    .featured-price-row .amount.carry { color: #ff7eb3; }
+    @media (max-width: 600px) {
+      .featured-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .featured-card-info { padding: 10px 12px 14px; }
+      .featured-name { font-size: 0.8rem; }
+    }
+
+    /* ======== SHOPPING GUIDE (Customer Service) ======== */
+    .guide-section {
+      padding: 80px 0 30px;
+      text-align: center;
+      border-top: 1px solid rgba(168,85,247,0.10);
+    }
+    .guide-inner { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+    .guide-title {
+      font-family: var(--font-headline);
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .guide-sub {
+      color: var(--lightgrey);
+      margin-bottom: 36px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .guide-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 0 auto;
+    }
+    .guide-card {
+      cursor: pointer;
+      background: rgba(168,85,247,0.04);
+      border: 1px solid rgba(168,85,247,0.22);
+      border-radius: 14px;
+      padding: 28px 22px;
+      transition: all var(--transition-normal);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .guide-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(168,85,247,0.0), rgba(244,114,182,0.0));
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+      pointer-events: none;
+    }
+    .guide-card:hover {
+      border-color: var(--accent);
+      background: rgba(168,85,247,0.10);
+      box-shadow: var(--shadow-soft), var(--neon-purple);
+      transform: translateY(-3px);
+    }
+    .guide-card:hover::before { opacity: 1; }
+    .guide-card-icon {
+      width: 44px; height: 44px;
+      margin: 0 auto 14px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: rgba(168,85,247,0.10);
+      border: 1px solid rgba(168,85,247,0.30);
+      color: var(--accent);
+    }
+    .guide-card-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .guide-card:hover .guide-card-icon {
+      background: rgba(168,85,247,0.18);
+      border-color: rgba(244,114,182,0.55);
+    }
+    .guide-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #fff;
+      margin: 0 0 6px 0;
+    }
+    .guide-card-en {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: rgba(244,114,182,0.7);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .guide-card-desc {
+      font-size: 0.78rem;
+      color: var(--lightgrey);
+      line-height: 1.6;
+    }
+    @media (max-width: 700px) {
+      .guide-cards { grid-template-columns: 1fr; gap: 14px; }
+      .guide-section { padding: 60px 0 20px; }
+      .guide-card { padding: 22px 18px; }
+    }
+
+    /* ======== 獵物雷達 / TARGET RADAR (代尋委託表單) ======== */
+    .hunt-section {
+      padding: 100px 0 60px;
+      border-top: 1px solid rgba(168,85,247,0.10);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(168,85,247,0.06), transparent 55%),
+        radial-gradient(circle at 80% 90%, rgba(244,114,182,0.04), transparent 50%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hunt-section::before {
+      /* 微弱的 scanline 紋理增強工業感 */
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(
+        180deg,
+        rgba(168,85,247,0) 0,
+        rgba(168,85,247,0) 3px,
+        rgba(168,85,247,0.015) 3px,
+        rgba(168,85,247,0.015) 4px
+      );
+    }
+    .hunt-inner {
+      max-width: 720px; margin: 0 auto; padding: 0 24px;
+      text-align: center; position: relative; z-index: 1;
+    }
+    .hunt-title {
+      font-family: var(--font-headline);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      margin: 12px 0 0;
+      background: var(--gradient-main);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: var(--neon-purple);
+    }
+    .hunt-lede {
+      color: #f9d4ff; font-size: 1.05rem; letter-spacing: 0.04em;
+      margin: 0 0 8px;
+    }
+    .hunt-desc {
+      color: var(--lightgrey); font-size: 0.92rem; line-height: 1.7;
+      margin: 0 auto 18px; max-width: 560px;
+    }
+    .hunt-disclaimer {
+      display: inline-block;
+      font-size: 0.74rem; line-height: 1.5;
+      color: rgba(192,132,252,0.75);
+      border: 1px dashed rgba(192,132,252,0.25);
+      padding: 8px 16px; border-radius: 4px;
+      margin: 0 0 8px; letter-spacing: 0.04em;
+      max-width: 560px;
+    }
+    .hunt-disclaimer.hunt-disclaimer-info {
+      /* 第二行語氣較輕的提醒 (節慶特價提示),用淺灰色框區分 */
+      color: rgba(156,163,175,0.85);
+      border-color: rgba(156,163,175,0.25);
+    }
+    .hunt-disclaimer:last-of-type { margin-bottom: 36px; }
+    .hunt-form {
+      text-align: left;
+      background: rgba(22,20,30,0.65);
+      border: 1px solid rgba(168,85,247,0.20);
+      border-radius: 12px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow:
+        0 8px 40px rgba(168,85,247,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .hunt-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .hunt-field { margin-bottom: 18px; }
+    .hunt-field label {
+      display: block;
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(192,132,252,0.85);
+      margin-bottom: 8px; font-weight: 600;
+    }
+    .hunt-field input,
+    .hunt-field textarea {
+      width: 100%; box-sizing: border-box;
+      background: rgba(7,4,12,0.6);
+      border: 1px solid rgba(168,85,247,0.22);
+      border-radius: 6px;
+      padding: 12px 14px;
+      color: #f0e6ff;
+      font-size: 0.92rem; font-family: inherit;
+      letter-spacing: 0.02em;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .hunt-field input::placeholder,
+    .hunt-field textarea::placeholder {
+      color: rgba(156,163,175,0.5); font-style: italic;
+    }
+    .hunt-field input:focus,
+    .hunt-field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(7,4,12,0.85);
+      box-shadow: 0 0 0 3px rgba(168,85,247,0.12), var(--neon-purple);
+    }
+    .hunt-field textarea { resize: vertical; min-height: 80px; }
+    .hunt-submit {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      width: 100%; margin-top: 8px;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #a855f7, #c084fc 60%, #f472b6);
+      border: none; border-radius: 8px;
+      color: white; font-family: inherit;
+      font-size: 0.86rem; font-weight: 700;
+      letter-spacing: 0.20em; text-transform: uppercase;
+      cursor: pointer; position: relative;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 24px rgba(168,85,247,0.30), var(--neon-purple);
+    }
+    .hunt-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(168,85,247,0.50), var(--neon-purple);
+    }
+    .hunt-submit:active { transform: translateY(0); }
+    .hunt-submit:disabled {
+      cursor: not-allowed; transform: none;
+      filter: saturate(0.6);
+    }
+    .hunt-pulse {
+      position: relative;
+      width: 8px; height: 8px;
+      background: #f9d4ff; border-radius: 50%;
+      box-shadow: 0 0 8px rgba(249,212,255,0.9);
+      flex-shrink: 0;
+    }
+    .hunt-pulse::before {
+      content: ''; position: absolute; inset: 0;
+      border-radius: 50%;
+      animation: huntPulse 1.6s infinite ease-out;
+    }
+    @keyframes huntPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(249,212,255,0.7); }
+      70%  { box-shadow: 0 0 0 12px rgba(249,212,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(249,212,255,0); }
+    }
+    .hunt-form-hint {
+      text-align: center; font-size: 0.74rem;
+      color: rgba(156,163,175,0.7);
+      margin: 14px 0 0; letter-spacing: 0.04em;
+    }
+    /* ── select 跟 input 一致樣式 ── */
+    .hunt-field select {
+      width: 100%; box-sizing: border-box;
+      background: rgba(7,4,12,0.6);
+      border: 1px solid rgba(168,85,247,0.22);
+      border-radius: 6px;
+      padding: 12px 14px;
+      color: #f0e6ff; font-size: 0.92rem;
+      font-family: inherit; letter-spacing: 0.02em;
+      cursor: pointer;
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='%23c084fc' stroke-width='1.5' stroke-linecap='round'/></svg>");
+      background-repeat: no-repeat; background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .hunt-field select:focus {
+      outline: none; border-color: var(--accent);
+      background-color: rgba(7,4,12,0.85);
+      box-shadow: 0 0 0 3px rgba(168,85,247,0.12), var(--neon-purple);
+    }
+    .hunt-field select option { background: #16141e; color: #f0e6ff; }
+
+    /* ── 即時報價預估區塊 (live estimate) ── */
+    .hunt-estimate {
+      margin: -8px 0 18px;
+      padding: 16px 18px;
+      background: rgba(168,85,247,0.07);
+      border: 1px solid rgba(168,85,247,0.22);
+      border-radius: 8px;
+    }
+    .hunt-estimate[hidden] { display: none; }
+    .hunt-estimate-title {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(192,132,252,0.85); font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .hunt-estimate-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 6px 0;
+    }
+    .hunt-estimate-row + .hunt-estimate-row {
+      border-top: 1px dashed rgba(168,85,247,0.15);
+    }
+    .hunt-estimate-label {
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--lightgrey);
+    }
+    .hunt-estimate-amount {
+      font-family: var(--font-headline); font-size: 1.2rem;
+      letter-spacing: 0.04em;
+      background: var(--gradient-main);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hunt-estimate-note {
+      font-size: 0.7rem; color: rgba(156,163,175,0.7);
+      margin: 10px 0 0; letter-spacing: 0.02em;
+    }
+
+    /* ── 提交成功確認面板 ── */
+    .hunt-success-panel {
+      text-align: center;
+      padding: 32px 24px;
+      background: rgba(22,20,30,0.65);
+      border: 1px solid rgba(74,222,128,0.30);
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(74,222,128,0.08);
+    }
+    .hunt-success-icon {
+      font-size: 2rem; line-height: 1;
+      color: #4ade80;
+      margin-bottom: 12px;
+    }
+    .hunt-success-title {
+      font-family: var(--font-headline);
+      font-size: 1.3rem; font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #4ade80;
+      margin: 0 0 8px;
+    }
+    .hunt-success-desc {
+      color: var(--lightgrey); font-size: 0.92rem;
+      line-height: 1.6; margin: 0 0 20px;
+    }
+    .hunt-success-estimate {
+      max-width: 360px; margin: 0 auto 24px;
+      padding: 16px 18px;
+      background: rgba(168,85,247,0.07);
+      border: 1px solid rgba(168,85,247,0.22);
+      border-radius: 8px;
+      text-align: left;
+    }
+    .hunt-success-restart {
+      background: transparent; border: 1px solid rgba(192,132,252,0.35);
+      color: #f9d4ff; padding: 10px 24px;
+      border-radius: 6px; font-family: inherit;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      font-size: 0.78rem; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .hunt-success-restart:hover {
+      border-color: var(--accent);
+      background: rgba(168,85,247,0.10);
+    }
+    /* ── 圖片上傳 dropzone ── */
+    .hunt-image-zone {
+      border: 1px dashed rgba(168,85,247,0.30);
+      border-radius: 6px;
+      padding: 20px 16px;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(7,4,12,0.4);
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+    .hunt-image-zone:hover,
+    .hunt-image-zone:focus,
+    .hunt-image-zone.dragover {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(168,85,247,0.05);
+      box-shadow: 0 0 0 3px rgba(168,85,247,0.10);
+    }
+    .hunt-image-zone-icon { font-size: 1.6rem; line-height: 1; margin-bottom: 6px; }
+    .hunt-image-zone-main {
+      font-size: 0.86rem; color: rgba(192,132,252,0.85); letter-spacing: 0.04em;
+    }
+    .hunt-image-zone-hint {
+      font-size: 0.7rem; color: var(--lightgrey); margin-top: 4px; letter-spacing: 0.1em;
+    }
+    .hunt-image-previews {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+      empty-cells: hide;
+    }
+    .hunt-image-previews:empty { display: none; }
+    .hunt-image-preview {
+      position: relative;
+      aspect-ratio: 1;
+      background: rgba(7,4,12,0.6);
+      border: 1px solid rgba(168,85,247,0.20);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .hunt-image-preview img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hunt-image-preview-remove {
+      position: absolute; top: 4px; right: 4px;
+      width: 22px; height: 22px;
+      background: rgba(0,0,0,0.7); border: none; color: #fff;
+      border-radius: 50%; cursor: pointer;
+      font-size: 14px; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0;
+    }
+    .hunt-image-preview-remove:hover { background: rgba(248,113,113,0.9); }
+    .hunt-image-preview.uploading::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(7,4,12,0.65);
+      backdrop-filter: blur(2px);
+    }
+    .hunt-image-preview.uploading::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      width: 22px; height: 22px;
+      margin: -11px 0 0 -11px;
+      border: 2px solid rgba(168,85,247,0.3);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: huntSpin 0.7s linear infinite;
+      z-index: 2;
+    }
+    @keyframes huntSpin { to { transform: rotate(360deg); } }
+    .hunt-form-error {
+      margin: 8px 0 0;
+      padding: 10px 14px;
+      background: rgba(248,113,113,0.1);
+      border: 1px solid rgba(248,113,113,0.3);
+      border-radius: 6px;
+      color: #f87171;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+    }
+    /* Success state — submit 完按鈕變綠 5 秒 */
+    .hunt-submit.success {
+      background: linear-gradient(135deg, #4ade80, #22c55e);
+      box-shadow: 0 4px 24px rgba(74,222,128,0.30), 0 0 20px rgba(74,222,128,0.4);
+    }
+    .hunt-submit.success .hunt-pulse { background: #ffffff; box-shadow: 0 0 8px rgba(255,255,255,0.9); }
+
+    @media (max-width: 768px) {
+      .hunt-section { padding: 70px 0 40px; }
+      .hunt-form { padding: 22px 18px; }
+      .hunt-row { grid-template-columns: 1fr; gap: 0; }
+    }
+
     /* ======== CONTACT CTA ======== */
     .contact-section { padding:90px 0;text-align:center; }
     .contact-inner { max-width:580px;margin:0 auto;padding:0 24px; }
-    .contact-title { font-family:var(--font-headline);font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:18px;letter-spacing:0.05em;text-transform:uppercase; }
+    .contact-title { font-family:var(--font-headline);font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:18px;letter-spacing:0.05em; }
     .contact-sub { color:var(--lightgrey);margin-bottom:38px;font-size:0.92rem;line-height:1.6; }
     .contact-links { display:flex;justify-content:center;gap:16px;flex-wrap:wrap; }
     .contact-link {
       display:flex;align-items:center;gap:12px;padding:14px 28px;
       border:1px solid rgba(168,85,247,0.25);border-radius:8px;
-      font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);
+      font-size:0.8rem;letter-spacing:0.06em;text-transform:none;color:var(--accent);
       transition:all var(--transition-normal);
       background: rgba(168,85,247,0.04);
       line-height:1.5;
     }
+    /* 聯絡我們區塊內的 section-eyebrow 也用小寫 */
+    .contact-section .section-eyebrow { text-transform:none; letter-spacing:0.18em; }
     .contact-link:hover { background:rgba(168,85,247,0.1);border-color:var(--accent);box-shadow: var(--shadow-soft), var(--neon-purple); }
     @media (max-width:480px) {
       .contact-links { flex-direction:column;gap:12px;align-items:stretch; }
@@ -666,6 +1321,7 @@
       .product-sizes { gap:3px; }
       .size-chip { font-size:0.5rem;padding:2px 5px; }
       .gallery-thumb { width:36px;height:36px; }
+    .neon-add-to-cart-btn { padding:5px 10px;font-size:0.6rem;margin-top:10px; }
     }
 
     .product-card {
@@ -760,7 +1416,7 @@
     }
     .lb-dot.active { background:var(--accent-pink); transform:scale(1.4); }
 
-    .product-info { padding:16px 18px 20px; }
+    .product-info { padding:16px 18px 20px; display:flex; flex-direction:column; }
     .product-season {
       font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;
     }
@@ -791,22 +1447,51 @@
 
     .product-tag { display:inline-block;margin-top:11px;padding:3px 10px;border:1px solid rgba(168,85,247,0.1);border-radius:20px;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--lightgrey); }
 
+    /* ── ADD TO CART BUTTON ── */
+    .neon-add-to-cart-btn {
+      align-self:flex-end;
+      margin-top:14px;
+      padding:7px 16px;
+      background:linear-gradient(135deg, rgba(168,85,247,0.25), rgba(244,114,182,0.18));
+      border:1px solid rgba(168,85,247,0.35);
+      border-radius:8px;
+      color:#f5f4f8;
+      font-size:0.72rem;
+      font-weight:600;
+      letter-spacing:0.08em;
+      cursor:pointer;
+      transition:all 0.25s ease;
+      white-space:nowrap;
+    }
+    .neon-add-to-cart-btn:hover {
+      background:linear-gradient(135deg, rgba(168,85,247,0.45), rgba(244,114,182,0.32));
+      border-color:rgba(168,85,247,0.6);
+      box-shadow:0 4px 16px rgba(168,85,247,0.25);
+      transform:translateY(-1px);
+    }
+    .neon-add-to-cart-btn:active {
+      transform:translateY(0);
+      box-shadow:none;
+    }
+
     /* ======== ABOUT PAGE ======== */
     .about-page { padding:90px 56px;max-width:900px;margin:0 auto; }
     .about-page-title {
-      font-family:var(--font-headline);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;
+      font-family:'Syncopate','Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;
       margin-bottom:44px;line-height:1;letter-spacing:-0.02em;text-transform:uppercase;
+      color:#ffffff;
     }
     .about-page-title em {
       background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text; font-style:italic;
     }
-    .about-page-body { font-size:0.9rem;color:rgba(245,244,248,0.82);line-height:1.6; }
+    .about-page-body { font-size:0.9rem;color:#dddddd;line-height:1.8;font-weight:300;text-align:justify; }
+    .about-page-body.about-page-body--en { font-family:'Space Mono',monospace; font-size:0.85rem; letter-spacing:0.02em; line-height:1.8;font-weight:300;color:#dddddd; }
     .about-page-body p+p { margin-bottom:20px; }
 
     /* ── About: dual-language blocks ────────────────────── */
     .about-hero-title {
-      font-family: var(--font-headline); font-size: 1.2rem;
+      font-family: 'Syncopate','Montserrat',sans-serif; font-size: 1.2rem;
       font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
       line-height: 1.4; margin-bottom: 28px;
       color: var(--accent-pink);
@@ -823,17 +1508,18 @@
       color: var(--accent-blue);
       -webkit-text-fill-color: var(--accent-blue);
     }
-    /* TH overrides for about page */
-    #page-about-th .about-hero-title {
-      font-family: 'Kanit', sans-serif; font-weight: 800;
-      font-size: 1.2rem; letter-spacing: 0.02em; text-transform: none;
-      -webkit-text-stroke: 1.5px var(--accent); -webkit-text-fill-color: transparent;
+    /* TW overrides for about page */
+    #page-about-tw .about-hero-title {
+      font-family: 'Kanit',sans-serif, sans-serif; font-weight: 700;
+      font-size: 1.2rem; letter-spacing: 0.04em; text-transform: none;
+      color: #ffffff; -webkit-text-fill-color: #ffffff; -webkit-text-stroke: 0;
     }
-    #page-about-th .about-page-body {
-      font-family: 'Kanit', sans-serif; line-height: 1.8;
+    #page-about-tw .about-page-body {
+      font-family: 'Kanit',sans-serif, sans-serif; line-height: 1.8;
+      letter-spacing: 0.08rem; font-weight: 300; color: #dddddd;
     }
-    #page-about-th .about-tagline {
-      font-family: 'Kanit', sans-serif; font-weight: 700;
+    #page-about-tw .about-tagline {
+      font-family: 'Kanit',sans-serif, sans-serif; font-weight: 700;
       letter-spacing: 0.08em; text-transform: none;
     }
     .about-divider {
@@ -861,13 +1547,121 @@
     /* ── About page: responsive ─────────────────────────── */
     @media (max-width:768px) {
       .about-hero-title { font-size:1rem; }
-      #page-about-th .about-hero-title { font-size:1rem; }
+      #page-about-tw .about-hero-title { font-size:1rem; }
       .about-page { padding:60px 24px; }
     }
 
     /* ======== FADE-IN ======== */
     .fade-in { opacity:0;transform:translateY(22px);transition:all 0.7s ease; }
     .fade-in.visible { opacity:1;transform:translateY(0); }
+
+    /* ======== VIRTUAL FITTING ROOM ======== */
+    .tryon-container { max-width:1100px; margin:0 auto; padding:80px 24px 60px; }
+    .tryon-step { display:none; }
+    .tryon-step.active { display:block; }
+    .tryon-header { text-align:center; margin-bottom:36px; }
+    .tryon-title { font-family:var(--font-headline); font-size:clamp(1.6rem,4vw,2.4rem); font-weight:700; letter-spacing:0.04em; margin:12px 0; }
+    .tryon-desc { color:var(--lightgrey); font-size:0.92rem; line-height:1.7; max-width:500px; margin:0 auto; }
+
+    .tryon-upload-area {
+      max-width:420px; margin:0 auto; aspect-ratio:3/4;
+      border:2px dashed rgba(168,85,247,0.3); border-radius:16px;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; position:relative; overflow:hidden;
+      transition:border-color 0.3s, background 0.3s;
+      background:rgba(168,85,247,0.03);
+    }
+    .tryon-upload-area:hover, .tryon-upload-area.dragover {
+      border-color:var(--accent); background:rgba(168,85,247,0.08);
+    }
+    .tryon-upload-placeholder { text-align:center; color:var(--lightgrey); padding:24px; }
+    .tryon-upload-placeholder svg { margin-bottom:16px; opacity:0.5; }
+    .tryon-upload-placeholder p { font-size:1rem; margin-bottom:6px; }
+    .tryon-upload-placeholder span { font-size:0.78rem; opacity:0.5; }
+    .tryon-selfie-preview { width:100%; height:100%; object-fit:cover; border-radius:14px; }
+
+    .tryon-actions { display:flex; justify-content:center; gap:12px; margin-top:28px; }
+    .tryon-btn-primary {
+      padding:14px 32px; border:none; border-radius:8px; font-size:0.88rem; font-weight:600;
+      background:linear-gradient(135deg, #a855f7, #6366f1); color:#fff; cursor:pointer;
+      letter-spacing:0.06em; transition:all 0.3s;
+    }
+    .tryon-btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(168,85,247,0.4); }
+    .tryon-btn-primary:disabled { opacity:0.4; cursor:not-allowed; transform:none; box-shadow:none; }
+    .tryon-btn-secondary {
+      padding:14px 24px; border:1px solid rgba(168,85,247,0.3); border-radius:8px;
+      font-size:0.88rem; font-weight:500; background:transparent; color:var(--accent);
+      cursor:pointer; transition:all 0.3s;
+    }
+    .tryon-btn-secondary:hover { background:rgba(168,85,247,0.1); }
+    .tryon-btn-sm { padding:8px 16px; font-size:0.78rem; }
+
+    .tryon-brand-filter { margin-top:12px; }
+    .tryon-brand-filter select {
+      padding:8px 16px; border:1px solid rgba(168,85,247,0.3); border-radius:6px;
+      background:var(--bg); color:var(--text); font-size:0.85rem;
+    }
+
+    .tryon-split { display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:start; }
+    .tryon-selfie-col { position:sticky; top:80px; text-align:center; }
+    .tryon-selfie-col img { width:100%; border-radius:12px; border:2px solid rgba(168,85,247,0.2); }
+
+    .tryon-clothes-grid {
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:16px;
+    }
+    .tryon-cloth-card {
+      background:rgba(255,255,255,0.03); border:1px solid rgba(168,85,247,0.12);
+      border-radius:12px; overflow:hidden; cursor:pointer; transition:all 0.3s;
+      position:relative;
+    }
+    .tryon-cloth-card:hover { border-color:var(--accent); transform:translateY(-3px); box-shadow:0 8px 24px rgba(168,85,247,0.15); }
+    .tryon-cloth-card img { width:100%; aspect-ratio:3/4; object-fit:cover; }
+    .tryon-cloth-info { padding:10px 12px; }
+    .tryon-cloth-info h4 { font-size:0.78rem; font-weight:600; margin-bottom:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .tryon-cloth-info span { font-size:0.72rem; color:var(--accent); font-weight:500; }
+    .tryon-cloth-trybtn {
+      position:absolute; top:8px; right:8px; padding:6px 12px;
+      background:rgba(0,0,0,0.7); backdrop-filter:blur(8px);
+      border:1px solid rgba(168,85,247,0.4); border-radius:20px;
+      color:#fff; font-size:0.68rem; font-weight:600; letter-spacing:0.05em;
+      opacity:0; transition:opacity 0.3s;
+    }
+    .tryon-cloth-card:hover .tryon-cloth-trybtn { opacity:1; }
+
+    .tryon-result-area { max-width:800px; margin:0 auto; }
+    .tryon-result-loading { text-align:center; padding:80px 24px; }
+    .tryon-spinner {
+      width:48px; height:48px; border:3px solid rgba(168,85,247,0.2);
+      border-top-color:var(--accent); border-radius:50%;
+      animation:tryon-spin 0.8s linear infinite; margin:0 auto 20px;
+    }
+    @keyframes tryon-spin { to { transform:rotate(360deg); } }
+    .tryon-result-loading p { color:var(--lightgrey); font-size:0.92rem; }
+
+    .tryon-compare { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .tryon-compare-item { text-align:center; }
+    .tryon-compare-item span { display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--lightgrey); margin-bottom:8px; }
+    .tryon-compare-item img { width:100%; border-radius:12px; border:1px solid rgba(168,85,247,0.2); }
+    .tryon-result-info { text-align:center; margin-top:20px; }
+    .tryon-result-info h3 { font-size:1.1rem; font-weight:600; margin-bottom:4px; }
+    .tryon-result-info p { color:var(--accent); font-size:1rem; font-weight:600; }
+    .tryon-result-error { text-align:center; padding:60px 24px; color:#ef5350; }
+
+    @media(max-width:768px) {
+      .tryon-split { grid-template-columns:1fr; }
+      .tryon-selfie-col { position:static; display:flex; align-items:center; gap:12px; }
+      .tryon-selfie-col img { width:80px; height:100px; object-fit:cover; }
+      .tryon-clothes-grid { grid-template-columns:repeat(auto-fill, minmax(130px, 1fr)); gap:10px; }
+      .tryon-compare { grid-template-columns:1fr 1fr; gap:8px; }
+      .tryon-upload-area { max-width:320px; }
+      /* Mobile: always show select button (no hover on touch devices) */
+      .tryon-cloth-trybtn { opacity:1 !important; font-size:0.62rem; padding:4px 10px; }
+      .tryon-cloth-card:active { transform:scale(0.97); }
+      /* Loading/result area padding */
+      .tryon-result-loading { padding:40px 16px; }
+      .tryon-result-error { padding:30px 16px; }
+      .tryon-result-info h3 { font-size:0.92rem; }
+    }
 
     /* ======== RESPONSIVE ======== */
     @media(max-width:900px) {
@@ -884,6 +1678,11 @@
       .nav-right { gap:8px; flex-shrink:0; }
       #lang-switch { padding:4px 10px; font-size:0.62rem; }
       .brands-grid { grid-template-columns:1fr; padding:0 16px; }
+      .brand-card { aspect-ratio:4/3; }
+      .brand-card-info { padding:16px 16px; }
+      .brand-card-tags { gap:4px; margin-bottom:4px; }
+      .brand-card-tag { font-size:0.5rem; padding:2px 7px; letter-spacing:0.08em; }
+      .brand-card-name { font-size:1.2rem; margin-bottom:4px; }
       .about-inner { grid-template-columns:1fr;gap:40px; }
       .brand-info-bar { grid-template-columns:1fr;padding:28px 20px; }
       .brand-hero-content { padding:36px 20px; }
@@ -894,6 +1693,13 @@
     @media(max-width:480px) {
       .brands-grid { grid-template-columns:1fr; }
       .hero-title { font-size: clamp(2.5rem,10vw,4rem); }
+      .brand-card-tag { font-size:0.48rem; padding:2px 6px; }
+      .brand-card-name { font-size:1.1rem; }
+      .brand-card-info { padding:14px 14px; }
+      .hero { height:auto; aspect-ratio:3/4; max-height:85vh; }
+    }
+    @media(max-width:768px) and (min-width:481px) {
+      .hero { height:auto; aspect-ratio:4/5; max-height:85vh; }
     }
 
     /* ── Gallery thumbnails ─────────────────────────────── */
@@ -1031,7 +1837,266 @@
     .vnd-q { font-size: 0.75em; opacity: 0.7; }
     .price-note-text { font-size: 0.68rem; color: var(--lightgrey); }
 
-  </style>
+  
+/* ââââââââââââââââââââââââââââââââââââââââââââââ
+   OUTFIT BUILDER â Category Tabs + Outfit Panel
+   ââââââââââââââââââââââââââââââââââââââââââââââ */
+
+/* ââ Category Tab Bar ââââââââââââââââââââââââââââ */
+.outfit-cat-tabs {
+  display:flex; gap:6px; margin-bottom:16px;
+  overflow-x:auto; padding-bottom:4px;
+}
+.outfit-cat-tab {
+  padding:8px 18px; border-radius:20px;
+  background:rgba(168,85,247,0.08);
+  border:1px solid rgba(168,85,247,0.2);
+  color:#c4b5d0; font-size:0.78rem; font-weight:600;
+  cursor:pointer; transition:all 0.2s; white-space:nowrap;
+  letter-spacing:0.03em;
+}
+.outfit-cat-tab:hover {
+  background:rgba(168,85,247,0.18);
+  border-color:rgba(168,85,247,0.4);
+}
+.outfit-cat-tab.active {
+  background:linear-gradient(135deg,rgba(168,85,247,0.3),rgba(99,102,241,0.25));
+  border-color:rgba(168,85,247,0.5);
+  color:#f5f4f8;
+}
+
+/* ââ Step 2 layout: split grid + outfit panel ââââ */
+.tryon-outfit-layout {
+  display:flex; gap:20px; min-height:450px;
+}
+.tryon-outfit-main {
+  flex:1; min-width:0;
+}
+.tryon-outfit-sidebar {
+  width:220px; flex-shrink:0;
+}
+
+/* ââ Outfit Panel (sidebar) ââââââââââââââââââââââ */
+#outfit-panel {
+  display:flex; flex-direction:column; gap:8px;
+}
+.outfit-slot {
+  border-radius:10px; padding:10px;
+  transition:all 0.2s;
+}
+.outfit-slot-empty {
+  border:1px dashed rgba(168,85,247,0.2);
+  background:rgba(168,85,247,0.03);
+  text-align:center; padding:14px 10px;
+}
+.outfit-slot-placeholder {
+  color:#6b5f7a; font-size:0.72rem; font-weight:500;
+}
+.outfit-slot-filled {
+  border:1px solid rgba(168,85,247,0.3);
+  background:rgba(168,85,247,0.08);
+  display:flex; align-items:center; gap:10px;
+  position:relative;
+}
+.outfit-slot-filled img {
+  width:48px; height:48px; object-fit:cover;
+  border-radius:6px; background:#1a1625;
+}
+.outfit-slot-info {
+  flex:1; min-width:0;
+  display:flex; flex-direction:column; gap:2px;
+}
+.outfit-slot-cat {
+  font-size:0.62rem; color:#a78bfa; font-weight:600;
+  text-transform:uppercase; letter-spacing:0.05em;
+}
+.outfit-slot-name {
+  font-size:0.7rem; color:#d4c8e0;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.outfit-slot-remove {
+  position:absolute; top:4px; right:4px;
+  width:20px; height:20px; border-radius:50%;
+  background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.3);
+  color:#f87171; font-size:0.6rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all 0.2s; line-height:1;
+}
+.outfit-slot-remove:hover {
+  background:rgba(239,68,68,0.4);
+}
+
+/* ââ Try On button âââââââââââââââââââââââââââââââ */
+#outfit-tryon-btn {
+  margin-top:12px; width:100%; padding:12px;
+  background:linear-gradient(135deg,rgba(168,85,247,0.35),rgba(244,114,182,0.28));
+  border:1px solid rgba(168,85,247,0.45);
+  border-radius:10px; color:#f5f4f8;
+  font-size:0.82rem; font-weight:700;
+  cursor:pointer; transition:all 0.25s;
+  letter-spacing:0.04em;
+}
+#outfit-tryon-btn:hover:not(:disabled) {
+  background:linear-gradient(135deg,rgba(168,85,247,0.55),rgba(244,114,182,0.42));
+  border-color:rgba(168,85,247,0.7);
+  box-shadow:0 4px 20px rgba(168,85,247,0.3);
+  transform:translateY(-1px);
+}
+#outfit-tryon-btn:disabled {
+  opacity:0.4; cursor:not-allowed;
+}
+
+/* ââ Step 3: Layer progress ââââââââââââââââââââââ */
+.tryon-layer-progress {
+  display:flex; gap:8px; margin-bottom:16px;
+  flex-wrap:wrap; justify-content:center;
+}
+.tryon-layer-chip {
+  padding:6px 14px; border-radius:16px;
+  font-size:0.7rem; font-weight:600;
+  border:1px solid rgba(168,85,247,0.2);
+  background:rgba(168,85,247,0.05);
+  color:#6b5f7a; transition:all 0.3s;
+}
+.tryon-layer-chip.processing {
+  border-color:rgba(250,204,21,0.5);
+  background:rgba(250,204,21,0.1);
+  color:#fbbf24;
+  animation:chipPulse 1.5s ease-in-out infinite;
+}
+.tryon-layer-chip.done {
+  border-color:rgba(34,197,94,0.5);
+  background:rgba(34,197,94,0.1);
+  color:#4ade80;
+}
+@keyframes chipPulse {
+  0%,100% { opacity:1; }
+  50% { opacity:0.5; }
+}
+
+/* ââ Result layer thumbnails âââââââââââââââââââââ */
+.tryon-result-layers {
+  display:flex; gap:10px; justify-content:center;
+  margin-top:12px; flex-wrap:wrap;
+}
+.tryon-result-layer-thumb {
+  width:60px; height:60px; border-radius:8px;
+  object-fit:cover; border:2px solid rgba(168,85,247,0.3);
+  cursor:pointer; transition:all 0.2s;
+}
+.tryon-result-layer-thumb:hover {
+  border-color:rgba(168,85,247,0.7);
+  transform:scale(1.1);
+}
+.tryon-result-layer-thumb.active {
+  border-color:#a78bfa;
+  box-shadow:0 0 12px rgba(168,85,247,0.4);
+}
+
+/* ââ Selected cloth card ââââââââââââââââââââââ */
+.tryon-cloth-selected {
+  border-color:rgba(168,85,247,0.6) !important;
+  background:rgba(168,85,247,0.1) !important;
+  box-shadow:0 0 12px rgba(168,85,247,0.25);
+}
+.tryon-cloth-selected .tryon-cloth-trybtn {
+  background:linear-gradient(135deg,rgba(34,197,94,0.3),rgba(34,197,94,0.2));
+  color:#4ade80;
+  opacity:1;
+}
+
+/* ââ Mobile responsive âââââââââââââââââââââââââââ */
+@media(max-width:768px) {
+  .tryon-outfit-layout {
+    flex-direction:column;
+  }
+  .tryon-outfit-sidebar {
+    width:100%;
+    order:-1; /* Panel on top for mobile */
+  }
+  #outfit-panel {
+    flex-direction:row; flex-wrap:wrap; gap:6px;
+  }
+  .outfit-slot {
+    flex:1; min-width:100px;
+  }
+  .outfit-slot-filled img {
+    width:36px; height:36px;
+  }
+  .outfit-cat-tabs {
+    gap:4px;
+  }
+  .outfit-cat-tab {
+    padding:6px 12px; font-size:0.7rem;
+  }
+}
+
+/* -- Selected cloth card -- */
+.tryon-cloth-selected {
+  border-color:rgba(168,85,247,0.6) !important;
+  background:rgba(168,85,247,0.1) !important;
+  box-shadow:0 0 12px rgba(168,85,247,0.25);
+}
+.tryon-cloth-selected .tryon-cloth-trybtn {
+  background:linear-gradient(135deg,rgba(34,197,94,0.3),rgba(34,197,94,0.2));
+  color:#4ade80;
+  opacity:1;
+}
+
+
+    /* ── Outfit Slots Panel ── */
+    .outfit-slots {
+      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .outfit-slot {
+      width: 72px; height: 90px; border-radius: 10px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      position: relative; cursor: pointer; transition: all .2s;
+    }
+    .outfit-slot.empty {
+      border: 2px dashed rgba(255,255,255,.25); background: rgba(255,255,255,.05);
+    }
+    .outfit-slot.filled {
+      border: 2px solid var(--accent, #a855f7); background: rgba(168,85,247,.1);
+    }
+    .outfit-slot.filled img {
+      width: 48px; height: 48px; object-fit: cover; border-radius: 6px;
+    }
+    .outfit-slot .slot-placeholder {
+      font-size: 24px; opacity: .4;
+    }
+    .outfit-slot .slot-label {
+      font-size: 10px; color: rgba(255,255,255,.6); margin-top: 4px;
+      white-space: nowrap;
+    }
+    .outfit-slot .slot-remove {
+      position: absolute; top: -6px; right: -6px; width: 18px; height: 18px;
+      border-radius: 50%; background: #ef4444; color: #fff; border: none;
+      font-size: 12px; line-height: 18px; text-align: center; cursor: pointer;
+      padding: 0; display: flex; align-items: center; justify-content: center;
+    }
+    .layer-badge {
+      display: inline-block; padding: 4px 10px; margin: 4px;
+      background: rgba(168,85,247,.2); border: 1px solid rgba(168,85,247,.4);
+      border-radius: 20px; font-size: 12px; color: #d8b4fe;
+    }
+    #outfit-tryon-btn {
+      width: 100%; padding: 12px; border-radius: 10px; border: none;
+      background: linear-gradient(135deg, var(--accent, #a855f7), #7c3aed);
+      color: #fff; font-size: 15px; font-weight: 600; cursor: pointer;
+      transition: opacity .2s;
+    }
+    #outfit-tryon-btn:disabled {
+      opacity: .4; cursor: not-allowed;
+      background: rgba(255,255,255,.1);
+    }
+    #tryon-layer-progress {
+      width: 100%; background: rgba(255,255,255,.1); border-radius: 4px;
+      overflow: hidden; margin-bottom: 12px;
+    }
+
+</style>
 </head>
 <body>
 
@@ -1051,15 +2116,15 @@
     <!-- BRANDS DROPDOWN -->
     <div class="nav-item">
       <button class="nav-btn">
-        <span data-en="BRANDS" data-th="แบรนด์">BRANDS</span>
+        <span data-en="BRANDS" data-th="แบรนด์">แบรนด์</span>
         <span class="chevron">▾</span>
       </button>
       <div class="brands-dropdown" id="brands-dropdown">
-        <div class="dropdown-header" data-en="ALL BRANDS A → Z" data-th="ทุกแบรนด์ A → Z">ALL BRANDS A → Z</div>
+        <div class="dropdown-header" data-en="ALL BRANDS A → Z" data-th="แบรนด์ทั้งหมด A → Z">แบรนด์ทั้งหมด A → Z</div>
         <div class="dropdown-letters" id="dropdown-letters"></div>
         <div class="dropdown-view-all">
           <button onclick="showPage('home'); document.getElementById('brands-section').scrollIntoView({behavior:'smooth'})">
-            <span data-en="View all brands" data-th="ดูแบรนด์ทั้งหมด">View all brands</span> →
+            <span data-en="View all brands" data-th="ดูแบรนด์ทั้งหมด">ดูแบรนด์ทั้งหมด</span> →
           </button>
         </div>
       </div>
@@ -1068,11 +2133,11 @@
     <!-- STYLE DROPDOWN -->
     <div class="nav-item">
       <button class="nav-btn">
-        <span data-en="STYLES" data-th="สไตล์">STYLES</span>
+        <span data-en="STYLES" data-th="สไตล์">สไตล์</span>
         <span class="chevron">▾</span>
       </button>
       <div class="brands-dropdown" id="styles-dropdown" style="width:440px">
-        <div class="dropdown-header" data-en="FILTER BY STYLE" data-th="กรองตามสไตล์">FILTER BY STYLE</div>
+        <div class="dropdown-header" data-en="FILTER BY STYLE" data-th="กรองตามสไตล์">กรองตามสไตล์</div>
         <div class="dropdown-brand-list" id="style-filter-list" style="gap:4px">
           <button class="dropdown-brand-btn" onclick="filterByStyle('Streetwear')">Streetwear</button>
           <button class="dropdown-brand-btn" onclick="filterByStyle('Avant-Garde')">Avant-Garde</button>
@@ -1087,16 +2152,24 @@
       </div>
     </div>
     <button class="nav-btn" onclick="showPage('about')">
-      <span data-en="ABOUT" data-th="เกี่ยวกับ">ABOUT</span>
+      <span data-en="ABOUT" data-th="เรื่องราวของเรา">เรื่องราวของเรา</span>
+    </button>
+    <button class="nav-btn" onclick="showPage('home'); setTimeout(()=>document.getElementById('hunt-section')?.scrollIntoView({behavior:'smooth',block:'start'}), 50)">
+      <span data-en="TARGET RADAR" data-th="เรดาร์เป้าหมาย">เรดาร์เป้าหมาย</span>
     </button>
     <button class="nav-btn" onclick="showPage('contact')">
-      <span data-en="CONTACT" data-th="ติดต่อ">CONTACT</span>
+      <span data-en="CONTACT" data-th="ติดต่อเรา">ติดต่อเรา</span>
+    </button>
+    <!-- 試衣間 (TRY ON) — 暫時隱藏,審核金流期間 -->
+    <button class="nav-btn" onclick="showPage('tryon')" style="display:none;background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(99,102,241,0.15));border-color:rgba(168,85,247,0.35)">
+      <span data-en="TRY ON" data-th="ห้องลองชุด">✨ ห้องลองชุด</span>
     </button>
   </div>
 
   <!-- RIGHT -->
   <div class="nav-right">
-    <button id="lang-switch">TH</button>
+    <span id="nav-cart-icon"></span>
+    <button id="lang-switch">EN</button>
     <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -1105,9 +2178,9 @@
 
 <!-- MOBILE OVERLAY MENU -->
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-nav-btn" data-en="BRANDS" data-th="แบรนด์" onclick="toggleMobileBrands()">BRANDS ▾</button>
+  <button class="mobile-nav-btn" data-en="BRANDS" data-th="แบรนด์" onclick="toggleMobileBrands()">แบรนด์ ▾</button>
   <div class="mobile-brand-list" id="mobile-brand-list" style="display:none"></div>
-  <button class="mobile-nav-btn" data-en="STYLES" data-th="สไตล์" onclick="toggleMobileStyles()">STYLES ▾</button>
+  <button class="mobile-nav-btn" data-en="STYLES" data-th="สไตล์" onclick="toggleMobileStyles()">สไตล์ ▾</button>
   <div class="mobile-brand-list" id="mobile-style-list" style="display:none">
     <button class="mobile-brand-item" onclick="filterByStyle('Streetwear');closeMobileMenu()">Streetwear</button>
     <button class="mobile-brand-item" onclick="filterByStyle('Avant-Garde');closeMobileMenu()">Avant-Garde</button>
@@ -1119,9 +2192,12 @@
     <button class="mobile-brand-item" onclick="filterByStyle('Accessories');closeMobileMenu()">Accessories</button>
     <button class="mobile-brand-item" onclick="filterByStyle('');closeMobileMenu()">Show All</button>
   </div>
-  <button class="mobile-nav-btn" data-en="ABOUT" data-th="เกี่ยวกับ" onclick="showPage('about');closeMobileMenu()">ABOUT</button>
-  <button class="mobile-nav-btn" data-en="CONTACT" data-th="ติดต่อ" onclick="showPage('contact');closeMobileMenu()">CONTACT</button>
-  <button class="mobile-lang-switch" id="mobile-lang-switch" onclick="toggleMobileLang()">TH</button>
+  <button class="mobile-nav-btn" data-en="ABOUT" data-th="เรื่องราวของเรา" onclick="showPage('about');closeMobileMenu()">เรื่องราวของเรา</button>
+  <button class="mobile-nav-btn" data-en="TARGET RADAR" data-th="เรดาร์เป้าหมาย" onclick="showPage('home');closeMobileMenu();setTimeout(()=>document.getElementById('hunt-section')?.scrollIntoView({behavior:'smooth',block:'start'}), 100)">เรดาร์เป้าหมาย</button>
+  <button class="mobile-nav-btn" data-en="CONTACT" data-th="ติดต่อเรา" onclick="showPage('contact');closeMobileMenu()">ติดต่อเรา</button>
+  <!-- 試衣間 (TRY ON) — 暫時隱藏,審核金流期間 -->
+  <button class="mobile-nav-btn" data-en="✨ TRY ON" data-th="✨ ห้องลองชุด" onclick="showPage('tryon');closeMobileMenu()" style="display:none;background:linear-gradient(135deg,rgba(168,85,247,0.2),rgba(99,102,241,0.2));color:#c084fc">✨ ห้องลองชุด</button>
+  <button class="mobile-lang-switch" id="mobile-lang-switch" onclick="toggleMobileLang()">EN</button>
 </div>
 
 
@@ -1131,6 +2207,7 @@
 <div id="page-home" class="page">
 
   <div class="hero">
+    <div id="hero-banners" style="display:none"></div>
     <div class="hero-bg"></div>
     <div class="hero-aurora"></div>
     <div class="hero-grid"></div>
@@ -1139,31 +2216,461 @@
       <h1 class="hero-title">NEON <span class="line2">LOTUS</span></h1>
       <p class="hero-sub" data-en="No basics here. Only street uniforms for the future. 100% Original Vietnam. 100% Trend Injected." data-th="ที่นี่ไม่มีเสื้อผ้าธรรมดา มีเพียงชุดยูนิฟอร์มสตรีทแห่งอนาคต ออริจินัลจากเวียดนาม 100% นำเข้าเทรนด์ 100%.">No basics here. Only street uniforms for the future. 100% Original Vietnam. 100% Trend Injected.</p>
       <a class="btn-primary" href="#" onclick="document.getElementById('brands-section').scrollIntoView({behavior:'smooth'})">
-        <span data-en="EXPLORE BRANDS" data-th="สำรวจแบรนด์">EXPLORE BRANDS</span>
+        <span data-en="EXPLORE BRANDS" data-th="สำรวจแบรนด์">สำรวจแบรนด์</span>
       </a>
       <a class="btn-outline" href="#" onclick="showPage('about')">
-        <span data-en="OUR STORY" data-th="เรื่องของเรา">OUR STORY</span>
+        <span data-en="OUR STORY" data-th="เรื่องราวของเรา">เรื่องราวของเรา</span>
       </a>
     </div>
-    <div class="hero-scroll"><span data-en="SCROLL" data-th="เลื่อน">SCROLL</span><div class="scroll-line"></div></div>
+    <div class="hero-scroll"><span data-en="SCROLL" data-th="เลื่อนลง">เลื่อนลง</span><div class="scroll-line"></div></div>
   </div>
+
+  <!-- ============ FEATURED HOT PRODUCTS ============ -->
+  <section class="featured-section">
+    <div class="featured-inner">
+      <div class="featured-header fade-in">
+        <p class="section-eyebrow" data-en="FEATURED" data-th="สินค้ายอดนิยม">สินค้ายอดนิยม</p>
+        <h2 class="featured-title" data-en="This Week's Picks" data-th="ของเด็ดสัปดาห์นี้">ของเด็ดสัปดาห์นี้</h2>
+      </div>
+      <div class="featured-grid" id="featured-grid">
+        <!-- Rendered by renderFeatured() in main.js -->
+      </div>
+    </div>
+  </section>
 
   <section class="section" id="brands-section">
     <div class="container">
       <div class="section-header fade-in">
-        <p class="section-eyebrow" data-en="BRAND COLLECTION" data-th="คอลเลกชันแบรนด์">BRAND COLLECTION</p>
-        <h2 class="section-title" data-en="Our Curated Labels" data-th="แบรนด์ที่เราคัดสรร">Our Curated Labels</h2>
+        <p class="section-eyebrow" data-en="BRAND COLLECTION" data-th="แบรนด์คัดสรร">แบรนด์คัดสรร</p>
+        <h2 class="section-title" data-en="Our Curated Labels" data-th="แบรนด์ที่เราคัดสรร">แบรนด์ที่เราคัดสรร</h2>
         <div class="section-line"></div>
       </div>
       <div class="brands-grid" id="brands-grid"></div>
     </div>
   </section>
 
+  <!-- ============ 獵物雷達 / TARGET RADAR (代尋委託表單) ============ -->
+  <section class="hunt-section" id="hunt-section">
+    <div class="hunt-inner fade-in">
+      <p class="section-eyebrow" data-en="TARGET RADAR · SUBMIT A HUNT" data-th="เรดาร์เป้าหมาย · รับหาให้">เรดาร์เป้าหมาย · รับหาให้</p>
+      <h2 class="hunt-title" data-en="Target Radar" data-th="เรดาร์เป้าหมาย">เรดาร์เป้าหมาย</h2>
+      <div class="section-line" style="margin-bottom: 26px;"></div>
+      <p class="hunt-lede" data-en="Didn't see your prey on the shelf? Tell us." data-th="ไม่เจอชิ้นที่อยากได้บนหน้าร้าน? บอกเรา">ไม่เจอชิ้นที่อยากได้บนหน้าร้าน? บอกเรา</p>
+      <p class="hunt-desc" data-en="The NEON LOTUS buyer team will infiltrate the alleys of Saigon and Hanoi to unlock your hidden code." data-th="ทีมไบเออร์ของ NEON LOTUS จะแฝงตัวเข้าไปในตรอกซอกซอยของโฮจิมินห์และฮานอย เพื่อปลดล็อกรหัสลับให้คุณ">ทีมไบเออร์ของ NEON LOTUS จะแฝงตัวเข้าไปในตรอกซอกซอยของโฮจิมินห์และฮานอย เพื่อปลดล็อกรหัสลับให้คุณ</p>
+      <p class="hunt-disclaimer" data-en="Note: We only accept commissions for designer labels and streetwear. We reserve the right to decline mediocre design." data-th="หมายเหตุ: เรารับเฉพาะแบรนด์ดีไซเนอร์และสตรีทแวร์ ขอสงวนสิทธิ์ปฏิเสธดีไซน์ที่ดูธรรมดา">หมายเหตุ: เรารับเฉพาะแบรนด์ดีไซเนอร์และสตรีทแวร์ ขอสงวนสิทธิ์ปฏิเสธดีไซน์ที่ดูธรรมดา</p>
+      <p class="hunt-disclaimer hunt-disclaimer-info" data-en="Reminder: Vietnamese brands frequently run seasonal promotions — online estimates are reference only; actual price depends on real-time conditions." data-th="แจ้งเตือน: แบรนด์เวียดนามมักมีโปรโมชั่นเทศกาล ราคาออนไลน์เป็นเพียงประมาณการ ราคาจริงขึ้นกับสภาวะ ณ ขณะนั้น">แจ้งเตือน: แบรนด์เวียดนามมักมีโปรโมชั่นเทศกาล ราคาออนไลน์เป็นเพียงประมาณการ ราคาจริงขึ้นกับสภาวะ ณ ขณะนั้น</p>
+
+      <form id="huntForm" class="hunt-form" autocomplete="off">
+        <div class="hunt-field">
+          <label for="huntTarget" data-en="ITEM NAME / BRAND" data-th="ชื่อสินค้า / แบรนด์">ชื่อสินค้า / แบรนด์</label>
+          <input type="text" id="huntTarget" name="target" required maxlength="200"
+                 placeholder="e.g. Levents archive jacket / dirtycoins SS24 hoodie">
+        </div>
+        <div class="hunt-field">
+          <label for="huntRefUrl" data-en="REFERENCE LINK (FACEBOOK / IG / WEBSITE)" data-th="ลิงก์อ้างอิง (Facebook / IG / เว็บแบรนด์)">ลิงก์อ้างอิง (Facebook / IG / เว็บแบรนด์)</label>
+          <input type="url" id="huntRefUrl" name="ref_url" maxlength="500"
+                 placeholder="https://...">
+        </div>
+        <div class="hunt-row">
+          <div class="hunt-field">
+            <label for="huntVndPrice" data-en="VIETNAMESE PRICE (VND)" data-th="ราคาเวียดนาม (VND)">ราคาเวียดนาม (VND)</label>
+            <input type="number" id="huntVndPrice" name="vnd_price" min="0" max="50000000" step="1000"
+                   placeholder="e.g. 500000">
+          </div>
+          <div class="hunt-field">
+            <label for="huntCategory" data-en="ITEM TYPE" data-th="ประเภทสินค้า">ประเภทสินค้า</label>
+            <select id="huntCategory" name="category">
+              <option value="_default">อื่นๆ / ไม่แน่ใจ</option>
+              <option value="Top">เสื้อ (Tee / Shirt / Hoodie)</option>
+              <option value="Bottom">กางเกง</option>
+              <option value="Outerwear">เสื้อคลุม</option>
+              <option value="Set">เซ็ต</option>
+              <option value="Accessories">แอคเซสซอรี่ / หมวก</option>
+            </select>
+          </div>
+        </div>
+        <div class="hunt-estimate" id="huntEstimate" hidden>
+          <div class="hunt-estimate-title" data-en="PRICE PREVIEW" data-th="ราคาประมาณ (THB)">ราคาประมาณ (THB)</div>
+          <div class="hunt-estimate-row">
+            <span class="hunt-estimate-label" data-en="CARRY-BACK" data-th="นำกลับเอง">นำกลับเอง</span>
+            <span class="hunt-estimate-amount" id="huntEstCarry">—</span>
+          </div>
+          <div class="hunt-estimate-row">
+            <span class="hunt-estimate-label" data-en="INTERNATIONAL SHIPPING" data-th="ส่งกลับไทย">ส่งกลับไทย</span>
+            <span class="hunt-estimate-amount" id="huntEstShip">—</span>
+          </div>
+          <p class="hunt-estimate-note" data-en="Estimate only · final price subject to item condition &amp; shipping rules" data-th="ราคาประมาณเท่านั้น · ราคาสุดท้ายอาจปรับตามสภาพสินค้าและค่าส่ง">ราคาประมาณเท่านั้น · ราคาสุดท้ายอาจปรับตามสภาพสินค้าและค่าส่ง</p>
+        </div>
+        <div class="hunt-field">
+          <label for="huntContact" data-en="YOUR CONTACT (LINE / IG / EMAIL)" data-th="ช่องทางติดต่อของคุณ (LINE / IG / Email)">ช่องทางติดต่อของคุณ (LINE / IG / Email)</label>
+          <input type="text" id="huntContact" name="contact" required maxlength="120"
+                 placeholder="@yourid 或 your@email.com">
+        </div>
+        <div class="hunt-field">
+          <label for="huntNotes" data-en="NOTES (SIZE / COLOR / URGENCY…)" data-th="หมายเหตุ (ไซส์/สี/ความเร่งด่วน…)">หมายเหตุ (ไซส์/สี/ความเร่งด่วน…)</label>
+          <textarea id="huntNotes" name="notes" rows="3" maxlength="800"
+                    placeholder="Size M / 顏色不指定 / 月底前到手最好…"></textarea>
+        </div>
+        <div class="hunt-field">
+          <label data-en="IMAGES (OPTIONAL · MAX 5 · 5MB EACH)" data-th="รูปภาพ (ไม่บังคับ · สูงสุด 5 รูป · รูปละ ≤5MB)">รูปภาพ (ไม่บังคับ · สูงสุด 5 รูป · รูปละ ≤5MB)</label>
+          <div class="hunt-image-zone" id="huntImageZone" tabindex="0" role="button" aria-label="Upload images">
+            <input type="file" id="huntImageFiles" accept="image/jpeg,image/png,image/webp,image/gif,image/heic" multiple hidden>
+            <div class="hunt-image-zone-text">
+              <div class="hunt-image-zone-icon">📸</div>
+              <div class="hunt-image-zone-main" data-en="Click or drag images here" data-th="คลิกหรือลากรูปมาที่นี่">คลิกหรือลากรูปมาที่นี่</div>
+              <div class="hunt-image-zone-hint">JPG / PNG / WebP / GIF · สูงสุด 5 รูป</div>
+            </div>
+          </div>
+          <div class="hunt-image-previews" id="huntImagePreviews"></div>
+        </div>
+        <p class="hunt-form-error" id="huntFormError" style="display:none;"></p>
+        <button type="submit" class="hunt-submit">
+          <span class="hunt-pulse" aria-hidden="true"></span>
+          <span class="hunt-submit-text" data-en="TRANSMIT SIGNAL" data-th="ส่งสัญญาณ · TRANSMIT SIGNAL">ส่งสัญญาณ · TRANSMIT SIGNAL</span>
+        </button>
+        <p class="hunt-form-hint" data-en="We typically respond within 24 hours via the contact you provided." data-th="หลังรับคำขอ เราจะตอบกลับภายใน 24 ชั่วโมงผ่านช่องทางที่คุณระบุ">หลังรับคำขอ เราจะตอบกลับภายใน 24 ชั่วโมงผ่านช่องทางที่คุณระบุ</p>
+      </form>
+
+      <!-- 提交成功面板 (預設隱藏,送出後才顯示) -->
+      <div class="hunt-success-panel" id="huntSuccessPanel" hidden>
+        <div class="hunt-success-icon">✓</div>
+        <h3 class="hunt-success-title" data-en="Signal Received" data-th="ส่งสัญญาณสำเร็จ">ส่งสัญญาณสำเร็จ</h3>
+        <p class="hunt-success-desc" data-en="Our buyers are scanning Saigon &amp; Hanoi. We'll get back to you within 24 hours via the contact you provided." data-th="ทีมไบเออร์กำลังสแกนหาเป้าหมายของคุณที่โฮจิมินห์และฮานอย เราจะติดต่อกลับภายใน 24 ชั่วโมงผ่านช่องทางที่คุณระบุ">ทีมไบเออร์กำลังสแกนหาเป้าหมายของคุณที่โฮจิมินห์และฮานอย เราจะติดต่อกลับภายใน 24 ชั่วโมงผ่านช่องทางที่คุณระบุ</p>
+        <div class="hunt-success-estimate" id="huntSuccessEstimate" hidden>
+          <div class="hunt-estimate-title" data-en="ESTIMATED PRICE" data-th="ราคาประมาณ (THB)">ราคาประมาณ (THB)</div>
+          <div class="hunt-estimate-row">
+            <span class="hunt-estimate-label" data-en="CARRY-BACK" data-th="นำกลับเอง">นำกลับเอง</span>
+            <span class="hunt-estimate-amount" id="huntSuccessCarry">—</span>
+          </div>
+          <div class="hunt-estimate-row">
+            <span class="hunt-estimate-label" data-en="INTERNATIONAL SHIPPING" data-th="ส่งกลับไทย">ส่งกลับไทย</span>
+            <span class="hunt-estimate-amount" id="huntSuccessShip">—</span>
+          </div>
+          <p class="hunt-estimate-note" data-en="Estimate only · final price subject to item condition" data-th="ราคาประมาณเท่านั้น · ราคาสุดท้ายอาจปรับตามสภาพสินค้าและค่าส่ง">ราคาประมาณเท่านั้น · ราคาสุดท้ายอาจปรับตามสภาพสินค้าและค่าส่ง</p>
+        </div>
+        <button type="button" class="hunt-success-restart" id="huntRestartBtn" data-en="SEND ANOTHER" data-th="ส่งอีกครั้ง">ส่งอีกครั้ง</button>
+      </div>
+    </div>
+    <script>
+      /* ════════════════════════════════════════════════════════════
+         獵物雷達 表單:URL 白名單 + 圖片上傳到 Supabase Storage
+                       + POST 到 /api/hunt → Telegram bot
+         ════════════════════════════════════════════════════════════ */
+      (function () {
+        const form = document.getElementById('huntForm');
+        if (!form) return;
+
+        // ── 共用 Supabase 客戶端 (anon key,跟 supabase-client.js 同一把) ──
+        const HUNT_SB_URL  = 'https://shwirwvnwzxtqsfkwiqj.supabase.co';
+        const HUNT_SB_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNod2lyd3Zud3p4dHFzZmt3aXFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3MDUxNDAsImV4cCI6MjA5MzI4MTE0MH0.trO28s8px44CA9zEpeAygQ-XDVfgIfzlUKyyVBsoYdw';
+        // ── Lazy init: SDK 是 body 底部才載入,當下 window.supabase 還不存在 ──
+        let _huntSbCache = null;
+        async function getHuntSb() {
+          if (_huntSbCache) return _huntSbCache;
+          // 等 SDK 載入,最多 3 秒 (30 × 100ms)
+          for (let i = 0; i < 30; i++) {
+            if (window.supabase && window.supabase.createClient) break;
+            await new Promise(r => setTimeout(r, 100));
+          }
+          if (!window.supabase || !window.supabase.createClient) return null;
+          _huntSbCache = window.supabase.createClient(HUNT_SB_URL, HUNT_SB_ANON);
+          return _huntSbCache;
+        }
+
+        // ── URL 白名單 (跟 api/hunt.js 一致;防垃圾連結) ──
+        const ALLOWED_REF_DOMAINS = [
+          'facebook.com','fb.com','fb.me','messenger.com',
+          'instagram.com',
+          'threads.net','threads.com',
+          'tiktok.com','vt.tiktok.com','douyin.com',
+          'xiaohongshu.com','xhslink.com',
+          'twitter.com','x.com',
+          'shopee.tw','shopee.vn','shopee.com.tw','shopee.com','shopee.sg','shopee.my','shopee.ph',
+          'ruten.com.tw','goods.ruten.com.tw',
+          'carousell.tw','carousell.com',
+          'pinkoi.com',
+          'lazada.vn','lazada.com.tw',
+          'tiki.vn',
+          'line.me','shop.line.me',
+        ];
+        function isAllowedRefUrl(url) {
+          if (!url || !String(url).trim()) return true;
+          try {
+            const u = new URL(String(url).trim());
+            if (u.protocol !== 'https:' && u.protocol !== 'http:') return false;
+            const host = u.hostname.toLowerCase().replace(/^www\./, '');
+            return ALLOWED_REF_DOMAINS.some(d => host === d || host.endsWith('.' + d));
+          } catch { return false; }
+        }
+
+        // ── 圖片上傳 ──────────────────────────────────────────────
+        const MAX_IMAGES = 5;
+        const MAX_BYTES = 5 * 1024 * 1024;
+        const zone   = document.getElementById('huntImageZone');
+        const input  = document.getElementById('huntImageFiles');
+        const grid   = document.getElementById('huntImagePreviews');
+        const errBox = document.getElementById('huntFormError');
+        let uploaded = []; // [{ url, path, previewEl }]
+
+        function showError(msg) {
+          errBox.textContent = msg;
+          errBox.style.display = 'block';
+          clearTimeout(showError._t);
+          showError._t = setTimeout(() => { errBox.style.display = 'none'; }, 6000);
+        }
+        function hideError() { errBox.style.display = 'none'; }
+
+        zone.addEventListener('click', () => input.click());
+        zone.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+        });
+        ['dragover','dragenter'].forEach(ev => zone.addEventListener(ev, (e) => {
+          e.preventDefault(); zone.classList.add('dragover');
+        }));
+        ['dragleave','drop'].forEach(ev => zone.addEventListener(ev, () => zone.classList.remove('dragover')));
+        zone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          handleFiles(e.dataTransfer && e.dataTransfer.files);
+        });
+        input.addEventListener('change', (e) => {
+          handleFiles(e.target.files);
+          e.target.value = '';
+        });
+
+        async function handleFiles(files) {
+          if (!files || !files.length) return;
+          hideError();
+          const sb = await getHuntSb();
+          if (!sb) { showError('Supabase 客戶端載入失敗,請重整頁面'); return; }
+          const remaining = MAX_IMAGES - uploaded.length;
+          if (remaining <= 0) { showError(`最多只能上傳 ${MAX_IMAGES} 張圖片`); return; }
+
+          const list = Array.from(files).slice(0, remaining);
+          for (const file of list) {
+            if (!file.type.startsWith('image/')) { showError(`${file.name} 不是圖片`); continue; }
+            if (file.size > MAX_BYTES) { showError(`${file.name} 超過 5MB`); continue; }
+            await uploadOne(file, sb);
+          }
+        }
+
+        async function uploadOne(file, sb) {
+          // 立刻顯示縮圖 (loading 狀態)
+          const previewEl = document.createElement('div');
+          previewEl.className = 'hunt-image-preview uploading';
+          const img = document.createElement('img');
+          img.alt = '';
+          previewEl.appendChild(img);
+          const removeBtn = document.createElement('button');
+          removeBtn.type = 'button';
+          removeBtn.className = 'hunt-image-preview-remove';
+          removeBtn.textContent = '×';
+          removeBtn.title = '移除';
+          previewEl.appendChild(removeBtn);
+          grid.appendChild(previewEl);
+
+          // 預覽縮圖 (用 FileReader 即時顯示,不用等上傳完)
+          const reader = new FileReader();
+          reader.onload = (e) => { img.src = e.target.result; };
+          reader.readAsDataURL(file);
+
+          // 上傳到 Supabase Storage
+          try {
+            const ext = (file.name.split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const path = `hunt/${Date.now()}-${Math.random().toString(36).slice(2,10)}.${ext || 'jpg'}`;
+            const { error } = await sb.storage.from('hunt-uploads').upload(path, file, {
+              cacheControl: '3600', upsert: false, contentType: file.type,
+            });
+            if (error) throw error;
+            const { data: { publicUrl } } = sb.storage.from('hunt-uploads').getPublicUrl(path);
+            uploaded.push({ url: publicUrl, path, previewEl });
+            previewEl.classList.remove('uploading');
+            removeBtn.addEventListener('click', () => removeOne(path));
+          } catch (err) {
+            console.warn('[hunt upload]', err);
+            previewEl.remove();
+            showError('圖片上傳失敗: ' + (err.message || err));
+          }
+        }
+
+        async function removeOne(path) {
+          const idx = uploaded.findIndex(u => u.path === path);
+          if (idx < 0) return;
+          const u = uploaded[idx];
+          u.previewEl.remove();
+          uploaded.splice(idx, 1);
+          // 嘗試從 Storage 刪 (失敗也不阻擋,反正 RLS 限制 anon 可能不准刪)
+          try {
+            const sb = await getHuntSb();
+            if (sb) await sb.storage.from('hunt-uploads').remove([path]);
+          } catch (_) {}
+        }
+
+        // ── 計價公式 (鏡像 main.js 的 calcPrice,確保前後一致) ──
+        const HUNT_RATE = 1 / 800;
+        const HUNT_SHIP_VND = {
+          Top:           72000,
+          Outerwear:    180000,
+          Bottom:       126000,
+          Set:          234000,
+          Accessories:   36000,
+          _default:      90000,
+        };
+        const HUNT_TIERS = [
+          { max:    300000, mult: 1.75 },
+          { max:    500000, mult: 1.5  },
+          { max:  1300000, mult: 1.4  },
+          { max:  2000000, mult: 1.4  },
+          { max:  Infinity, mult: 1.35 },
+        ];
+        // 累進制倍率 — 跟 main.js 的 marginalAdjVnd 完全一致
+        function _huntMarginalAdj(vnd) {
+          if (!vnd || vnd <= 0) return 0;
+          let total = 0, prev = 0;
+          for (const { max, mult } of HUNT_TIERS) {
+            if (vnd <= max) { total += (vnd - prev) * mult; return total; }
+            total += (max - prev) * mult;
+            prev = max;
+          }
+          return total;
+        }
+        function _huntPsych(n) {
+          if (n == null) return n;
+          const r = Math.round(n / 10) * 10;
+          const tail = r % 100;
+          return tail <= 50 ? r - tail + 50 : r - tail + 90;
+        }
+        function calcHuntPrice(vnd, tag) {
+          if (!vnd || vnd <= 0) return null;
+          const est = HUNT_SHIP_VND[tag] ?? HUNT_SHIP_VND._default;
+          // 累進制:carry 跟 ship 各自 marginally 加總
+          const carry_vnd = _huntMarginalAdj(vnd);
+          const ship_vnd  = _huntMarginalAdj(vnd + est);
+          let carry = Math.round(carry_vnd * HUNT_RATE / 10) * 10;
+          let ship  = _huntPsych(ship_vnd * HUNT_RATE);
+          const ceiling = carry + 200;
+          if (ship > ceiling) {
+            ship = _huntPsych(ceiling);
+            if (ship > ceiling) ship -= 100;
+          }
+          return { carry, ship };
+        }
+
+        // ── 即時預估報價 (用戶輸入 VND / 改類別時跑) ──
+        const vndInput   = document.getElementById('huntVndPrice');
+        const catSelect  = document.getElementById('huntCategory');
+        const estBox     = document.getElementById('huntEstimate');
+        const estCarryEl = document.getElementById('huntEstCarry');
+        const estShipEl  = document.getElementById('huntEstShip');
+        function updateLiveEstimate() {
+          const vnd = parseInt(vndInput.value, 10) || 0;
+          const tag = catSelect.value || '_default';
+          const result = calcHuntPrice(vnd, tag);
+          if (!result) { estBox.hidden = true; return; }
+          estCarryEl.textContent = '฿ ' + result.carry.toLocaleString();
+          estShipEl.textContent  = '฿ ' + result.ship.toLocaleString();
+          estBox.hidden = false;
+        }
+        vndInput.addEventListener('input',  updateLiveEstimate);
+        catSelect.addEventListener('change', updateLiveEstimate);
+
+        // ── 成功面板 ↔ 表單切換 ──
+        const successPanel    = document.getElementById('huntSuccessPanel');
+        const successEstBox   = document.getElementById('huntSuccessEstimate');
+        const successCarryEl  = document.getElementById('huntSuccessCarry');
+        const successShipEl   = document.getElementById('huntSuccessShip');
+        document.getElementById('huntRestartBtn')?.addEventListener('click', () => {
+          successPanel.hidden = true;
+          form.hidden = false;
+        });
+
+        // ── 表單提交 ──────────────────────────────────────────────
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          hideError();
+
+          const fd = new FormData(form);
+          const payload = Object.fromEntries(fd.entries());
+
+          // 客戶端 URL 白名單檢查 (即時友善 UI)
+          if (!isAllowedRefUrl(payload.ref_url)) {
+            showError('參考連結僅接受 Facebook / Instagram / Threads / 蝦皮 / TikTok / 小紅書 / 露天 / Pinkoi / Carousell / LINE Shopping / Lazada / Tiki 等社群和拍賣平台。');
+            document.getElementById('huntRefUrl')?.focus();
+            return;
+          }
+
+          // 計算預估價格 (有 vnd_price 才算)
+          const vnd = parseInt(payload.vnd_price, 10) || 0;
+          const tag = payload.category || '_default';
+          const est = calcHuntPrice(vnd, tag);
+
+          payload.vnd_price = vnd || null;
+          payload.category  = tag;
+          payload.estimated_carryback = est ? est.carry : null;
+          payload.estimated_shipping  = est ? est.ship  : null;
+          payload.submitted_at = new Date().toISOString();
+          payload.user_agent   = navigator.userAgent.slice(0, 200);
+          payload.referrer     = (document.referrer || '').slice(0, 200);
+          payload.image_urls   = uploaded.map(u => u.url);
+
+          const btn  = form.querySelector('.hunt-submit');
+          const text = btn.querySelector('.hunt-submit-text');
+          btn.disabled = true;
+          text.textContent = '訊號傳送中…';
+
+          // 先 backup localStorage 防 API 掉線
+          try {
+            const queue = JSON.parse(localStorage.getItem('huntQueue') || '[]');
+            queue.push(payload);
+            localStorage.setItem('huntQueue', JSON.stringify(queue.slice(-50)));
+          } catch (_) {}
+
+          let apiOk = false;
+          try {
+            const res = await fetch('/api/hunt', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+            apiOk = res.ok;
+            if (!apiOk) {
+              const errBody = await res.json().catch(() => ({}));
+              console.warn('[hunt] API error:', res.status, errBody);
+              if (errBody && errBody.message) showError(errBody.message);
+            }
+          } catch (err) {
+            console.warn('[hunt] API submit failed:', err);
+          }
+
+          // 顯示成功面板,塞入預估價格
+          if (est) {
+            successCarryEl.textContent = '฿ ' + est.carry.toLocaleString();
+            successShipEl.textContent  = '฿ ' + est.ship.toLocaleString();
+            successEstBox.hidden = false;
+          } else {
+            successEstBox.hidden = true;
+          }
+          form.hidden = true;
+          successPanel.hidden = false;
+          successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          // 重置表單 (下次再送時是乾淨的)
+          form.reset();
+          uploaded.forEach(u => u.previewEl.remove());
+          uploaded = [];
+          estBox.hidden = true;
+          btn.classList.remove('success');
+          btn.disabled = false;
+          text.textContent = '發送訊號 · TRANSMIT SIGNAL';
+        });
+      })();
+    </script>
+  </section>
+
   <div class="about-strip">
     <div class="container">
       <div class="about-inner">
         <div class="fade-in">
-          <p class="about-label" data-en="WHO WE ARE" data-th="เราคือใคร">WHO WE ARE</p>
+          <p class="about-label" data-en="ABOUT US" data-th="เกี่ยวกับเรา">เกี่ยวกับเรา</p>
 
           <div class="about-container">
             <div id="about-en" class="lang-content active">
@@ -1194,6 +2701,41 @@
     </div>
   </div>
 
+  <!-- ============ CUSTOMER SERVICE / SHOPPING GUIDE ============ -->
+  <section class="guide-section">
+    <div class="guide-inner fade-in">
+      <p class="section-eyebrow" data-en="CUSTOMER SERVICE" data-th="บริการลูกค้า">บริการลูกค้า</p>
+      <h2 class="guide-title" data-en="Shopping Guide" data-th="คู่มือการซื้อ">คู่มือการซื้อ</h2>
+      <p class="guide-sub" data-en="Please review the following before placing your order. Tap any card for full details." data-th="ก่อนสั่งซื้อโปรดอ่านข้อมูลการซื้อต่อไปนี้ คลิกที่การ์ดเพื่อดูรายละเอียด">ก่อนสั่งซื้อโปรดอ่านข้อมูลการซื้อต่อไปนี้ คลิกที่การ์ดเพื่อดูรายละเอียด</p>
+      <div class="guide-cards">
+        <div class="guide-card" onclick="showPage('policy-purchase')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')showPage('policy-purchase')">
+          <div class="guide-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 6h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
+          </div>
+          <p class="guide-card-en">PURCHASE & PAYMENT</p>
+          <h3 class="guide-card-title" data-en="Purchase Guide" data-th="ข้อมูลการซื้อ">ข้อมูลการซื้อ</h3>
+          <p class="guide-card-desc" data-en="Selection nature · Sizing · Payment methods" data-th="ลักษณะสินค้า · คำแนะนำไซส์ · วิธีชำระเงิน">ลักษณะสินค้า · คำแนะนำไซส์ · วิธีชำระเงิน</p>
+        </div>
+        <div class="guide-card" onclick="showPage('policy-shipping')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')showPage('policy-shipping')">
+          <div class="guide-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <p class="guide-card-en">SHIPPING & DELIVERY</p>
+          <h3 class="guide-card-title" data-en="Shipping" data-th="วิธีจัดส่ง">วิธีจัดส่ง</h3>
+          <p class="guide-card-desc" data-en="VN→TW timeline · Weekly cycle · Owner-handled flights" data-th="เวียดนาม → ไทย · จัดส่งรายสัปดาห์ · ขนกลับโดยทีมงาน">เวียดนาม → ไทย · จัดส่งรายสัปดาห์ · ขนกลับโดยทีมงาน</p>
+        </div>
+        <div class="guide-card" onclick="showPage('policy-returns')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')showPage('policy-returns')">
+          <div class="guide-card-icon">
+            <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          </div>
+          <p class="guide-card-en">RETURNS & EXCHANGES</p>
+          <h3 class="guide-card-title" data-en="Returns Policy" data-th="นโยบายคืนสินค้า">นโยบายคืนสินค้า</h3>
+          <p class="guide-card-desc" data-en="Conditions · Required unboxing video · 5-day window" data-th="เงื่อนไขรับคืน · ต้องถ่ายวิดีโอแกะกล่อง · ตรวจสอบ 5 วัน">เงื่อนไขรับคืน · ต้องถ่ายวิดีโอแกะกล่อง · ตรวจสอบ 5 วัน</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="contact-section">
     <div class="contact-inner fade-in">
       <p class="section-eyebrow" data-en="CONTACT US" data-th="ติดต่อเรา">CONTACT US</p>
@@ -1212,6 +2754,17 @@
            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <div class="footer-logo" style="display:none">NEON LOTUS</div>
     </div>
+    <div class="footer-policy-links">
+      <a class="footer-policy-link" href="/policy/purchase" onclick="event.preventDefault(); showPage('policy-purchase');" data-en="Purchase Guide" data-th="ข้อมูลการซื้อ">ข้อมูลการซื้อ</a>
+      <span class="footer-policy-divider">•</span>
+      <a class="footer-policy-link" href="/policy/shipping" onclick="event.preventDefault(); showPage('policy-shipping');" data-en="Shipping" data-th="วิธีจัดส่ง">วิธีจัดส่ง</a>
+      <span class="footer-policy-divider">•</span>
+      <a class="footer-policy-link" href="/policy/returns" onclick="event.preventDefault(); showPage('policy-returns');" data-en="Returns" data-th="นโยบายคืนสินค้า">นโยบายคืนสินค้า</a>
+      <span class="footer-policy-divider">•</span>
+      <a class="footer-policy-link" href="/policy/privacy" onclick="event.preventDefault(); showPage('policy-privacy');" data-en="Privacy" data-th="นโยบายความเป็นส่วนตัว">นโยบายความเป็นส่วนตัว</a>
+      <span class="footer-policy-divider">•</span>
+      <a class="footer-policy-link" href="#contact" onclick="event.preventDefault(); showPage('contact');" data-en="Contact" data-th="ติดต่อเรา">ติดต่อเรา</a>
+    </div>
     <div data-en="&copy; 2025 NEON LOTUS. Bangkok, Thailand." data-th="&copy; 2025 NEON LOTUS. กรุงเทพมหานคร ประเทศไทย">&copy; 2025 NEON LOTUS. Bangkok, Thailand.</div>
   </footer>
 </div>
@@ -1225,7 +2778,7 @@
     <div class="brand-hero-bg" id="brand-hero-bg"></div>
     <div class="brand-hero-overlay"></div>
     <div class="brand-hero-content">
-      <button class="brand-back-btn" onclick="showPage('home')"><svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> <span data-en="ALL BRANDS" data-th="ทุกแบรนด์">ALL BRANDS</span></button>
+      <button class="brand-back-btn" onclick="goBack('home')"><svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> <span data-en="BACK" data-th="กลับ">กลับ</span></button>
       <p class="brand-hero-label" id="brand-hero-label"></p>
       <h1 class="brand-hero-name" id="brand-hero-name"></h1>
     </div>
@@ -1233,15 +2786,15 @@
   <div class="brand-info-bar" id="brand-info-bar"></div>
   <div class="products-section">
     <div class="products-header">
-      <h2 class="products-title" data-en="Collection" data-th="คอลเลกชัน">Collection</h2>
+      <h2 class="products-title" data-en="Collection" data-th="คอลเลกชั่น">คอลเลกชั่น</h2>
       <div class="products-filter" id="products-filter">
-        <button class="filter-btn active" data-tag="all">ALL / ทั้งหมด</button>
-        <button class="filter-btn" data-tag="Top">TOPS / เสื้อ</button>
-        <button class="filter-btn" data-tag="Bottom">BOTTOMS / กางเกง</button>
-        <button class="filter-btn" data-tag="Outerwear">OUTERWEAR / เสื้อคลุม</button>
-        <button class="filter-btn" data-tag="Bag">BAGS / กระเป๋า</button>
-        <button class="filter-btn" data-tag="Accessories">ACC / เครื่องประดับ</button>
-        <button class="filter-btn" data-tag="Headwear">HATS / หมวก</button>
+        <button class="filter-btn active" data-tag="all">ทั้งหมด</button>
+        <button class="filter-btn" data-tag="Top">เสื้อ</button>
+        <button class="filter-btn" data-tag="Bottom">กางเกง</button>
+        <button class="filter-btn" data-tag="Outerwear">เสื้อคลุม</button>
+        <button class="filter-btn" data-tag="Bag">กระเป๋า</button>
+        <button class="filter-btn" data-tag="Accessories">แอคเซสซอรี่</button>
+        <button class="filter-btn" data-tag="Headwear">หมวก</button>
       </div>
     </div>
     <div class="products-grid" id="products-grid"></div>
@@ -1313,6 +2866,308 @@
 </div>
 
 
+<!-- ═══════════════ VIRTUAL FITTING ROOM ═══════════════ -->
+<div id="page-tryon" class="page hidden">
+  <div class="tryon-container">
+    <!-- Step 1: Upload Selfie -->
+    <div id="tryon-step1" class="tryon-step active">
+      <div class="tryon-header">
+        <p class="section-eyebrow" data-en="VIRTUAL FITTING ROOM" data-th="ห้องลองชุดออนไลน์">ห้องลองชุดออนไลน์</p>
+        <h1 class="tryon-title" data-en="Upload Your Photo" data-th="อัพโหลดรูปของคุณ">อัพโหลดรูปของคุณ</h1>
+        <p class="tryon-desc" data-en="Take a full-body photo or upload one, then browse our collection to try on clothes virtually with AI." data-th="ถ่ายรูปเต็มตัวหรืออัพโหลดรูป จากนั้นเลือกคอลเลกชั่นเพื่อลองสวมผ่าน AI">ถ่ายรูปเต็มตัวหรืออัพโหลดรูป จากนั้นเลือกคอลเลกชั่นเพื่อลองสวมผ่าน AI</p>
+      </div>
+      <div class="tryon-upload-area" id="tryon-upload-area">
+        <div class="tryon-upload-placeholder" id="tryon-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p data-en="Tap to upload or drag & drop" data-th="คลิกอัพโหลดหรือลากรูปมาวาง">คลิกอัพโหลดหรือลากรูปมาวาง</p>
+          <span data-en="Full-body photo works best" data-th="รูปเต็มตัวให้ผลดีที่สุด">รูปเต็มตัวให้ผลดีที่สุด</span>
+        </div>
+        <img id="tryon-selfie-preview" class="tryon-selfie-preview" style="display:none" alt="Your photo" />
+        <input type="file" id="tryon-selfie-input" accept="image/*" style="display:none" />
+      </div>
+      <div class="tryon-actions">
+        <button id="tryon-change-photo" class="tryon-btn-secondary" style="display:none" data-en="Change Photo" data-th="เปลี่ยนรูป">เปลี่ยนรูป</button>
+        <button id="tryon-next-btn" class="tryon-btn-primary" data-en="Choose Clothes →" data-th="เลือกเสื้อผ้า →">เลือกเสื้อผ้า →</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Browse & Try On -->
+        <!-- ═══ STEP 2: Outfit Builder ═══ -->
+    <div id="tryon-step2" class="tryon-step">
+      <div class="tryon-header">
+        <h2 class="tryon-title" data-en="Build Your Outfit" data-th="จัดลุคของคุณ">จัดลุคของคุณ</h2>
+        <p class="tryon-desc" data-en="Pick items from each category to create your look" data-th="เลือกสินค้าจากหมวดต่างๆ มาจัดลุค">เลือกสินค้าจากหมวดต่างๆ มาจัดลุค</p>
+        <div class="tryon-brand-filter">
+          <select id="tryon-brand-select">
+            <option value="all" data-en="All Brands" data-th="ทุกแบรนด์">ทุกแบรนด์</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="outfit-cat-tabs" id="outfit-cat-tabs">
+        <button class="outfit-cat-tab active" data-cat="ALL">👗 <span data-en="All" data-th="ทั้งหมด">ทั้งหมด</span></button>
+        <button class="outfit-cat-tab" data-cat="top">👕 <span data-en="Top" data-th="เสื้อ">เสื้อ</span></button>
+        <button class="outfit-cat-tab" data-cat="bottom">👖 <span data-en="Bottom" data-th="กางเกง">กางเกง</span></button>
+        <button class="outfit-cat-tab" data-cat="outerwear">🧥 <span data-en="Outerwear" data-th="เสื้อคลุม">เสื้อคลุม</span></button>
+        <button class="outfit-cat-tab" data-cat="bag">🎒 <span data-en="Bag" data-th="กระเป๋า">กระเป๋า</span></button>
+        <button class="outfit-cat-tab" data-cat="hat">🧢 <span data-en="Hat" data-th="หมวก">หมวก</span></button>
+      </div>
+
+      <!-- Main layout: grid + sidebar -->
+      <div class="tryon-outfit-layout">
+        <!-- Left: Product grid -->
+        <div class="tryon-outfit-main">
+          <div class="tryon-clothes-grid" id="tryon-clothes-grid">
+            <!-- Products rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Right: Outfit panel + selfie -->
+        <div class="tryon-outfit-sidebar">
+          <div class="tryon-selfie-col" style="margin-bottom:14px">
+            <img id="tryon-selfie-small" alt="Your photo" style="width:100%;border-radius:10px;border:1px solid rgba(168,85,247,0.2)" />
+            <button id="tryon-back-btn" class="tryon-btn-secondary tryon-btn-sm" style="margin-top:8px;width:100%" data-en="← Change photo" data-th="← เปลี่ยนรูป">← เปลี่ยนรูป</button>
+          </div>
+
+          <div id="outfit-panel">
+            <!-- Rendered by OutfitBuilder.renderOutfitPanel() -->
+          </div>
+
+          <button id="outfit-tryon-btn" disabled data-en="Select items first" data-th="กรุณาเลือกสินค้าก่อน">กรุณาเลือกสินค้าก่อน</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Step 3: Result -->
+        <!-- ═══ STEP 3: Layered Try-On Result ═══ -->
+    <div id="tryon-step3" class="tryon-step">
+      <div class="tryon-header">
+        <h2 class="tryon-title" data-en="Your Try-On Result" data-th="ผลการลองชุด">ผลการลองชุด</h2>
+      </div>
+
+      <!-- Layer progress chips -->
+      <div class="tryon-layer-progress" id="tryon-layer-progress" style="display:none">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="tryon-result-area">
+        <!-- Loading spinner -->
+        <div class="tryon-result-loading" id="tryon-loading" style="display:none">
+          <div class="tryon-spinner"></div>
+          <p id="tryon-loading-msg" data-en="AI is styling your outfit... ~15s per item" data-th="AI กำลังเปลี่ยนชุดให้คุณ... ประมาณ 15 วินาทีต่อชิ้น">AI กำลังเปลี่ยนชุดให้คุณ... ประมาณ 15 วินาทีต่อชิ้น</p>
+        </div>
+
+        <!-- Result: before/after comparison -->
+        <div class="tryon-result-content" id="tryon-result" style="display:none">
+          <div class="tryon-compare">
+            <div class="tryon-compare-item">
+              <span data-en="Before" data-th="รูปต้นฉบับ">รูปต้นฉบับ</span>
+              <img id="tryon-result-before" alt="Before" />
+            </div>
+            <div class="tryon-compare-item">
+              <span data-en="After" data-th="ลุคเต็ม">ลุคเต็ม</span>
+              <img id="tryon-result-after" alt="Try-on result" />
+            </div>
+          </div>
+
+          <!-- Per-layer result thumbnails -->
+          <div class="tryon-result-layers" id="tryon-result-layers">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="tryon-result-info">
+            <h3 id="tryon-result-name"></h3>
+            <p id="tryon-result-price"></p>
+          </div>
+        </div>
+
+        <!-- Error -->
+        <div class="tryon-result-error" id="tryon-error" style="display:none">
+          <p id="tryon-error-msg"></p>
+        </div>
+      </div>
+
+      <div class="tryon-actions">
+        <button id="tryon-try-another" class="tryon-btn-secondary" data-en="← Modify outfit" data-th="← แก้ไขลุค">← แก้ไขลุค</button>
+        <button id="tryon-add-cart" class="tryon-btn-primary" style="display:none" data-en="🛒 Add All to Cart" data-th="🛒 เพิ่มทั้งหมดลงตะกร้า">🛒 เพิ่มทั้งหมดลงตะกร้า</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- ============ POLICY PAGE: 購買須知 ============ -->
+<div id="page-policy-purchase" class="page hidden policy-page">
+  <div class="policy-container">
+    <button class="policy-back-btn" onclick="goBack('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span data-en="BACK" data-th="กลับ">กลับ</span>
+    </button>
+    <p class="policy-eyebrow">PURCHASE &amp; PAYMENT</p>
+    <h1 class="policy-title" data-en="Purchase Guide" data-th="ข้อมูลการซื้อและวิธีชำระเงิน">ข้อมูลการซื้อและวิธีชำระเงิน</h1>
+    <div class="policy-body">
+      <h3>商品性質</h3>
+      <p>NEON LOTUS 提供的是<strong>越南設計師品牌選品</strong>。我們嚴選越南各大設計師品牌的商品,直接從品牌端採購並運送至ไทย。</p>
+
+      <h3>尺寸建議</h3>
+      <p>下單前請務必確認尺寸 (可參考商品頁面尺寸表或私訊客服)。商品下單後,
+      除重大瑕疵外,<strong>無法因「尺寸不合」或「個人喜好」提供退換貨</strong>。</p>
+
+      <h3>色差說明</h3>
+      <p>商品照片可能因拍攝光線、個人手機或電腦螢幕顯示器不同而產生微色差,皆以實品顏色為準,
+      微小色差不列入瑕疵退換範圍。</p>
+
+      <h3>支付方式</h3>
+      <p>目前官網支援的訂金付款方式包含:</p>
+      <ul>
+        <li>線上刷卡 (Visa / Mastercard / JCB)</li>
+        <li>Apple Pay</li>
+        <li>銀行轉帳</li>
+      </ul>
+
+      <div class="warn">
+        訂單成立即代表您同意所有購物須知條款。如有任何疑問,
+        歡迎透過 LINE <span class="lineid">@463fdlew</span> 私訊客服。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ POLICY PAGE: 運送方式 ============ -->
+<div id="page-policy-shipping" class="page hidden policy-page">
+  <div class="policy-container">
+    <button class="policy-back-btn" onclick="goBack('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span data-en="BACK" data-th="กลับ">กลับ</span>
+    </button>
+    <p class="policy-eyebrow">SHIPPING &amp; DELIVERY</p>
+    <h1 class="policy-title" data-en="Shipping &amp; Delivery" data-th="วิธีจัดส่งและรายละเอียด">วิธีจัดส่งและรายละเอียด</h1>
+    <div class="policy-body">
+      <h3>越南端嚴格品檢</h3>
+      <p>所有商品在寄出前,皆會由我們的越南團隊進行<strong>初步開箱檢查</strong>,
+      確保商品無重大瑕疵。</p>
+
+      <h3>固定出貨週期</h3>
+      <p>我們<span class="accent">每週日進行結單</span>,並於<span class="accent">每週一統一安排國際出貨</span>。</p>
+
+      <h3>預估天數</h3>
+      <p>商品自越南寄出後,預計約 <strong>5 至 10 個工作天</strong> 抵達ไทย。
+      (遇節慶假日或海關查驗可能微幅延遲,敬請見諒)</p>
+
+      <h3>包裝聲明</h3>
+      <p>我們會盡最大努力附上品牌原盒กับ完整包裝,但國際長途運送過程中,
+      鞋盒或外包裝難免有擠壓破損之情形,無法保證 100% 完美,
+      <strong>完美主義者請斟酌下單</strong>。</p>
+
+      <h3>特別企劃 — 主理人親帶班機</h3>
+      <ul>
+        <li>每兩個月我們將親自從越南帶貨回台,該批次訂單將<strong>免收國際運費</strong>!</li>
+        <li>確切的「下趟回台時間」กับ收單期限,請密切鎖定 <strong>NEON LOTUS 官方 Instagram</strong> 公告。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ POLICY PAGE: 退換貨政策 ============ -->
+<div id="page-policy-returns" class="page hidden policy-page">
+  <div class="policy-container">
+    <button class="policy-back-btn" onclick="goBack('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span data-en="BACK" data-th="กลับ">กลับ</span>
+    </button>
+    <p class="policy-eyebrow">RETURNS &amp; EXCHANGES</p>
+    <h1 class="policy-title" data-en="Returns &amp; Exchanges" data-th="นโยบายคืนสินค้า">นโยบายคืนสินค้า</h1>
+    <div class="policy-body">
+      <p>根據行政院消保法規定,<strong>依消費者要求所為之客製化給付</strong> (如專屬選品/預購) 可排除 7 日解除權。
+      因此,預購/選品商品<strong>不提供任何「個人因素」</strong> (如尺寸不合、穿起來不適合、กับ想像不同) 的退換貨服務。</p>
+
+      <h3>受理退換貨條件</h3>
+      <p>退換貨僅限於以下兩種情況:</p>
+      <ul>
+        <li><strong>寄錯商品</strong> — 款式、顏色或尺寸กับ您訂單上所載明的不符。</li>
+        <li><strong>重大瑕疵</strong> — 嚴重影響穿著或缺少แอคเซสซอรี่。例如:超過 3cm 的大範圍無法清洗污漬、明顯破洞、鞋底膠合破裂等。</li>
+      </ul>
+
+      <h3>非瑕疵範圍定義</h3>
+      <p>服飾กับ鞋款於工廠大量製造過程中,難免有做工問題。以下情況屬正常做工範圍,<strong>不列入重大瑕疵且無法退換</strong>:</p>
+      <ul>
+        <li>極小脫線、線頭外露、輕微車線偏移。</li>
+        <li>極小污點 (3cm 以內)、鞋款輕微溢膠。</li>
+        <li>商品本身因染劑或布料產生的氣味。</li>
+        <li>因海關抽驗規定,少部分商品吊牌可能被拆除,但我們保證皆為全新正品。</li>
+      </ul>
+
+      <h3>退換貨必備流程 — 開箱錄影</h3>
+      <div class="warn">
+        為保障雙方權益,<strong>未提供「一鏡到底開箱影片」將不受理任何退換貨申請</strong>!
+      </div>
+      <ul>
+        <li>請於收到包裹 <strong>5 天內</strong> 檢查商品。</li>
+        <li>若發現重大問題,請準備好「<strong>包裹未拆封狀態至取出商品檢查</strong>」的完整錄影檔กับ照片,聯繫官方客服 (LINE ID: <span class="lineid">@463fdlew</span>)。</li>
+        <li>經客服判定符合退換貨資格後,請確保商品保持<strong>全新未拆狀態</strong> (包含แอคเซสซอรี่、吊牌未剪、無下水、無沾染香水或煙味),我們將盡速為您處理。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ POLICY PAGE: 隱私權政策 ============ -->
+<div id="page-policy-privacy" class="page hidden policy-page">
+  <div class="policy-container">
+    <button class="policy-back-btn" onclick="goBack('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span data-en="BACK" data-th="กลับ">กลับ</span>
+    </button>
+    <p class="policy-eyebrow">PRIVACY POLICY</p>
+    <h1 class="policy-title" data-en="Privacy Policy" data-th="นโยบายความเป็นส่วนตัว">นโยบายความเป็นส่วนตัว</h1>
+    <div class="policy-body">
+      <p>非常歡迎您光臨「NEON LOTUS」(以下簡稱本網站),為了讓您能夠安心的使用本網站的各項服務กับ資訊,特此向您說明本網站的隱私權保護政策,以保障您的權益,請您詳閱下列內容:</p>
+
+      <h3>一、隱私權保護政策的適用範圍</h3>
+      <p>隱私權保護政策內容,包括本網站如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本網站以外的相關連結網站,也不適用於非本網站所委託或參กับ管理的人員。</p>
+
+      <h3>二、個人資料的蒐集、處理及利用方式</h3>
+      <p>當您造訪本網站或使用本網站所提供之功能服務時,我們將視該服務功能性質,請您提供必要的個人資料,並在該特定目的範圍內處理及利用您的個人資料;<strong>非經您書面同意,本網站不會將個人資料用於其他用途</strong>。</p>
+      <p>本網站在您使用服務信箱、問卷調查等互動性功能時,會保留您所提供的姓名、電子郵件地址、聯絡方式及使用時間等。</p>
+      <p>於一般瀏覽時,伺服器會自行記錄相關行徑,包括您使用連線設備的 IP 位址、使用時間、使用的瀏覽器、瀏覽及點選資料記錄等,做為我們增進網站服務的參考依據,此記錄為內部應用,決不對外公佈。</p>
+      <p>為提供精確的服務,我們會將收集的問卷調查內容進行統計กับ分析,分析結果之統計數據或說明文字呈現,除供內部研究外,我們會視需要公佈統計數據及說明文字,但不涉及特定個人之資料。</p>
+      <p>您可以隨時向我們提出請求,以更正或刪除您的帳戶或本網站所蒐集的個人資料等隱私資訊。聯繫方式請見最下方<strong>聯繫管道</strong>。</p>
+
+      <h3>三、資料之保護</h3>
+      <p>本網站主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施,加以保護網站及您的個人資料採用嚴格的保護措施,只由經過授權的人員才能接觸您的個人資料,相關處理人員皆簽有保密合約,如有違反保密義務者,將會受到相關的法律處分。</p>
+      <p>如因業務需要有必要委託其他單位提供服務時,本網站亦會嚴格要求其遵守保密義務,並且採取必要檢查程序以確定其將確實遵守。</p>
+
+      <h3>四、網站對外的相關連結</h3>
+      <p>本網站的網頁提供其他網站的網路連結,您也可經由本網站所提供的連結,點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策,您必須參考該連結網站中的隱私權保護政策。</p>
+
+      <h3>五、กับ第三人共用個人資料之政策</h3>
+      <p>本網站絕不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關,但有法律依據或合約義務者,不在此限。</p>
+      <p>前項但書之情形包括不限於:</p>
+      <ul>
+        <li>經由您書面同意。</li>
+        <li>法律明文規定。</li>
+        <li>為免除您生命、身體、自由或財產上之危險。</li>
+        <li>กับ公務機關或學術研究機構合作,基於公共利益為統計或學術研究而有必要,且資料經過提供者處理或蒐集者依其揭露方式無從識別特定之當事人。</li>
+        <li>當您在網站的行為,違反服務條款或可能損害或妨礙網站กับ其他使用者權益或導致任何人遭受損害時,經網站管理單位研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。</li>
+        <li>有利於您的權益。</li>
+      </ul>
+      <p>本網站委託廠商協助蒐集、處理或利用您的個人資料時,將對委外廠商或個人善盡監督管理之責。</p>
+
+      <h3>六、Cookie 之使用</h3>
+      <p>為了提供您最佳的服務,本網站會在您的電腦中放置並取用我們的 Cookie,若您不願接受 Cookie 的寫入,您可在您使用的瀏覽器功能項中設定隱私權等級為高,即可拒絕 Cookie 的寫入,但可能會導致網站某些功能無法正常執行。</p>
+
+      <h3>七、隱私權保護政策之修正</h3>
+      <p>本網站隱私權保護政策將因應需求隨時進行修正,修正後的條款將刊登於網站上。</p>
+
+      <h3>八、聯繫管道</h3>
+      <p>對於本站之隱私權政策有任何疑問,或者想提出變更、移除個人資料之請求,請前往本站「<strong>聯絡我們</strong>」頁面提交表單,或透過 LINE ID: <span class="lineid">@463fdlew</span> 聯繫官方客服。</p>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════ LIGHTBOX ═══════════════ -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <button id="lb-close" aria-label="Close">&times;</button>
@@ -1326,9 +3181,22 @@
   <div id="lb-dots"></div>
 </div>
 
-<!-- data.js embeds brands_products.json as window.BRANDS_DATA — works with file:// -->
-<script src="data.js"></script>
+<!-- Supabase JS SDK (CDN) — used by supabase-client.js to fetch data in real-time -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<!-- data-overlay.js / loader: 攔截 window.BRANDS_DATA 賦值, merge 額外品牌กับ size_chart -->
+<!-- 必須在 supabase-client.js 之前 -->
+<script src="data-overlay.js?v=25"></script>
+<script src="data-overlay-loader.js?v=18"></script>
+<!-- supabase-client.js: fetches data from Supabase and sets window.BRANDS_DATA -->
+<script src="supabase-client.js?v=7"></script>
+<!-- cart.js: e-commerce cart + checkout system -->
+<script src="cart.js?v=2"></script>
+<!-- sizechart.js: 尺寸表 modal (越南文翻譯後的中文資料) -->
+<script src="sizechart.js?v=4"></script>
+<!-- shopping-guide.js: 客戶服務 modal (購買須知/運送/退換貨) -->
+<script src="shopping-guide.js?v=2"></script>
 <!-- main.js: full app logic — uses window.BRANDS_DATA if available, else fetch() -->
-<script src="main.js?v=23" defer></script>
+<script src="scripts/outfit-builder.js"></script>
+    <script src="main.js?v=54" defer></script>
 </body>
 </html>

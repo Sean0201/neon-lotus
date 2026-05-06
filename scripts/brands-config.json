@@ -1,0 +1,43 @@
+{
+  "brands": [
+    {
+      "id": "23sptmbr",
+      "name": "23'SPTMBR",
+      "style": "Vietnamese Streetwear",
+      "color_hex": "#0a0a0f",
+      "meta": {
+        "website": "https://23sptmbr.vn",
+        "location": "Vietnam"
+      },
+      "platform": "haravan",
+      "collection_url": "https://23sptmbr.vn/collections/all",
+      "enabled": true
+    },
+    {
+      "id": "aastu",
+      "name": "AASTU",
+      "style": "Vietnamese Streetwear",
+      "color_hex": "#1a1a2e",
+      "meta": {
+        "website": "https://aastu.vn",
+        "location": "Vietnam"
+      },
+      "platform": "haravan",
+      "collection_url": "https://aastu.vn/collections/all-products",
+      "enabled": true
+    },
+    {
+      "id": "aesir",
+      "name": "AESIR STUDIOS",
+      "style": "Streetwear",
+      "color_hex": "#15151f",
+      "meta": {
+        "website": "https://aesir-studios.com",
+        "location": "Vietnam"
+      },
+      "platform": "woocommerce",
+      "collection_url": "https://aesir-studios.com/product-category/men/",
+      "enabled": false
+    }
+  ]
+}

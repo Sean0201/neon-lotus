@@ -1,0 +1,3617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>NEON LOTUS TW - Admin Panel</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --bg-tertiary: #0f3460;
+            --accent: #0f3460;
+            --accent-hover: #16213e;
+            --danger: #e94560;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --border: #2a2a3e;
+            --input-bg: #0a0a1a;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Login Page */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .login-card {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid var(--border);
+        }
+
+        .login-card h1 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+        }
+
+        .login-card .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #e94560, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="url"],
+        input[type="color"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        input[type="url"]:focus,
+        input[type="color"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.2);
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: var(--text-primary);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button.btn-primary {
+            background-color: var(--accent);
+        }
+
+        button.btn-danger {
+            background-color: var(--danger);
+        }
+
+        button.btn-danger:hover {
+            background-color: #d63447;
+        }
+
+        button.btn-success {
+            background-color: var(--success);
+        }
+
+        button.btn-success:hover {
+            background-color: #27ae60;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 0.875rem;
+            margin-top: 1rem;
+            background-color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .btn-login:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Main Layout */
+        .app-container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .sidebar-logo {
+            font-weight: bold;
+            font-size: 1.35rem;
+            letter-spacing: 0.02em;
+            /* 紫色漸層,跟 admin1 的 Neon Lotus 一致 */
+            background: linear-gradient(135deg, #c084fc, #a855f7, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .nav-menu {
+            flex: 1;
+            padding: 1rem 0;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            border-left-color: var(--accent);
+        }
+
+        .nav-icon {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .logout-btn {
+            width: 100%;
+            background-color: transparent;
+            color: var(--danger);
+            border: 1px solid var(--danger);
+            padding: 0.625rem;
+        }
+
+        .logout-btn:hover {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+        }
+
+        .header-info {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        /* Dashboard */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .stat-card .subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Table Styles */
+        .table-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow-x: auto;          /* 表格比容器寬時允許水平捲動,避免 Actions 欄被切掉 */
+            overflow-y: hidden;        /* 垂直維持隱藏以保留圓角外觀 */
+            box-shadow: var(--shadow);
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .table-header h2 {
+            font-size: 1.3rem;
+        }
+
+        .table-controls {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            width: 200px;
+        }
+
+        .filter-select {
+            width: auto;
+            min-width: 150px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        tr:hover {
+            background-color: var(--bg-tertiary);
+        }
+
+        tr.dragging {
+            opacity: 0.5;
+            background-color: var(--accent);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* ── 直排操作鈕 (admin1 風格) ── */
+        .table-actions-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            align-items: center;
+        }
+        .table-actions-vertical .btn-link {
+            background: transparent;
+            border: none;
+            padding: 2px 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .table-actions-vertical .btn-link.edit  { color: #60a5fa; }
+        .table-actions-vertical .btn-link.del   { color: #f87171; }
+        .table-actions-vertical .btn-link:hover { text-decoration: underline; }
+
+        /* ── 表格內縮圖 (品牌首圖 / 商品封面) ── */
+        .table-thumb {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            display: block;
+        }
+        .table-thumb-empty {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px dashed var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+        }
+
+        /* ── 色塊 swatch (品牌主色預覽) ── */
+        .color-swatch {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            display: inline-block;
+        }
+
+        /* ── monospace ID (品牌/商品識別碼) ── */
+        .mono-id {
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        /* ── 狀態 badge (待審/已售完/上架中) ── */
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .status-badge.review   { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .status-badge.soldout  { background: rgba(248,113,113,0.15); color: #f87171; }
+        .status-badge.active   { background: rgba(74,222,128,0.15);  color: #4ade80; }
+        .status-badge.inactive { background: rgba(148,163,184,0.15); color: #94a3b8; }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-icon {
+            padding: 0.5rem 0.75rem;
+            background-color: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .btn-icon:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        .btn-icon.delete:hover {
+            background-color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            opacity: 1;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            overflow: hidden;
+        }
+
+        .modal form {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.3rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .modal-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            flex-shrink: 0;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Dynamic List (Sizes, Gallery) */
+        .dynamic-list {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1rem;
+            background-color: var(--input-bg);
+        }
+
+        .list-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding: 0.75rem;
+            background-color: var(--bg-tertiary);
+            border-radius: 4px;
+            align-items: center;
+        }
+
+        .list-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .list-item input {
+            flex: 1;
+        }
+
+        .list-item label {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .list-item input[type="checkbox"] {
+            width: auto;
+        }
+
+        .btn-add-item {
+            margin-top: 0.75rem;
+            width: 100%;
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px dashed var(--border);
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+
+        .toggle-switch > .slider {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            min-width: 50px;
+            height: 26px;
+            background-color: var(--border);
+            border-radius: 26px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .toggle-switch > .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        .toggle-switch > input:checked + .slider {
+            background-color: var(--success);
+        }
+
+        .toggle-switch > input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border);
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--success);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .toast {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1rem 1.5rem;
+            box-shadow: var(--shadow);
+            animation: slideInRight 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 300px;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .toast.success {
+            border-left: 4px solid var(--success);
+        }
+
+        .toast.error {
+            border-left: 4px solid var(--danger);
+        }
+
+        .toast.warning {
+            border-left: 4px solid var(--warning);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Checkbox */
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+
+        /* Image Preview */
+        .image-preview {
+            width: 100px;
+            height: 100px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            object-fit: cover;
+            background-color: var(--input-bg);
+        }
+
+        /* File Upload */
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .batch-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .batch-info {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-menu {
+                display: flex;
+                overflow-x: auto;
+                padding: 0;
+            }
+
+            .nav-item {
+                flex-shrink: 0;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+                padding: 0.75rem 1rem;
+            }
+
+            .nav-item.active {
+                border-left: none;
+                border-bottom-color: var(--accent);
+            }
+
+            .main-content {
+                height: auto;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            .table-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .table-controls {
+                width: 100%;
+            }
+
+            .modal {
+                max-width: 95%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .toast-container {
+                top: 1rem;
+                right: 1rem;
+                left: 1rem;
+            }
+
+            .toast {
+                min-width: auto;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo">🌸 NEON LOTUS</div>
+                <h1>Admin Panel</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="admin@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn-login">Sign In</button>
+                    <div id="loginError" style="color: var(--danger); margin-top: 1rem; text-align: center; font-size: 0.9rem;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="appPage" class="page">
+        <div class="app-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo">🌸 Neon Lotus</div>
+                    <div class="sidebar-subtitle">Admin Panel</div>
+                </div>
+                <nav class="nav-menu">
+                    <div class="nav-item active" data-page="dashboard">
+                        <span class="nav-icon">📊</span>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="nav-item" data-page="brands">
+                        <span class="nav-icon">🏷️</span>
+                        <span>Brand Management</span>
+                    </div>
+                    <div class="nav-item" data-page="products">
+                        <span class="nav-icon">👕</span>
+                        <span>Product Management</span>
+                    </div>
+                    <div class="nav-item" data-page="banners">
+                        <span class="nav-icon">🖼️</span>
+                        <span>Banner 管理</span>
+                    </div>
+                    <div class="nav-item" data-page="featured">
+                        <span class="nav-icon">★</span>
+                        <span>本週精選</span>
+                    </div>
+                    <div class="nav-item" data-page="orders">
+                        <span class="nav-icon">🛒</span>
+                        <span>Order Management</span>
+                    </div>
+                    <div class="nav-item" data-page="settings">
+                        <span class="nav-icon">⚙️</span>
+                        <span>SEO 設定</span>
+                    </div>
+                    <div class="nav-item" data-page="deploy">
+                        <span class="nav-icon">🚀</span>
+                        <span>發布部署</span>
+                    </div>
+                </nav>
+                <div class="sidebar-footer">
+                    <button id="logoutBtn" class="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <header class="header">
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <div class="header-info">
+                        <div id="userEmail"></div>
+                    </div>
+                </header>
+
+                <div class="content">
+                    <!-- Dashboard Page -->
+                    <div id="dashboard" class="page active">
+                        <div class="dashboard-grid">
+                            <div class="stat-card">
+                                <h3>Total Brands</h3>
+                                <div class="value" id="totalBrands">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Total Products</h3>
+                                <div class="value" id="totalProducts">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Active Products</h3>
+                                <div class="value" id="activeProducts">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Sold Out</h3>
+                                <div class="value" id="soldOutProducts">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Total Orders</h3>
+                                <div class="value" id="totalOrders">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Pending Orders</h3>
+                                <div class="value" id="pendingOrders" style="color:#ffa726;">0</div>
+                            </div>
+                        </div>
+
+                        <div class="table-container">
+                            <div class="table-header">
+                                <h2>Recent Updates</h2>
+                            </div>
+                            <table id="recentTable">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Brand</th>
+                                        <th>Updated</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Brands Page -->
+                    <div id="brands" class="page">
+                        <div class="table-container">
+                            <div class="table-header">
+                                <h2>Brand Management</h2>
+                                <div class="table-controls">
+                                    <input type="text" class="search-input" id="brandsSearch" placeholder="搜尋品牌...">
+                                    <button id="addBrandBtn" class="btn-primary">+ 新增品牌</button>
+                                </div>
+                            </div>
+                            <table id="brandsTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 4%;">⋮</th>
+                                        <th style="width: 100px;">首圖</th>
+                                        <th style="width: 60px;">色塊</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>風格</th>
+                                        <th>分類</th>
+                                        <th style="width: 80px; text-align: center;">商品數</th>
+                                        <th style="width: 60px; text-align: center;">Sort</th>
+                                        <th style="width: 80px; white-space: nowrap;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="brandsTableBody" draggable="true">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Products Page -->
+                    <div id="products" class="page">
+                        <div class="table-container">
+                            <div class="table-header">
+                                <h2>Product Management</h2>
+                                <div class="table-controls">
+                                    <input type="text" class="search-input" id="productsSearch" placeholder="搜尋商品名稱…">
+                                    <select class="filter-select" id="brandFilter">
+                                        <option value="">所有品牌</option>
+                                    </select>
+                                    <select class="filter-select" id="categoryFilter">
+                                        <option value="">所有分類</option>
+                                    </select>
+                                    <div id="batchActionsContainer" class="batch-actions" style="display: none;">
+                                        <span class="batch-info" id="batchInfo"></span>
+                                        <select id="batchActionSelect">
+                                            <option value="">批次操作</option>
+                                            <option value="activate">啟用</option>
+                                            <option value="deactivate">停用</option>
+                                            <option value="sold-out">標記為已售完</option>
+                                            <option value="clear-sold">取消已售完</option>
+                                            <option value="delete">刪除所選</option>
+                                        </select>
+                                        <button id="batchApplyBtn" class="btn-small">套用</button>
+                                    </div>
+                                    <button id="addProductBtn" class="btn-primary">+ 新增商品</button>
+                                </div>
+                            </div>
+                            <table id="productsTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 32px;"><input type="checkbox" id="selectAllCheckbox"></th>
+                                        <th style="width: 32px;">⋮</th>
+                                        <th style="width: 80px;">Cover</th>
+                                        <th style="width: 200px;">ID</th>
+                                        <th>Name</th>
+                                        <th>Brands</th>
+                                        <th>分類</th>
+                                        <th style="width: 110px;">VND</th>
+                                        <th style="width: 90px;">Status</th>
+                                        <th style="width: 60px; text-align:center;">Sort</th>
+                                        <th style="width: 80px; white-space: nowrap;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody" draggable="true">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Banners Page -->
+                    <div id="banners" class="page">
+                        <div class="table-container">
+                            <div class="table-header">
+                                <h2>Banners</h2>
+                                <div class="table-controls">
+                                    <button id="addBannerBtn" class="btn-primary">+ Add Banner</button>
+                                </div>
+                            </div>
+                            <table id="bannersTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%;">⋮</th>
+                                        <th style="width: 8%;">Desktop</th>
+                                        <th style="width: 8%;">Mobile</th>
+                                        <th>Title</th>
+                                        <th>Subtitle</th>
+                                        <th>Active</th>
+                                        <th>Order</th>
+                                        <th style="width: 10%;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bannersTableBody" draggable="true">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Featured Products Page -->
+                    <div id="featured" class="page">
+                        <div class="table-container">
+                            <div class="table-header">
+                                <h2>Featured Products</h2>
+                                <div class="table-controls">
+                                    <button id="addFeaturedBtn" class="btn-primary">+ Add Featured</button>
+                                </div>
+                            </div>
+                            <table id="featuredTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%;">⋮</th>
+                                        <th style="width: 8%;">Cover</th>
+                                        <th>Brand</th>
+                                        <th>Product</th>
+                                        <th style="width: 10%;">CARRY-BACK</th>
+                                        <th style="width: 10%;">SHIPPING</th>
+                                        <th>Active</th>
+                                        <th>Order</th>
+                                        <th style="width: 110px; white-space: nowrap;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="featuredTableBody" draggable="true">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Orders Page -->
+                    <div id="orders" class="page">
+                        <div class="table-container">
+                            <div class="table-header">
+                                <h2>Orders</h2>
+                                <div style="display:flex;gap:8px;align-items:center;">
+                                    <select id="orderStatusFilter" style="padding:6px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;">
+                                        <option value="all">All Status</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="confirmed">Confirmed</option>
+                                        <option value="shipped">Shipped</option>
+                                        <option value="delivered">Delivered</option>
+                                        <option value="cancelled">Cancelled</option>
+                                    </select>
+                                    <button class="btn-secondary" onclick="loadOrders()">Refresh</button>
+                                </div>
+                            </div>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order #</th>
+                                        <th>Date</th>
+                                        <th>Customer</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordersTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Order Detail Modal -->
+                    <div id="orderDetailModal" class="modal-overlay" style="display:none;">
+                        <div class="modal" style="max-width:700px;">
+                            <div class="modal-header">
+                                <h2 id="orderDetailTitle">Order Detail</h2>
+                                <button class="modal-close" onclick="closeOrderDetail()">×</button>
+                            </div>
+                            <div class="modal-body" id="orderDetailBody" style="padding:1.5rem;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Page -->
+                    <div id="settings" class="page">
+                        <div class="table-container">
+                            <div class="table-header">
+                                <h2>SEO & Settings</h2>
+                            </div>
+                            <div style="padding: 1.5rem;">
+                                <!-- Homepage SEO -->
+                                <div style="margin-bottom: 2rem;">
+                                    <h3 style="margin-bottom: 1rem;">Homepage SEO</h3>
+                                    <div class="form-group full">
+                                        <label>Title (English)</label>
+                                        <input type="text" id="seoTitleEn" placeholder="Enter English title">
+                                    </div>
+                                    <div class="form-group full">
+                                        <label>Title (Thai)</label>
+                                        <input type="text" id="seoTitleTh" placeholder="Enter Thai title">
+                                    </div>
+                                    <div class="form-group full">
+                                        <label>Description (English)</label>
+                                        <textarea id="seoDescEn" placeholder="Enter English description"></textarea>
+                                    </div>
+                                    <div class="form-group full">
+                                        <label>Description (Thai)</label>
+                                        <textarea id="seoDescTh" placeholder="Enter Thai description"></textarea>
+                                    </div>
+                                    <button id="saveSeoBtn" class="btn-primary">Save SEO</button>
+                                </div>
+
+                                <!-- Homepage Hero -->
+                                <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0;">
+                                <div style="margin-bottom: 2rem;">
+                                    <h3 style="margin-bottom: 1rem;">Homepage Hero</h3>
+                                    <div class="form-group full">
+                                        <label>Hero Title</label>
+                                        <input type="text" id="heroTitle" placeholder="Enter hero title">
+                                    </div>
+                                    <div class="form-group full">
+                                        <label>Hero Subtitle (English)</label>
+                                        <input type="text" id="heroSubtitleEn" placeholder="Enter English subtitle">
+                                    </div>
+                                    <div class="form-group full">
+                                        <label>Hero Subtitle (Thai)</label>
+                                        <input type="text" id="heroSubtitleTh" placeholder="Enter Thai subtitle">
+                                    </div>
+                                    <button id="saveHeroBtn" class="btn-primary">Save Hero</button>
+                                </div>
+
+                                <!-- OG Image -->
+                                <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0;">
+                                <div>
+                                    <h3 style="margin-bottom: 1rem;">Default OG Image & Favicon</h3>
+                                    <div class="form-group full">
+                                        <label>OG Image URL</label>
+                                        <input type="url" id="ogImageUrl" placeholder="https://...">
+                                    </div>
+                                    <div class="form-group full">
+                                        <label>Favicon URL</label>
+                                        <input type="url" id="faviconUrl" placeholder="https://...">
+                                    </div>
+                                    <button id="saveImageSettingsBtn" class="btn-primary">Save Images</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deploy Page -->
+                    <div id="deploy" class="page">
+                        <div class="table-container" style="padding: 1.5rem;">
+                            <div class="table-header" style="border:none; padding:0 0 1rem;">
+                                <h2>發布部署</h2>
+                            </div>
+
+                            <!-- 說明卡 -->
+                            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;">
+                                <h3 style="margin: 0 0 0.5rem; font-size: 1rem;">部署說明</h3>
+                                <p style="margin: 0; color: var(--text-secondary); line-height: 1.6; font-size: 0.85rem;">
+                                    平常在 admin 修改品牌、商品、Banner、本週精選後,前端會在 5 分鐘內自動更新(走快取重新整理)。
+                                    若需要<b style="color:var(--text);">立刻</b>讓 Vercel 重新建置部署,可在這裡按下方按鈕觸發 deploy hook。
+                                    第一次使用前,請先在 Vercel 專案設定 → Git → Deploy Hooks 建立一個 hook 並把 URL 貼進下面欄位。
+                                </p>
+                            </div>
+
+                            <!-- Deploy hook 設定 -->
+                            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;">
+                                <h3 style="margin: 0 0 1rem; font-size: 1rem;">🔧 Deploy Hook 設定</h3>
+                                <div class="form-group full">
+                                    <label for="deployHookTw">中文站 Deploy Hook URL</label>
+                                    <input type="url" id="deployHookTw" placeholder="https://api.vercel.com/v1/integrations/deploy/...">
+                                </div>
+                                <div class="form-group full">
+                                    <label for="deployHookTh">泰文站 Deploy Hook URL(若有)</label>
+                                    <input type="url" id="deployHookTh" placeholder="https://api.vercel.com/v1/integrations/deploy/...">
+                                </div>
+                                <button id="saveDeployHooksBtn" class="btn-primary">儲存 Hook URL</button>
+                            </div>
+
+                            <!-- 部署按鈕 -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem;">
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 1rem;">🇹🇼 中文站</h3>
+                                    <p style="margin: 0 0 1rem; color: var(--text-secondary); font-size: 0.8rem;">部署到中文版 Vercel 專案</p>
+                                    <button id="deployTwBtn" class="btn-primary" style="width: 100%; background: #3b82f6;" disabled>部署中文站</button>
+                                    <div id="deployTwStatus" style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-secondary);"></div>
+                                </div>
+                                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem;">
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 1rem;">🇹🇭 泰文站</h3>
+                                    <p style="margin: 0 0 1rem; color: var(--text-secondary); font-size: 0.8rem;">部署到泰文版 Vercel 專案</p>
+                                    <button id="deployThBtn" class="btn-primary" style="width: 100%; background: #22c55e;" disabled>部署泰文站</button>
+                                    <div id="deployThStatus" style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-secondary);"></div>
+                                </div>
+                            </div>
+
+                            <button id="deployAllBtn" class="btn-primary" style="width: 100%; background: linear-gradient(135deg, #a855f7, #8b5cf6); padding: 1rem; font-size: 1rem;" disabled>🚀 一鍵部署全部站點</button>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Brand Modal -->
+    <div id="brandModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="brandModalTitle">新增品牌</h2>
+                <button class="modal-close" onclick="closeBrandModal()">×</button>
+            </div>
+            <form id="brandForm">
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="brandId">品牌 ID(英文小寫)*</label>
+                            <input type="text" id="brandId" required placeholder="e.g. blish">
+                        </div>
+                        <div class="form-group">
+                            <label for="brandName">品牌名稱 *</label>
+                            <input type="text" id="brandName" required placeholder="e.g. BLISH">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="brandStyle">風格</label>
+                            <input type="text" id="brandStyle" placeholder="e.g. Futurism / Gorpcore">
+                        </div>
+                        <div class="form-group">
+                            <label>品牌主色 (HEX)</label>
+                            <div style="display:flex; gap:0.5rem; align-items:center;">
+                                <input type="color" id="brandColor" value="#0a0a1a" style="width:50px; height:40px; padding:2px;">
+                                <input type="text" id="brandColorHex" value="#0a0a1a" placeholder="#0a0a1a" style="flex:1; font-family:ui-monospace, monospace;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="brandCategory">分類</label>
+                            <input type="text" id="brandCategory" placeholder="e.g. Contemporary">
+                        </div>
+                        <div class="form-group">
+                            <label for="brandWebsite">官網</label>
+                            <input type="url" id="brandWebsite" placeholder="https://...">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="brandLocation">地點</label>
+                            <input type="text" id="brandLocation" placeholder="e.g. Hanoi, Vietnam">
+                        </div>
+                        <div class="form-group">
+                            <label for="brandFounded">成立年份</label>
+                            <input type="text" id="brandFounded" placeholder="e.g. 2020">
+                        </div>
+                    </div>
+
+                    <!-- 圖片區: 首圖 + Logo -->
+                    <hr style="border:none; border-top:1px solid var(--border); margin: 1.5rem 0 1rem;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>品牌首圖(卡片背景圖)</label>
+                            <div style="display:flex; gap:1rem; align-items:flex-start;">
+                                <div style="flex:1;">
+                                    <input type="text" id="brandCoverUrl" placeholder="或貼上圖片 URL">
+                                    <div style="margin-top:0.5rem;">
+                                        <input type="file" id="brandCoverFile" accept="image/*" style="display:none;">
+                                        <button type="button" class="btn-small" onclick="document.getElementById('brandCoverFile').click()">上傳首圖</button>
+                                        <span id="brandCoverHint" style="font-size:0.75rem; color:#f59e0b; margin-left:0.5rem;">請先填寫品牌 ID</span>
+                                    </div>
+                                </div>
+                                <img id="brandCoverPreview" class="image-preview" style="display:none;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>品牌 Logo(卡片中央 Logo)</label>
+                            <div style="display:flex; gap:1rem; align-items:flex-start;">
+                                <div style="flex:1;">
+                                    <input type="text" id="brandLogoUrl" placeholder="或貼上 Logo URL">
+                                    <div style="margin-top:0.5rem;">
+                                        <input type="file" id="brandLogoFile" accept="image/*" style="display:none;">
+                                        <button type="button" class="btn-small" onclick="document.getElementById('brandLogoFile').click()">上傳 Logo</button>
+                                        <span id="brandLogoHint" style="font-size:0.75rem; color:#f59e0b; margin-left:0.5rem;">請先填寫品牌 ID</span>
+                                    </div>
+                                </div>
+                                <img id="brandLogoPreview" class="image-preview" style="display:none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="brandSortOrder">Sort</label>
+                            <input type="number" id="brandSortOrder" value="0">
+                        </div>
+                    </div>
+
+                    <hr style="border:none; border-top:1px solid var(--border); margin: 1.5rem 0 1rem;">
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="brandDescZh">描述(中文)</label>
+                            <textarea id="brandDescZh"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="brandDescEn">描述(英文)</label>
+                            <textarea id="brandDescEn"></textarea>
+                        </div>
+                    </div>
+                    <!-- 泰文描述留給另一個站處理,這裡的 admin 不顯示 -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="closeBrandModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">儲存品牌</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="productModalTitle">新增商品</h2>
+                <button class="modal-close" onclick="closeProductModal()">×</button>
+            </div>
+            <form id="productForm">
+                <div class="modal-body">
+                    <!-- 基本資訊 -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productBrand">品牌 *</label>
+                            <select id="productBrand" required>
+                                <option value="">選擇品牌</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">商品名稱 *</label>
+                            <input type="text" id="productName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productId">商品 ID(自動產生或手動輸入)*</label>
+                            <input type="text" id="productId" required placeholder="留空自動產生">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productTag">Tag</label>
+                            <input type="text" id="productTag" placeholder="選擇">
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">Category</label>
+                            <input type="text" id="productCategory" placeholder="選擇">
+                        </div>
+                        <div class="form-group">
+                            <label for="productSeason">Season</label>
+                            <input type="text" id="productSeason" placeholder="e.g. SS26">
+                        </div>
+                    </div>
+
+                    <!-- 價格 -->
+                    <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">Price</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productPriceVnd">VND 原價</label>
+                            <input type="number" id="productPriceVnd">
+                        </div>
+                        <div class="form-group">
+                            <label for="productPriceVndEst">VND 預估價</label>
+                            <input type="number" id="productPriceVndEst">
+                        </div>
+                        <div class="form-group">
+                            <label for="productPriceThbShip">THB(含運)</label>
+                            <input type="number" id="productPriceThbShip">
+                        </div>
+                        <div class="form-group">
+                            <label for="productPriceThbCarry">THB(自取)</label>
+                            <input type="number" id="productPriceThbCarry">
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="productPriceNote">價格備註</label>
+                            <textarea id="productPriceNote" style="min-height: 60px;"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 圖片 -->
+                    <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">Image</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productCoverUrl">封面圖路徑</label>
+                            <input type="text" id="productCoverUrl" placeholder="images/products/brand/product-id/cover.jpg">
+                            <div style="margin-top: 0.5rem;">
+                                <input type="file" id="productCoverFile" accept="image/*" style="display: none;">
+                                <button type="button" class="btn-small" onclick="document.getElementById('productCoverFile').click()">上傳封面</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="productOriginalCoverUrl">原始封面 URL</label>
+                            <input type="text" id="productOriginalCoverUrl" placeholder="https://...">
+                            <img id="productCoverPreview" class="image-preview" style="display: none; margin-top: 0.5rem; max-width: 120px;">
+                        </div>
+                    </div>
+
+                    <!-- 多語描述 (中文 / 英文) — 泰文留給另一個站處理 -->
+                    <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">商品描述(中文 / 英文)</h3>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="productDescZh">描述(中文)</label>
+                            <textarea id="productDescZh" placeholder="商品介紹、材質、設計理念…"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="productDescEn">Description (English)</label>
+                            <textarea id="productDescEn" placeholder="Product description, materials, design notes…"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 尺寸 -->
+                    <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">Size</h3>
+                    <div class="dynamic-list" id="sizesList">
+                    </div>
+                    <button type="button" class="btn-add-item" onclick="addSizeField()">+ 新增尺寸</button>
+
+                    <!-- 相簿 -->
+                    <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">相簿</h3>
+                    <div class="dynamic-list" id="galleryList">
+                    </div>
+                    <button type="button" class="btn-add-item" onclick="addGalleryField()">+ 新增相片</button>
+
+                    <!-- 狀態 -->
+                    <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+                    <h3 style="margin-bottom: 1rem;">Status</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="productActive" checked>
+                                <span class="slider"></span>
+                                上架中
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="productSoldOut">
+                                <span class="slider"></span>
+                                已售完
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="productNeedsReview">
+                                <span class="slider"></span>
+                                Needs Review
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productSortOrder">Sort Order</label>
+                            <input type="number" id="productSortOrder" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="closeProductModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">儲存商品</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Banner Modal -->
+    <div id="bannerModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="bannerModalTitle">Add Banner</h2>
+                <button class="modal-close" onclick="closeBannerModal()">×</button>
+            </div>
+            <form id="bannerForm">
+                <div class="modal-body">
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="bannerTitle">Title</label>
+                            <input type="text" id="bannerTitle">
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="bannerSubtitle">Subtitle</label>
+                            <input type="text" id="bannerSubtitle">
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label>Desktop Banner (21:9 橫式，建議 2100×900)</label>
+                            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <input type="text" id="bannerImageUrl" placeholder="Image URL or upload below">
+                                    <div style="margin-top: 0.5rem;">
+                                        <input type="file" id="bannerImageFile" accept="image/*" style="display: none;">
+                                        <button type="button" class="btn-small" onclick="document.getElementById('bannerImageFile').click()">Upload Desktop Image</button>
+                                    </div>
+                                </div>
+                                <img id="bannerImagePreview" class="image-preview" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label>Mobile Banner (9:16 直式，建議 1080×1920)</label>
+                            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <input type="text" id="bannerMobileImageUrl" placeholder="Mobile image URL or upload below (留空則使用桌面版)">
+                                    <div style="margin-top: 0.5rem;">
+                                        <input type="file" id="bannerMobileImageFile" accept="image/*" style="display: none;">
+                                        <button type="button" class="btn-small" onclick="document.getElementById('bannerMobileImageFile').click()">Upload Mobile Image</button>
+                                    </div>
+                                </div>
+                                <img id="bannerMobileImagePreview" class="image-preview" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="bannerBrandId">連結品牌 (點擊 Banner 進入該品牌頁)</label>
+                            <select id="bannerBrandId" style="width:100%;padding:8px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:14px;">
+                                <option value="">— 不連結 —</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="bannerLink">或自訂連結 URL (留空則使用上方品牌)</label>
+                            <input type="url" id="bannerLink" placeholder="https://...">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="bannerActive" checked>
+                                <span class="slider"></span>
+                                Active
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="bannerSortOrder">Sort Order</label>
+                            <input type="number" id="bannerSortOrder" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="closeBannerModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Banner</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Featured Modal -->
+    <div id="featuredModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="featuredModalTitle">Add Featured</h2>
+                <button class="modal-close" onclick="closeFeaturedModal()">×</button>
+            </div>
+            <form id="featuredForm">
+                <div class="modal-body">
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="featuredBrandId">Brand</label>
+                            <select id="featuredBrandId" required style="width:100%;padding:8px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:14px;">
+                                <option value="">— 選擇品牌 —</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label for="featuredProductId">Product</label>
+                            <select id="featuredProductId" required disabled style="width:100%;padding:8px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:14px;">
+                                <option value="">— 先選擇品牌 —</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group full">
+                            <label>Preview</label>
+                            <div id="featuredPreview" style="display:flex;gap:1rem;align-items:flex-start;padding:0.75rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;min-height:80px;">
+                                <img id="featuredPreviewImg" class="image-preview" style="display:none;width:100px;height:100px;object-fit:cover;border-radius:4px;">
+                                <div id="featuredPreviewMeta" style="flex:1;font-size:13px;color:var(--text-muted);align-self:center;">— 選擇商品後預覽 —</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="featuredActive" checked>
+                                <span class="slider"></span>
+                                Active
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="featuredSortOrder">Sort Order</label>
+                            <input type="number" id="featuredSortOrder" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="closeFeaturedModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Featured</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // ============================================================================
+        // SUPABASE INITIALIZATION
+        // ============================================================================
+        // 泰國 Supabase project
+        const SUPABASE_URL = 'https://shwirwvnwzxtqsfkwiqj.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNod2lyd3Zud3p4dHFzZmt3aXFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3MDUxNDAsImV4cCI6MjA5MzI4MTE0MH0.trO28s8px44CA9zEpeAygQ-XDVfgIfzlUKyyVBsoYdw';
+
+        const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        // ============================================================================
+        // STATE
+        // ============================================================================
+        let currentUser = null;
+        let currentPage = 'dashboard';
+        let allBrands = [];
+        let allProducts = [];
+        let allBanners = [];
+        let allFeatured = [];
+        let selectedProductIds = new Set();
+        let editingBrandId = null;
+        let editingProductId = null;
+        let editingBannerId = null;
+        let editingFeaturedId = null;
+        let draggedRow = null;
+
+        // ============================================================================
+        // AUTHENTICATION
+        // ============================================================================
+        async function initAuth() {
+            try {
+                const { data: { session } } = await sb.auth.getSession();
+                if (session) {
+                    currentUser = session.user;
+                    showAppPage();
+                    loadDashboard();
+                } else {
+                    showLoginPage();
+                }
+            } catch (error) {
+                console.error('Auth error:', error);
+                showLoginPage();
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('loginError');
+            errorDiv.textContent = '';
+
+            try {
+                const { data, error } = await sb.auth.signInWithPassword({
+                    email,
+                    password
+                });
+
+                if (error) throw error;
+
+                currentUser = data.user;
+                showAppPage();
+                loadDashboard();
+            } catch (error) {
+                errorDiv.textContent = error.message;
+            }
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', async () => {
+            await sb.auth.signOut();
+            currentUser = null;
+            showLoginPage();
+        });
+
+        function showLoginPage() {
+            document.getElementById('loginPage').classList.add('active');
+            document.getElementById('appPage').classList.remove('active');
+        }
+
+        function showAppPage() {
+            document.getElementById('loginPage').classList.remove('active');
+            document.getElementById('appPage').classList.add('active');
+            document.getElementById('userEmail').textContent = currentUser.email;
+        }
+
+        // ============================================================================
+        // NAVIGATION
+        // ============================================================================
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const page = item.dataset.page;
+                navigateTo(page);
+            });
+        });
+
+        function navigateTo(page) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`.nav-item[data-page="${page}"]`).classList.add('active');
+
+            document.querySelectorAll('.page', '#content').forEach(p => {
+                if (p.id !== 'loginPage' && p.id !== 'appPage') {
+                    p.classList.remove('active');
+                }
+            });
+
+            const contentPages = document.querySelectorAll('.content .page');
+            contentPages.forEach(p => p.classList.remove('active'));
+            document.getElementById(page).classList.add('active');
+
+            currentPage = page;
+            updatePageTitle(page);
+
+            if (page === 'dashboard') loadDashboard();
+            else if (page === 'brands') loadBrands();
+            else if (page === 'products') loadProducts();
+            else if (page === 'banners') loadBanners();
+            else if (page === 'featured') loadFeatured();
+            else if (page === 'orders') loadOrders();
+            else if (page === 'settings') loadSettings();
+            else if (page === 'deploy') loadDeploy();
+        }
+
+        function updatePageTitle(page) {
+            const titles = {
+                'dashboard': 'Dashboard',
+                'brands': 'Brand Management',
+                'products': 'Product Management',
+                'banners': 'Banner 管理',
+                'featured': '本週精選',
+                'orders': 'Order Management',
+                'settings': 'SEO 設定',
+                'deploy':   '發布部署'
+            };
+            document.getElementById('pageTitle').textContent = titles[page] || page;
+        }
+
+        // ============================================================================
+        // DASHBOARD
+        // ============================================================================
+        async function loadDashboard() {
+            try {
+                const [brandsData, productsData] = await Promise.all([
+                    sb.from('brands').select('id'),
+                    sb.from('products').select('*').order('updated_at', { ascending: false }).limit(10)
+                ]);
+
+                const [activeProducts, soldOutProducts] = await Promise.all([
+                    sb.from('products').select('id', { count: 'exact', head: true }).eq('is_active', true),
+                    sb.from('products').select('id', { count: 'exact', head: true }).eq('sold_out', true)
+                ]);
+
+                const [totalOrdersRes, pendingOrdersRes] = await Promise.all([
+                    sb.from('orders').select('id', { count: 'exact', head: true }),
+                    sb.from('orders').select('id', { count: 'exact', head: true }).eq('status', 'pending'),
+                ]);
+
+                document.getElementById('totalBrands').textContent = brandsData.data?.length || 0;
+                document.getElementById('totalProducts').textContent = (await sb.from('products').select('id', { count: 'exact', head: true })).count || 0;
+                document.getElementById('activeProducts').textContent = activeProducts.count || 0;
+                document.getElementById('soldOutProducts').textContent = soldOutProducts.count || 0;
+                document.getElementById('totalOrders').textContent = totalOrdersRes.count || 0;
+                document.getElementById('pendingOrders').textContent = pendingOrdersRes.count || 0;
+
+                const tbody = document.getElementById('recentTableBody');
+                tbody.innerHTML = '';
+                if (productsData.data) {
+                    for (const product of productsData.data) {
+                        const brand = await sb.from('brands').select('name').eq('id', product.brand_id).single();
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${product.name}</td>
+                            <td>${brand.data?.name || 'N/A'}</td>
+                            <td>${new Date(product.updated_at).toLocaleDateString()}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    }
+                }
+            } catch (error) {
+                showToast('Error loading dashboard', 'error');
+                console.error(error);
+            }
+        }
+
+        // ============================================================================
+        // BRANDS
+        // ============================================================================
+        async function loadBrands() {
+            try {
+                const { data, error } = await sb.from('brands').select('*').order('sort_order', { ascending: true });
+                if (error) throw error;
+                allBrands = data || [];
+                renderBrandsTable();
+            } catch (error) {
+                showToast('Error loading brands', 'error');
+                console.error(error);
+            }
+        }
+
+        function renderBrandsTable() {
+            const tbody = document.getElementById('brandsTableBody');
+            tbody.innerHTML = '';
+
+            // 篩選 (搜尋框)
+            const q = (document.getElementById('brandsSearch')?.value || '').trim().toLowerCase();
+            const list = q
+                ? allBrands.filter(b => (b.id || '').toLowerCase().includes(q)
+                                     || (b.name || '').toLowerCase().includes(q)
+                                     || (b.style || '').toLowerCase().includes(q)
+                                     || (b.category || '').toLowerCase().includes(q))
+                : allBrands;
+
+            list.forEach(brand => {
+                const tr = document.createElement('tr');
+                tr.draggable = true;
+                tr.dataset.id = brand.id;
+                const cover = brand.cover_url || '';
+                const thumb = cover
+                    ? `<img class="table-thumb" src="${cover.replace(/"/g,'&quot;')}" alt="" onerror="this.outerHTML='<div class=\\'table-thumb-empty\\'>無圖</div>'">`
+                    : `<div class="table-thumb-empty">無圖</div>`;
+                const swatch = `<span class="color-swatch" style="background:${brand.color_hex || '#0a0a1a'}"></span>`;
+                const safeId = (brand.id || '').replace(/'/g, "\\'");
+                tr.innerHTML = `
+                    <td style="cursor: move; text-align: center;">⋮</td>
+                    <td>${thumb}</td>
+                    <td style="text-align: center;">${swatch}</td>
+                    <td><span class="mono-id">${brand.id || ''}</span></td>
+                    <td style="font-weight:600; letter-spacing:0.02em;">${(brand.name || '').toUpperCase()}</td>
+                    <td style="color:var(--text-secondary);">${brand.style || '-'}</td>
+                    <td>${brand.category || '-'}</td>
+                    <td id="brand-count-${brand.id}" style="text-align:center;">0</td>
+                    <td style="text-align:center;">${brand.sort_order}</td>
+                    <td>
+                        <div class="table-actions-vertical">
+                            <button class="btn-link edit" onclick="editBrand('${safeId}')">Edit</button>
+                            <button class="btn-link del"  onclick="deleteBrand('${safeId}')">Delete</button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+
+                sb.from('products').select('id', { count: 'exact', head: true }).eq('brand_id', brand.id).then(({ count }) => {
+                    const countEl = document.getElementById(`brand-count-${brand.id}`);
+                    if (countEl) countEl.textContent = count || 0;
+                });
+            });
+
+            setupDragDrop('brandsTableBody', 'brands');
+        }
+
+        // 搜尋框即時 filter
+        document.getElementById('brandsSearch')?.addEventListener('input', () => renderBrandsTable());
+
+        // ── 開新增 modal ─────────────────────────────────────────
+        document.getElementById('addBrandBtn').addEventListener('click', () => {
+            editingBrandId = null;
+            document.getElementById('brandModalTitle').textContent = '新增品牌';
+            document.getElementById('brandForm').reset();
+            document.getElementById('brandId').disabled = false;
+            // 重設 color 跟 cover/logo 預覽
+            document.getElementById('brandColor').value = '#0a0a1a';
+            document.getElementById('brandColorHex').value = '#0a0a1a';
+            document.getElementById('brandCoverPreview').style.display = 'none';
+            document.getElementById('brandLogoPreview').style.display = 'none';
+            _updateBrandUploadHints();
+            document.getElementById('brandModal').classList.add('active');
+        });
+
+        // ── 編輯既有 brand ───────────────────────────────────────
+        async function editBrand(id) {
+            editingBrandId = id;
+            const brand = allBrands.find(b => b.id === id);
+            document.getElementById('brandModalTitle').textContent = '編輯品牌';
+            document.getElementById('brandId').disabled = true;
+            document.getElementById('brandId').value = brand.id;
+            document.getElementById('brandName').value = brand.name || '';
+            document.getElementById('brandStyle').value = brand.style || '';
+            const color = brand.color_hex || '#0a0a1a';
+            document.getElementById('brandColor').value = color;
+            document.getElementById('brandColorHex').value = color;
+            document.getElementById('brandCategory').value = brand.category || '';
+            document.getElementById('brandLocation').value = brand.location || '';
+            document.getElementById('brandFounded').value = brand.founded || '';
+            document.getElementById('brandWebsite').value = brand.website || '';
+            document.getElementById('brandSortOrder').value = brand.sort_order || 0;
+            document.getElementById('brandDescEn').value = brand.description_en || '';
+            document.getElementById('brandDescZh').value = brand.description_th || '';
+            // 圖片
+            document.getElementById('brandCoverUrl').value = brand.cover_url || '';
+            document.getElementById('brandLogoUrl').value  = brand.logo_url  || '';
+            const coverImg = document.getElementById('brandCoverPreview');
+            if (brand.cover_url) { coverImg.src = brand.cover_url; coverImg.style.display = 'block'; }
+            else                 { coverImg.style.display = 'none'; }
+            const logoImg = document.getElementById('brandLogoPreview');
+            if (brand.logo_url)  { logoImg.src = brand.logo_url; logoImg.style.display = 'block'; }
+            else                 { logoImg.style.display = 'none'; }
+            _updateBrandUploadHints();
+            document.getElementById('brandModal').classList.add('active');
+        }
+
+        function closeBrandModal() {
+            document.getElementById('brandModal').classList.remove('active');
+            editingBrandId = null;
+        }
+
+        // ── color picker <-> hex 同步 ─────────────────────────
+        document.getElementById('brandColor').addEventListener('input', e => {
+            document.getElementById('brandColorHex').value = e.target.value;
+        });
+        document.getElementById('brandColorHex').addEventListener('input', e => {
+            const v = e.target.value.trim();
+            if (/^#[0-9a-fA-F]{6}$/.test(v)) {
+                document.getElementById('brandColor').value = v;
+            }
+        });
+
+        // ── 上傳提示 (沒填 ID 不能傳) ────────────────────────
+        function _updateBrandUploadHints() {
+            const hasId = !!document.getElementById('brandId').value.trim();
+            document.getElementById('brandCoverHint').style.display = hasId ? 'none' : '';
+            document.getElementById('brandLogoHint').style.display  = hasId ? 'none' : '';
+        }
+        document.getElementById('brandId').addEventListener('input', _updateBrandUploadHints);
+
+        // ── 上傳首圖 ────────────────────────────────────────
+        document.getElementById('brandCoverFile').addEventListener('change', async e => {
+            const file = e.target.files[0]; if (!file) return;
+            const id = document.getElementById('brandId').value.trim();
+            if (!id) { showToast('請先填寫品牌 ID', 'error'); e.target.value = ''; return; }
+            try {
+                const path = `brands/${id}/cover-${Date.now()}-${file.name}`;
+                const { error } = await sb.storage.from('product-images').upload(path, file);
+                if (error) throw error;
+                const { data: { publicUrl } } = sb.storage.from('product-images').getPublicUrl(path);
+                document.getElementById('brandCoverUrl').value = publicUrl;
+                document.getElementById('brandCoverPreview').src = publicUrl;
+                document.getElementById('brandCoverPreview').style.display = 'block';
+                showToast('首圖已上傳', 'success');
+            } catch (err) { showToast(err.message || '上傳失敗', 'error'); }
+        });
+
+        // ── 上傳 Logo ───────────────────────────────────────
+        document.getElementById('brandLogoFile').addEventListener('change', async e => {
+            const file = e.target.files[0]; if (!file) return;
+            const id = document.getElementById('brandId').value.trim();
+            if (!id) { showToast('請先填寫品牌 ID', 'error'); e.target.value = ''; return; }
+            try {
+                const path = `brands/${id}/logo-${Date.now()}-${file.name}`;
+                const { error } = await sb.storage.from('product-images').upload(path, file);
+                if (error) throw error;
+                const { data: { publicUrl } } = sb.storage.from('product-images').getPublicUrl(path);
+                document.getElementById('brandLogoUrl').value = publicUrl;
+                document.getElementById('brandLogoPreview').src = publicUrl;
+                document.getElementById('brandLogoPreview').style.display = 'block';
+                showToast('Logo 已上傳', 'success');
+            } catch (err) { showToast(err.message || '上傳失敗', 'error'); }
+        });
+
+        // 貼上 URL 時也即時更新預覽
+        document.getElementById('brandCoverUrl').addEventListener('input', e => {
+            const url = e.target.value.trim();
+            const img = document.getElementById('brandCoverPreview');
+            if (url) { img.src = url; img.style.display = 'block'; }
+            else     { img.style.display = 'none'; }
+        });
+        document.getElementById('brandLogoUrl').addEventListener('input', e => {
+            const url = e.target.value.trim();
+            const img = document.getElementById('brandLogoPreview');
+            if (url) { img.src = url; img.style.display = 'block'; }
+            else     { img.style.display = 'none'; }
+        });
+
+        // ── 儲存表單 ─────────────────────────────────────────
+        document.getElementById('brandForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById('brandName').value,
+                style: document.getElementById('brandStyle').value,
+                color_hex: document.getElementById('brandColor').value,
+                category: document.getElementById('brandCategory').value,
+                location: document.getElementById('brandLocation').value,
+                founded: document.getElementById('brandFounded').value,
+                website: document.getElementById('brandWebsite').value,
+                sort_order: parseInt(document.getElementById('brandSortOrder').value) || 0,
+                cover_url: document.getElementById('brandCoverUrl').value || null,
+                logo_url:  document.getElementById('brandLogoUrl').value  || null,
+                description_en: document.getElementById('brandDescEn').value,
+                description_th: document.getElementById('brandDescZh').value,
+                // description_th 不從這個 admin 寫入,保留 DB 既有值給其他語系站使用
+                updated_at: new Date().toISOString()
+            };
+
+            try {
+                if (editingBrandId) {
+                    let { error } = await sb.from('brands').update(data).eq('id', editingBrandId);
+                    // 如果 cover_url / logo_url 還沒在 schema 裡,移除這兩欄重試
+                    if (error && error.code === 'PGRST204' && /cover_url|logo_url/.test(error.message)) {
+                        delete data.cover_url; delete data.logo_url;
+                        ({ error } = await sb.from('brands').update(data).eq('id', editingBrandId));
+                    }
+                    if (error) throw error;
+                    showToast('品牌已更新', 'success');
+                } else {
+                    data.id = document.getElementById('brandId').value;
+                    let { error } = await sb.from('brands').insert([data]);
+                    if (error && error.code === 'PGRST204' && /cover_url|logo_url/.test(error.message)) {
+                        delete data.cover_url; delete data.logo_url;
+                        ({ error } = await sb.from('brands').insert([data]));
+                    }
+                    if (error) throw error;
+                    showToast('品牌已建立', 'success');
+                }
+                closeBrandModal();
+                loadBrands();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        async function deleteBrand(id) {
+            if (!confirm(`確定要刪除品牌「${id}」嗎?該品牌下所有商品也會被刪掉。`)) return;
+            try {
+                const { error } = await sb.from('brands').delete().eq('id', id);
+                if (error) throw error;
+                showToast('品牌已刪除', 'success');
+                loadBrands();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+
+        document.getElementById('brandsSearch').addEventListener('input', (e) => {
+            const search = e.target.value.toLowerCase();
+            document.querySelectorAll('#brandsTableBody tr').forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(search) ? '' : 'none';
+            });
+        });
+
+        // ============================================================================
+        // PRODUCTS
+        // ============================================================================
+        async function loadProducts() {
+            try {
+                const { data, error } = await sb.from('products').select('*').order('sort_order', { ascending: true });
+                if (error) throw error;
+                allProducts = data || [];
+
+                const brandsSelect = document.getElementById('productBrand');
+                brandsSelect.innerHTML = '<option value="">選擇品牌</option>';
+                brandsSelect.innerHTML += allBrands.map(b => `<option value="${b.id}">${b.name}</option>`).join('');
+
+                const brandFilter = document.getElementById('brandFilter');
+                brandFilter.innerHTML = '<option value="">所有品牌</option>';
+                brandFilter.innerHTML += allBrands.map(b => `<option value="${b.id}">${b.name}</option>`).join('');
+
+                // 分類下拉:從 products 抓所有不同的 category
+                const categoryFilter = document.getElementById('categoryFilter');
+                if (categoryFilter) {
+                    const cats = [...new Set(allProducts.map(p => p.category).filter(Boolean))].sort();
+                    categoryFilter.innerHTML = '<option value="">所有分類</option>'
+                        + cats.map(c => `<option value="${c}">${c}</option>`).join('');
+                }
+
+                renderProductsTable();
+            } catch (error) {
+                showToast('載入商品失敗', 'error');
+                console.error(error);
+            }
+        }
+
+        function renderProductsTable() {
+            const tbody = document.getElementById('productsTableBody');
+            tbody.innerHTML = '';
+            selectedProductIds.clear();
+
+            // 套用篩選條件
+            const q  = (document.getElementById('productsSearch')?.value || '').trim().toLowerCase();
+            const bf = document.getElementById('brandFilter')?.value || '';
+            const cf = document.getElementById('categoryFilter')?.value || '';
+            const list = allProducts.filter(p =>
+                (!bf || p.brand_id === bf) &&
+                (!cf || p.category === cf) &&
+                (!q  || (p.name || '').toLowerCase().includes(q) || (p.id || '').toLowerCase().includes(q))
+            );
+
+            list.forEach(product => {
+                const brand = allBrands.find(b => b.id === product.brand_id);
+                const tr = document.createElement('tr');
+                tr.draggable = true;
+                tr.dataset.id = product.id;
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = product.id;
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        selectedProductIds.add(product.id);
+                    } else {
+                        selectedProductIds.delete(product.id);
+                    }
+                    updateBatchActionsUI();
+                });
+
+                // 封面圖優先用 original_cover_url(外部 URL),fallback 才用 cover_image(站內路徑)
+                const cover = product.original_cover_url || product.cover_image || '';
+                const img = cover
+                    ? `<img class="table-thumb" style="width:60px;height:60px;" src="${cover.replace(/"/g,'&quot;')}" alt="" onerror="this.outerHTML='<div class=\\'table-thumb-empty\\' style=\\'width:60px;height:60px;\\'>無圖</div>'">`
+                    : `<div class="table-thumb-empty" style="width:60px;height:60px;">無圖</div>`;
+
+                // 狀態 badge:優先 needs_review > sold_out > is_active
+                let badge;
+                if (product.needs_review) badge = `<span class="status-badge review">Pending Review</span>`;
+                else if (product.sold_out) badge = `<span class="status-badge soldout">Sold Out</span>`;
+                else if (product.is_active) badge = `<span class="status-badge active">Active</span>`;
+                else badge = `<span class="status-badge inactive">已下架</span>`;
+
+                const safeId = (product.id || '').replace(/'/g, "\\'");
+
+                tr.innerHTML = `
+                    <td style="text-align:center;"></td>
+                    <td style="cursor: move; text-align: center;">⋮</td>
+                    <td>${img}</td>
+                    <td><span class="mono-id">${product.id || ''}</span></td>
+                    <td>${product.name || ''}</td>
+                    <td>${(brand?.name || 'N/A').toUpperCase()}</td>
+                    <td style="color:var(--text-secondary);">${product.category || '-'}</td>
+                    <td>${product.price_vnd ? product.price_vnd.toLocaleString() + ' ₫' : '-'}</td>
+                    <td>${badge}</td>
+                    <td style="text-align:center;">${product.sort_order ?? 0}</td>
+                    <td>
+                        <div class="table-actions-vertical">
+                            <button class="btn-link edit" onclick="editProduct('${safeId}')">Edit</button>
+                            <button class="btn-link del"  onclick="deleteProduct('${safeId}')">Delete</button>
+                        </div>
+                    </td>
+                `;
+
+                const checkboxCell = tr.firstElementChild;
+                checkboxCell.appendChild(checkbox);
+                tbody.appendChild(tr);
+            });
+
+            setupDragDrop('productsTableBody', 'products');
+        }
+
+        function updateBatchActionsUI() {
+            const container = document.getElementById('batchActionsContainer');
+            const count = selectedProductIds.size;
+            if (count > 0) {
+                container.style.display = 'flex';
+                document.getElementById('batchInfo').textContent = `已選 ${count} 筆`;
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        document.getElementById('selectAllCheckbox').addEventListener('change', (e) => {
+            document.querySelectorAll('#productsTableBody input[type="checkbox"]').forEach(cb => {
+                cb.checked = e.target.checked;
+                if (e.target.checked) {
+                    selectedProductIds.add(cb.value);
+                } else {
+                    selectedProductIds.delete(cb.value);
+                }
+            });
+            updateBatchActionsUI();
+        });
+
+        document.getElementById('batchActionSelect').addEventListener('change', async (e) => {
+            const action = e.target.value;
+            if (!action) return;
+
+            try {
+                if (action === 'activate') {
+                    for (const id of selectedProductIds) {
+                        await sb.from('products').update({ is_active: true }).eq('id', id);
+                    }
+                    showToast(`${selectedProductIds.size} products activated`, 'success');
+                } else if (action === 'deactivate') {
+                    for (const id of selectedProductIds) {
+                        await sb.from('products').update({ is_active: false }).eq('id', id);
+                    }
+                    showToast(`${selectedProductIds.size} products deactivated`, 'success');
+                } else if (action === 'sold-out') {
+                    for (const id of selectedProductIds) {
+                        await sb.from('products').update({ sold_out: true }).eq('id', id);
+                    }
+                    showToast(`${selectedProductIds.size} products marked as sold out`, 'success');
+                } else if (action === 'clear-sold') {
+                    for (const id of selectedProductIds) {
+                        await sb.from('products').update({ sold_out: false }).eq('id', id);
+                    }
+                    showToast(`${selectedProductIds.size} products cleared from sold out`, 'success');
+                } else if (action === 'delete') {
+                    if (!confirm(`Delete ${selectedProductIds.size} products?`)) return;
+                    for (const id of selectedProductIds) {
+                        await sb.from('products').delete().eq('id', id);
+                    }
+                    showToast(`${selectedProductIds.size} products deleted`, 'success');
+                }
+                loadProducts();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+            e.target.value = '';
+        });
+
+        async function updateProductSoldOut(id, value) {
+            try {
+                await sb.from('products').update({ sold_out: value }).eq('id', id);
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+
+        async function updateProductActive(id, value) {
+            try {
+                await sb.from('products').update({ is_active: value }).eq('id', id);
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+
+        // 篩選 (品牌 / 分類 / 搜尋) — 改用 data-driven re-render,順便能搜 ID
+        document.getElementById('brandFilter').addEventListener('change', () => renderProductsTable());
+        document.getElementById('categoryFilter')?.addEventListener('change', () => renderProductsTable());
+        document.getElementById('productsSearch').addEventListener('input', () => renderProductsTable());
+
+        document.getElementById('addProductBtn').addEventListener('click', () => {
+            editingProductId = null;
+            document.getElementById('productModalTitle').textContent = '新增商品';
+            document.getElementById('productForm').reset();
+            document.getElementById('productId').disabled = false;
+            // reset cover preview
+            const cp = document.getElementById('productCoverPreview');
+            if (cp) cp.style.display = 'none';
+            // reset multilingual descriptions (form.reset() 對 textarea 已生效,但保險)
+            ['productDescZh','productDescEn'].forEach(id => {
+                const el = document.getElementById(id); if (el) el.value = '';
+            });
+            clearProductSizes();
+            clearProductGallery();
+            document.getElementById('productModal').classList.add('active');
+        });
+
+        function clearProductSizes() {
+            document.getElementById('sizesList').innerHTML = '';
+        }
+
+        function clearProductGallery() {
+            document.getElementById('galleryList').innerHTML = '';
+        }
+
+        function addSizeField() {
+            const sizesList = document.getElementById('sizesList');
+            const item = document.createElement('div');
+            item.className = 'list-item';
+            item.innerHTML = `
+                <input type="text" placeholder="Size label (e.g., S, M, L)" value="">
+                <label style="margin: 0;">
+                    <input type="checkbox" checked>
+                    Available
+                </label>
+                <button type="button" class="btn-icon" onclick="this.parentElement.remove()">🗑️</button>
+            `;
+            sizesList.appendChild(item);
+        }
+
+        function addGalleryField() {
+            const galleryList = document.getElementById('galleryList');
+            const item = document.createElement('div');
+            item.className = 'list-item';
+            item.innerHTML = `
+                <input type="text" placeholder="Image URL" value="">
+                <select style="width: 100px;">
+                    <option>image</option>
+                    <option>video</option>
+                </select>
+                <button type="button" class="btn-icon" onclick="this.parentElement.remove()">🗑️</button>
+            `;
+            galleryList.appendChild(item);
+        }
+
+        async function editProduct(id) {
+            editingProductId = id;
+            const product = allProducts.find(p => p.id === id);
+            const brand = allBrands.find(b => b.id === product.brand_id);
+
+            document.getElementById('productModalTitle').textContent = '編輯商品';
+            document.getElementById('productId').disabled = true;
+            document.getElementById('productId').value = product.id;
+            document.getElementById('productName').value = product.name || '';
+            document.getElementById('productBrand').value = product.brand_id || '';
+            document.getElementById('productTag').value = product.tag || '';
+            document.getElementById('productCategory').value = product.category || '';
+            document.getElementById('productSeason').value = product.season || '';
+            document.getElementById('productPriceVnd').value = product.price_vnd || '';
+            document.getElementById('productPriceVndEst').value = product.price_vnd_estimated || '';
+            document.getElementById('productPriceThbShip').value = product.price_thb_shipping || '';
+            document.getElementById('productPriceThbCarry').value = product.price_thb_carryback || '';
+            document.getElementById('productPriceNote').value = product.price_note || '';
+            document.getElementById('productCoverUrl').value = product.cover_image || '';
+            const ocuEl = document.getElementById('productOriginalCoverUrl');
+            if (ocuEl) ocuEl.value = product.original_cover_url || '';
+            // 預覽優先用 original_cover_url 才看得到外部圖
+            const previewSrc = product.original_cover_url || product.cover_image || '';
+            const cp = document.getElementById('productCoverPreview');
+            if (previewSrc) { cp.src = previewSrc; cp.style.display = 'block'; }
+            else            { cp.style.display = 'none'; }
+            document.getElementById('productActive').checked = product.is_active !== false;
+            document.getElementById('productSoldOut').checked = product.sold_out || false;
+            document.getElementById('productNeedsReview').checked = product.needs_review || false;
+            document.getElementById('productSortOrder').value = product.sort_order || 0;
+            // 多語描述 (中文 + 英文)
+            document.getElementById('productDescZh').value = product.description_th || '';
+            document.getElementById('productDescEn').value = product.description_en || '';
+
+            clearProductSizes();
+            const { data: sizes } = await sb.from('product_sizes').select('*').eq('product_id', id).order('sort_order', { ascending: true });
+            if (sizes) {
+                sizes.forEach(size => {
+                    const sizesList = document.getElementById('sizesList');
+                    const item = document.createElement('div');
+                    item.className = 'list-item';
+                    item.innerHTML = `
+                        <input type="text" placeholder="Size label" value="${size.label}">
+                        <label style="margin: 0;">
+                            <input type="checkbox" ${size.available ? 'checked' : ''}>
+                            Available
+                        </label>
+                        <button type="button" class="btn-icon" onclick="this.parentElement.remove()">🗑️</button>
+                    `;
+                    sizesList.appendChild(item);
+                });
+            }
+
+            clearProductGallery();
+            const { data: gallery } = await sb.from('product_gallery').select('*').eq('product_id', id).order('sort_order', { ascending: true });
+            if (gallery) {
+                gallery.forEach(item => {
+                    const galleryList = document.getElementById('galleryList');
+                    const elem = document.createElement('div');
+                    elem.className = 'list-item';
+                    elem.innerHTML = `
+                        <input type="text" placeholder="Image URL" value="${item.url || ''}">
+                        <select style="width: 100px;">
+                            <option ${item.type === 'image' ? 'selected' : ''}>image</option>
+                            <option ${item.type === 'video' ? 'selected' : ''}>video</option>
+                        </select>
+                        <button type="button" class="btn-icon" onclick="this.parentElement.remove()">🗑️</button>
+                    `;
+                    galleryList.appendChild(elem);
+                });
+            }
+
+            document.getElementById('productModal').classList.add('active');
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.remove('active');
+            editingProductId = null;
+        }
+
+        document.getElementById('productCoverFile').addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            try {
+                const filename = `${Date.now()}-${file.name}`;
+                const path = `products/${editingProductId || 'temp'}/${filename}`;
+                const { data, error } = await sb.storage.from('product-images').upload(path, file);
+                if (error) throw error;
+
+                const { data: publicUrl } = sb.storage.from('product-images').getPublicUrl(path);
+                document.getElementById('productCoverUrl').value = publicUrl.publicUrl;
+                document.getElementById('productCoverPreview').src = publicUrl.publicUrl;
+                document.getElementById('productCoverPreview').style.display = 'block';
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        document.getElementById('productForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const data = {
+                brand_id: document.getElementById('productBrand').value,
+                name: document.getElementById('productName').value,
+                tag: document.getElementById('productTag').value,
+                category: document.getElementById('productCategory').value,
+                season: document.getElementById('productSeason').value,
+                price_vnd: parseInt(document.getElementById('productPriceVnd').value) || null,
+                price_vnd_estimated: parseInt(document.getElementById('productPriceVndEst').value) || null,
+                price_thb_shipping: parseInt(document.getElementById('productPriceThbShip').value) || null,
+                price_thb_carryback: parseInt(document.getElementById('productPriceThbCarry').value) || null,
+                price_note: document.getElementById('productPriceNote').value,
+                cover_image: document.getElementById('productCoverUrl').value,
+                original_cover_url: document.getElementById('productOriginalCoverUrl')?.value || null,
+                is_active: document.getElementById('productActive').checked,
+                sold_out: document.getElementById('productSoldOut').checked,
+                needs_review: document.getElementById('productNeedsReview').checked,
+                sort_order: parseInt(document.getElementById('productSortOrder').value) || 0,
+                // 多語描述 (Migration 20260501 後新增) — 此站只寫中文 + 英文
+                description_th: document.getElementById('productDescZh').value || null,
+                description_en: document.getElementById('productDescEn').value || null,
+                updated_at: new Date().toISOString()
+            };
+            // 自動產生 ID:留空時用 brand-randomhash 格式 (新增模式)
+            if (!editingProductId && !document.getElementById('productId').value.trim()) {
+                const brand = data.brand_id || 'product';
+                const hash = Math.random().toString(16).slice(2, 10);
+                document.getElementById('productId').value = `${brand}-${hash}`;
+            }
+
+            // 把可能還沒在 schema 裡的多語描述欄位拆出來,失敗時可 fallback 拿掉重試
+            const _retryWithoutDesc = async (op) => {
+                const stripped = { ...data };
+                delete stripped.description_th;
+                delete stripped.description_en;
+                return op(stripped);
+            };
+
+            try {
+                if (editingProductId) {
+                    let { error } = await sb.from('products').update(data).eq('id', editingProductId);
+                    // 如果 description_* 欄位還沒 migrate,移除這 3 欄重試
+                    if (error && error.code === 'PGRST204' && /description_/.test(error.message)) {
+                        ({ error } = await _retryWithoutDesc(d => sb.from('products').update(d).eq('id', editingProductId)));
+                        if (!error) showToast('已存(描述欄位需先在 Supabase 跑 migration)', 'success');
+                    }
+                    if (error) throw error;
+
+                    await sb.from('product_sizes').delete().eq('product_id', editingProductId);
+                    const sizes = [];
+                    document.querySelectorAll('#sizesList .list-item').forEach((item, idx) => {
+                        const label = item.querySelector('input[type="text"]').value;
+                        const available = item.querySelector('input[type="checkbox"]').checked;
+                        if (label) {
+                            sizes.push({ product_id: editingProductId, label, available, sort_order: idx });
+                        }
+                    });
+                    if (sizes.length > 0) {
+                        await sb.from('product_sizes').insert(sizes);
+                    }
+
+                    await sb.from('product_gallery').delete().eq('product_id', editingProductId);
+                    const gallery = [];
+                    document.querySelectorAll('#galleryList .list-item').forEach((item, idx) => {
+                        const url = item.querySelector('input[type="text"]').value;
+                        const type = item.querySelector('select').value;
+                        if (url) {
+                            gallery.push({ product_id: editingProductId, url, type, sort_order: idx });
+                        }
+                    });
+                    if (gallery.length > 0) {
+                        await sb.from('product_gallery').insert(gallery);
+                    }
+
+                    showToast('商品已更新', 'success');
+                } else {
+                    data.id = document.getElementById('productId').value;
+                    data.created_at = new Date().toISOString();
+
+                    let { error } = await sb.from('products').insert([data]);
+                    if (error && error.code === 'PGRST204' && /description_/.test(error.message)) {
+                        ({ error } = await _retryWithoutDesc(d => sb.from('products').insert([d])));
+                        if (!error) showToast('已存(描述欄位需先在 Supabase 跑 migration)', 'success');
+                    }
+                    if (error) throw error;
+
+                    const sizes = [];
+                    document.querySelectorAll('#sizesList .list-item').forEach((item, idx) => {
+                        const label = item.querySelector('input[type="text"]').value;
+                        const available = item.querySelector('input[type="checkbox"]').checked;
+                        if (label) {
+                            sizes.push({ product_id: data.id, label, available, sort_order: idx });
+                        }
+                    });
+                    if (sizes.length > 0) {
+                        await sb.from('product_sizes').insert(sizes);
+                    }
+
+                    const gallery = [];
+                    document.querySelectorAll('#galleryList .list-item').forEach((item, idx) => {
+                        const url = item.querySelector('input[type="text"]').value;
+                        const type = item.querySelector('select').value;
+                        if (url) {
+                            gallery.push({ product_id: data.id, url, type, sort_order: idx });
+                        }
+                    });
+                    if (gallery.length > 0) {
+                        await sb.from('product_gallery').insert(gallery);
+                    }
+
+                    showToast('商品已建立', 'success');
+                }
+                closeProductModal();
+                loadProducts();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        async function deleteProduct(id) {
+            if (!confirm(`確定要刪除商品「${id}」嗎?`)) return;
+            try {
+                await sb.from('product_sizes').delete().eq('product_id', id);
+                await sb.from('product_gallery').delete().eq('product_id', id);
+                const { error } = await sb.from('products').delete().eq('id', id);
+                if (error) throw error;
+                showToast('商品已刪除', 'success');
+                loadProducts();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+
+        // ============================================================================
+        // BANNERS
+        // ============================================================================
+        async function loadBanners() {
+            try {
+                const { data, error } = await sb.from('banners').select('*').order('sort_order', { ascending: true });
+                if (error) throw error;
+                allBanners = data || [];
+                renderBannersTable();
+            } catch (error) {
+                showToast('Error loading banners', 'error');
+                console.error(error);
+            }
+        }
+
+        function renderBannersTable() {
+            const tbody = document.getElementById('bannersTableBody');
+            tbody.innerHTML = '';
+
+            allBanners.forEach(banner => {
+                const tr = document.createElement('tr');
+                tr.draggable = true;
+                tr.dataset.id = banner.id;
+                const img = banner.image_url ? `<img src="${banner.image_url}" class="image-preview" style="width: 80px; height: 50px; border-radius: 4px; object-fit: cover;">` : '-';
+                const mobileImg = banner.mobile_image_url ? `<img src="${banner.mobile_image_url}" class="image-preview" style="width: 35px; height: 60px; border-radius: 4px; object-fit: cover;">` : '<span style="opacity:0.4;font-size:11px">同桌面</span>';
+                tr.innerHTML = `
+                    <td style="cursor: move; text-align: center;">⋮</td>
+                    <td style="width: 8%;">${img}</td>
+                    <td style="width: 8%;">${mobileImg}</td>
+                    <td>${banner.title || '-'}</td>
+                    <td>${banner.subtitle || '-'}</td>
+                    <td>
+                        <label class="toggle-switch">
+                            <input type="checkbox" ${banner.is_active ? 'checked' : ''} onchange="updateBannerActive('${banner.id}', this.checked)">
+                            <span class="slider"></span>
+                        </label>
+                    </td>
+                    <td>${banner.sort_order}</td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn-icon" onclick="editBanner('${banner.id}')">✏️</button>
+                            <button class="btn-icon delete" onclick="deleteBanner('${banner.id}')">🗑️</button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            setupDragDrop('bannersTableBody', 'banners');
+        }
+
+        async function populateBannerBrandSelect(selectedId) {
+            const sel = document.getElementById('bannerBrandId');
+            sel.innerHTML = '<option value="">— 不連結 —</option>';
+            try {
+                const { data: brands } = await sb.from('brands').select('id, name').order('name');
+                (brands || []).forEach(b => {
+                    const opt = document.createElement('option');
+                    opt.value = b.id;
+                    opt.textContent = b.name;
+                    if (b.id === selectedId) opt.selected = true;
+                    sel.appendChild(opt);
+                });
+            } catch (e) { console.error('Failed to load brands for selector:', e); }
+        }
+
+        document.getElementById('addBannerBtn').addEventListener('click', async () => {
+            editingBannerId = null;
+            document.getElementById('bannerModalTitle').textContent = 'Add Banner';
+            document.getElementById('bannerForm').reset();
+            document.getElementById('bannerActive').checked = true;
+            document.getElementById('bannerImagePreview').style.display = 'none';
+            document.getElementById('bannerMobileImagePreview').style.display = 'none';
+            await populateBannerBrandSelect('');
+            document.getElementById('bannerModal').classList.add('active');
+        });
+
+        async function editBanner(id) {
+            editingBannerId = id;
+            const banner = allBanners.find(b => b.id === id);
+            document.getElementById('bannerModalTitle').textContent = 'Edit Banner';
+            document.getElementById('bannerTitle').value = banner.title || '';
+            document.getElementById('bannerSubtitle').value = banner.subtitle || '';
+            document.getElementById('bannerImageUrl').value = banner.image_url || '';
+            document.getElementById('bannerMobileImageUrl').value = banner.mobile_image_url || '';
+            document.getElementById('bannerLink').value = banner.link_url || '';
+            document.getElementById('bannerActive').checked = banner.is_active !== false;
+            document.getElementById('bannerSortOrder').value = banner.sort_order || 0;
+            if (banner.image_url) {
+                document.getElementById('bannerImagePreview').src = banner.image_url;
+                document.getElementById('bannerImagePreview').style.display = 'block';
+            } else {
+                document.getElementById('bannerImagePreview').style.display = 'none';
+            }
+            if (banner.mobile_image_url) {
+                document.getElementById('bannerMobileImagePreview').src = banner.mobile_image_url;
+                document.getElementById('bannerMobileImagePreview').style.display = 'block';
+            } else {
+                document.getElementById('bannerMobileImagePreview').style.display = 'none';
+            }
+            await populateBannerBrandSelect(banner.brand_id || '');
+            document.getElementById('bannerModal').classList.add('active');
+        }
+
+        function closeBannerModal() {
+            document.getElementById('bannerModal').classList.remove('active');
+            editingBannerId = null;
+        }
+
+        document.getElementById('bannerImageFile').addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            try {
+                const filename = `${Date.now()}-${file.name}`;
+                const path = `banners/${editingBannerId || 'temp'}/${filename}`;
+                const { data, error } = await sb.storage.from('product-images').upload(path, file);
+                if (error) throw error;
+
+                const { data: publicUrl } = sb.storage.from('product-images').getPublicUrl(path);
+                document.getElementById('bannerImageUrl').value = publicUrl.publicUrl;
+                document.getElementById('bannerImagePreview').src = publicUrl.publicUrl;
+                document.getElementById('bannerImagePreview').style.display = 'block';
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        document.getElementById('bannerMobileImageFile').addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            try {
+                const filename = `${Date.now()}-mobile-${file.name}`;
+                const path = `banners/${editingBannerId || 'temp'}/${filename}`;
+                const { data, error } = await sb.storage.from('product-images').upload(path, file);
+                if (error) throw error;
+                const { data: publicUrl } = sb.storage.from('product-images').getPublicUrl(path);
+                document.getElementById('bannerMobileImageUrl').value = publicUrl.publicUrl;
+                document.getElementById('bannerMobileImagePreview').src = publicUrl.publicUrl;
+                document.getElementById('bannerMobileImagePreview').style.display = 'block';
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        document.getElementById('bannerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const data = {
+                title: document.getElementById('bannerTitle').value,
+                subtitle: document.getElementById('bannerSubtitle').value,
+                image_url: document.getElementById('bannerImageUrl').value,
+                mobile_image_url: document.getElementById('bannerMobileImageUrl').value,
+                brand_id: document.getElementById('bannerBrandId').value || null,
+                link_url: document.getElementById('bannerLink').value,
+                is_active: document.getElementById('bannerActive').checked,
+                sort_order: parseInt(document.getElementById('bannerSortOrder').value) || 0,
+                updated_at: new Date().toISOString()
+            };
+
+            try {
+                let saveResult;
+                if (editingBannerId) {
+                    saveResult = await sb.from('banners').update(data).eq('id', editingBannerId);
+                    // If brand_id column doesn't exist yet, retry without it
+                    if (saveResult.error && saveResult.error.code === 'PGRST204' && saveResult.error.message.includes('brand_id')) {
+                        delete data.brand_id;
+                        saveResult = await sb.from('banners').update(data).eq('id', editingBannerId);
+                    }
+                    if (saveResult.error) throw saveResult.error;
+                    showToast('Banner updated', 'success');
+                } else {
+                    data.created_at = new Date().toISOString();
+                    saveResult = await sb.from('banners').insert([data]);
+                    // If brand_id column doesn't exist yet, retry without it
+                    if (saveResult.error && saveResult.error.code === 'PGRST204' && saveResult.error.message.includes('brand_id')) {
+                        delete data.brand_id;
+                        saveResult = await sb.from('banners').insert([data]);
+                    }
+                    if (saveResult.error) throw saveResult.error;
+                    showToast('Banner created', 'success');
+                }
+                closeBannerModal();
+                loadBanners();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        async function updateBannerActive(id, value) {
+            try {
+                await sb.from('banners').update({ is_active: value }).eq('id', id);
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+
+        async function deleteBanner(id) {
+            if (!confirm('Are you sure you want to delete this banner?')) return;
+            try {
+                const { error } = await sb.from('banners').delete().eq('id', id);
+                if (error) throw error;
+                showToast('Banner deleted', 'success');
+                loadBanners();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+
+        // ============================================================================
+        // FEATURED PRODUCTS
+        // ============================================================================
+        async function loadFeatured() {
+            try {
+                const { data, error } = await sb.from('featured_products')
+                    .select('*, products(id, name, cover_image, original_cover_url, price_vnd, tag, category), brands(id, name)')
+                    .order('sort_order', { ascending: true });
+                if (error) throw error;
+                allFeatured = data || [];
+                renderFeaturedTable();
+            } catch (error) {
+                showToast('Error loading featured products', 'error');
+                console.error(error);
+            }
+        }
+
+        // Mirrors main.js price calc — keep in sync
+        const FEATURED_RATE = 1 / 800;
+        const FEATURED_SHIP_VND = { Top: 72000, Outerwear: 180000, Bottom: 126000, Set: 234000, Accessories: 36000, _default: 90000 };
+        const FEATURED_TIERS = [
+            { max: 300000,  mult: 1.75 },
+            { max: 500000,  mult: 1.5  },
+            { max: 1300000, mult: 1.4  },
+            { max: 2000000, mult: 1.4  },
+            { max: Infinity, mult: 1.35 },
+        ];
+        // 累進制倍率 — 跟 main.js 的 marginalAdjVnd 完全一致
+        function _featuredMarginalAdj(vnd) {
+            if (!vnd || vnd <= 0) return 0;
+            let total = 0, prev = 0;
+            for (const { max, mult } of FEATURED_TIERS) {
+                if (vnd <= max) { total += (vnd - prev) * mult; return total; }
+                total += (max - prev) * mult;
+                prev = max;
+            }
+            return total;
+        }
+        function _featuredPsych(n) {
+            if (n == null) return n;
+            const r = Math.round(n / 10) * 10;
+            const tail = r % 100;
+            return tail <= 50 ? r - tail + 50 : r - tail + 90;
+        }
+        function _featuredCalc(vnd, tag) {
+            if (!vnd) return { carry: null, ship: null };
+            const est = FEATURED_SHIP_VND[tag] ?? FEATURED_SHIP_VND._default;
+            // 累進制:carry 跟 ship 各自 marginally 加總
+            const carry_vnd = _featuredMarginalAdj(vnd);
+            const ship_vnd  = _featuredMarginalAdj(vnd + est);
+            let carry = Math.round(carry_vnd * FEATURED_RATE / 10) * 10;
+            let ship = _featuredPsych(ship_vnd * FEATURED_RATE);
+            const ceiling = carry + 200;
+            if (ship > ceiling) {
+                ship = _featuredPsych(ceiling);
+                if (ship > ceiling) ship -= 100;
+            }
+            return { carry, ship };
+        }
+
+        function renderFeaturedTable() {
+            const tbody = document.getElementById('featuredTableBody');
+            tbody.innerHTML = '';
+
+            allFeatured.forEach(f => {
+                const tr = document.createElement('tr');
+                tr.draggable = true;
+                tr.dataset.id = f.id;
+
+                const product = f.products || {};
+                const brand = f.brands || {};
+                // 優先用外部 URL (cover_image 常常是本機沒有的相對路徑 → 404)
+                const cover = product.original_cover_url || product.cover_image || '';
+                const img = cover
+                    ? `<img src="${cover}" class="image-preview" style="width: 60px; height: 60px; border-radius: 4px; object-fit: cover;">`
+                    : '<span style="opacity:0.4;font-size:11px">no image</span>';
+
+                const { carry, ship } = _featuredCalc(product.price_vnd, product.tag || product.category || '');
+                const carryStr = carry != null ? `฿ ${carry.toLocaleString()}` : '-';
+                const shipStr  = ship  != null ? `฿ ${ship.toLocaleString()}`  : '-';
+
+                tr.innerHTML = `
+                    <td style="cursor: move; text-align: center;">⋮</td>
+                    <td>${img}</td>
+                    <td>${brand.name || '-'}</td>
+                    <td>${product.name || '<span style="opacity:0.5">(missing)</span>'}</td>
+                    <td>${carryStr}</td>
+                    <td>${shipStr}</td>
+                    <td>
+                        <label class="toggle-switch">
+                            <input type="checkbox" ${f.is_active ? 'checked' : ''} onchange="updateFeaturedActive('${f.id}', this.checked)">
+                            <span class="slider"></span>
+                        </label>
+                    </td>
+                    <td>${f.sort_order}</td>
+                    <td style="white-space: nowrap;">
+                        <div class="table-actions">
+                            <button class="btn-icon" onclick="editFeatured('${f.id}')">✏️</button>
+                            <button class="btn-icon delete" onclick="deleteFeatured('${f.id}')">🗑️</button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            setupDragDrop('featuredTableBody', 'featured_products');
+        }
+
+        async function populateFeaturedBrandSelect(selectedId) {
+            const sel = document.getElementById('featuredBrandId');
+            sel.innerHTML = '<option value="">— 選擇品牌 —</option>';
+            try {
+                const { data: brands } = await sb.from('brands').select('id, name').order('name');
+                (brands || []).forEach(b => {
+                    const opt = document.createElement('option');
+                    opt.value = b.id;
+                    opt.textContent = b.name;
+                    if (b.id === selectedId) opt.selected = true;
+                    sel.appendChild(opt);
+                });
+            } catch (e) { console.error('Failed to load brands for featured selector:', e); }
+        }
+
+        async function populateFeaturedProductSelect(brandId, selectedId) {
+            const sel = document.getElementById('featuredProductId');
+            if (!brandId) {
+                sel.disabled = true;
+                sel.innerHTML = '<option value="">— 先選擇品牌 —</option>';
+                return;
+            }
+            try {
+                const { data: products } = await sb.from('products')
+                    .select('id, name, cover_image, original_cover_url, price_vnd, tag, category')
+                    .eq('brand_id', brandId)
+                    .eq('is_active', true)
+                    .order('name');
+                sel.disabled = false;
+                sel.innerHTML = '<option value="">— 選擇商品 —</option>' +
+                    (products || []).map(p => {
+                        const { carry } = _featuredCalc(p.price_vnd, p.tag || p.category || '');
+                        const priceLabel = carry != null ? ` — ฿${carry.toLocaleString()}` : '';
+                        const sel2 = p.id === selectedId ? 'selected' : '';
+                        const safeName = (p.name || '').replace(/"/g, '&quot;');
+                        return `<option value="${p.id}" ${sel2} data-cover="${(p.original_cover_url || p.cover_image || '').replace(/"/g, '&quot;')}" data-price-vnd="${p.price_vnd || 0}" data-tag="${(p.tag || p.category || '').replace(/"/g, '&quot;')}">${safeName}${priceLabel}</option>`;
+                    }).join('');
+            } catch (e) { console.error('Failed to load products for featured selector:', e); }
+        }
+
+        function _updateFeaturedPreview() {
+            const sel = document.getElementById('featuredProductId');
+            const opt = sel.options[sel.selectedIndex];
+            const img = document.getElementById('featuredPreviewImg');
+            const meta = document.getElementById('featuredPreviewMeta');
+            if (!opt || !opt.value) {
+                img.style.display = 'none';
+                meta.textContent = '— 選擇商品後預覽 —';
+                return;
+            }
+            const cover = opt.dataset.cover || '';
+            const vnd = +opt.dataset.priceVnd || 0;
+            const tag = opt.dataset.tag || '';
+            const { carry, ship } = _featuredCalc(vnd, tag);
+            if (cover) {
+                img.src = cover;
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+            }
+            meta.innerHTML = `
+                <div style="font-weight:600;color:var(--text);margin-bottom:4px;">${opt.textContent.split(' — ')[0]}</div>
+                <div>VND: ${vnd ? vnd.toLocaleString() : '-'} (${tag || '_default'})</div>
+                <div>親自帶: ${carry != null ? '฿ ' + carry.toLocaleString() : '-'} / 國際送: ${ship != null ? '฿ ' + ship.toLocaleString() : '-'}</div>
+            `;
+        }
+
+        document.getElementById('featuredBrandId').addEventListener('change', async (e) => {
+            await populateFeaturedProductSelect(e.target.value, '');
+            _updateFeaturedPreview();
+        });
+
+        document.getElementById('featuredProductId').addEventListener('change', _updateFeaturedPreview);
+
+        document.getElementById('addFeaturedBtn').addEventListener('click', async () => {
+            editingFeaturedId = null;
+            document.getElementById('featuredModalTitle').textContent = 'Add Featured';
+            document.getElementById('featuredForm').reset();
+            document.getElementById('featuredActive').checked = true;
+            document.getElementById('featuredPreviewImg').style.display = 'none';
+            document.getElementById('featuredPreviewMeta').textContent = '— 選擇商品後預覽 —';
+            await populateFeaturedBrandSelect('');
+            await populateFeaturedProductSelect('', '');
+            document.getElementById('featuredModal').classList.add('active');
+        });
+
+        async function editFeatured(id) {
+            editingFeaturedId = id;
+            const f = allFeatured.find(x => x.id === id);
+            if (!f) return;
+            document.getElementById('featuredModalTitle').textContent = 'Edit Featured';
+            document.getElementById('featuredActive').checked = f.is_active !== false;
+            document.getElementById('featuredSortOrder').value = f.sort_order || 0;
+            await populateFeaturedBrandSelect(f.brand_id || '');
+            await populateFeaturedProductSelect(f.brand_id || '', f.product_id || '');
+            _updateFeaturedPreview();
+            document.getElementById('featuredModal').classList.add('active');
+        }
+
+        function closeFeaturedModal() {
+            document.getElementById('featuredModal').classList.remove('active');
+            editingFeaturedId = null;
+        }
+
+        document.getElementById('featuredForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const payload = {
+                brand_id:   document.getElementById('featuredBrandId').value,
+                product_id: document.getElementById('featuredProductId').value,
+                is_active:  document.getElementById('featuredActive').checked,
+                sort_order: parseInt(document.getElementById('featuredSortOrder').value) || 0,
+            };
+            if (!payload.brand_id || !payload.product_id) {
+                showToast('Please pick brand & product', 'error');
+                return;
+            }
+            try {
+                let result;
+                if (editingFeaturedId) {
+                    result = await sb.from('featured_products').update(payload).eq('id', editingFeaturedId);
+                    if (result.error) throw result.error;
+                    showToast('Featured updated', 'success');
+                } else {
+                    result = await sb.from('featured_products').insert([payload]);
+                    if (result.error) throw result.error;
+                    showToast('Featured created', 'success');
+                }
+                closeFeaturedModal();
+                loadFeatured();
+            } catch (error) {
+                showToast(error.message || 'Save failed', 'error');
+            }
+        });
+
+        async function updateFeaturedActive(id, value) {
+            try {
+                await sb.from('featured_products').update({ is_active: value }).eq('id', id);
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+
+        async function deleteFeatured(id) {
+            if (!confirm('Are you sure you want to remove this from featured?')) return;
+            try {
+                const { error } = await sb.from('featured_products').delete().eq('id', id);
+                if (error) throw error;
+                showToast('Featured removed', 'success');
+                loadFeatured();
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        }
+
+        // ============================================================================
+        // ORDERS MANAGEMENT
+        // ============================================================================
+        const ORDER_STATUSES = ['pending', 'confirmed', 'shipped', 'delivered', 'cancelled'];
+        const STATUS_COLORS = {
+            pending:   '#ffa726',
+            confirmed: '#42a5f5',
+            shipped:   '#ab47bc',
+            delivered: '#66bb6a',
+            cancelled: '#ef5350',
+        };
+
+        async function loadOrders() {
+            const tbody = document.getElementById('ordersTableBody');
+            tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;">Loading orders...</td></tr>';
+
+            try {
+                const statusFilter = document.getElementById('orderStatusFilter').value;
+                let query = sb.from('orders').select('*').order('created_at', { ascending: false });
+                if (statusFilter !== 'all') query = query.eq('status', statusFilter);
+                const { data: orders, error } = await query;
+                if (error) throw error;
+
+                if (!orders || orders.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text-secondary);">No orders found</td></tr>';
+                    return;
+                }
+
+                // Fetch item counts per order
+                const orderIds = orders.map(o => o.id);
+                const { data: items } = await sb.from('order_items').select('order_id, quantity').in('order_id', orderIds);
+                const itemCounts = {};
+                (items || []).forEach(i => {
+                    itemCounts[i.order_id] = (itemCounts[i.order_id] || 0) + i.quantity;
+                });
+
+                tbody.innerHTML = orders.map(o => {
+                    const date = new Date(o.created_at).toLocaleDateString('th-TH', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+                    const statusColor = STATUS_COLORS[o.status] || '#999';
+                    const count = itemCounts[o.id] || 0;
+                    return `<tr>
+                        <td><strong>${o.order_number || '—'}</strong></td>
+                        <td style="font-size:12px;">${date}</td>
+                        <td>${o.customer_name || '—'}<br><span style="font-size:11px;color:var(--text-secondary);">${o.customer_phone || ''}</span></td>
+                        <td>${count} item${count !== 1 ? 's' : ''}</td>
+                        <td><strong>฿ ${(o.total || 0).toLocaleString()}</strong></td>
+                        <td><span style="display:inline-block;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;background:${statusColor}22;color:${statusColor};border:1px solid ${statusColor}44;">${o.status}</span></td>
+                        <td>
+                            <button class="btn-secondary" style="font-size:11px;padding:4px 8px;" onclick="viewOrderDetail('${o.id}')">View</button>
+                            <select style="font-size:11px;padding:4px;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;color:var(--text);" onchange="updateOrderStatus('${o.id}', this.value)">
+                                ${ORDER_STATUSES.map(s => `<option value="${s}" ${s === o.status ? 'selected' : ''}>${s}</option>`).join('')}
+                            </select>
+                            <button style="font-size:11px;padding:4px 8px;background:#ef535022;color:#ef5350;border:1px solid #ef535044;border-radius:4px;cursor:pointer;margin-left:4px;" onclick="deleteOrder('${o.id}','${o.order_number || ""}')">Delete</button>
+                        </td>
+                    </tr>`;
+                }).join('');
+            } catch (err) {
+                console.error('Failed to load orders:', err);
+                tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;color:#ef5350;">Error: ${err.message}</td></tr>`;
+            }
+        }
+
+        async function deleteOrder(orderId, orderNumber) {
+            if (!confirm('確定要刪除訂單 ' + (orderNumber || orderId) + '？\n此操作無法復原！')) return;
+            try {
+                await sb.from('order_items').delete().eq('order_id', orderId);
+                const { error } = await sb.from('orders').delete().eq('id', orderId);
+                if (error) throw error;
+                showToast('訂單 ' + (orderNumber || orderId) + ' 已刪除');
+                loadOrders();
+            } catch (err) {
+                console.error('Failed to delete order:', err);
+                showToast('刪除失敗: ' + err.message, 'error');
+            }
+        }
+
+        async function updateOrderStatus(orderId, newStatus) {
+            try {
+                const { error } = await sb.from('orders').update({ status: newStatus, updated_at: new Date().toISOString() }).eq('id', orderId);
+                if (error) throw error;
+                showToast('Order status updated to: ' + newStatus);
+                loadOrders();
+            } catch (err) {
+                console.error('Failed to update order status:', err);
+                showToast('Error updating status: ' + err.message, 'error');
+            }
+        }
+
+        async function viewOrderDetail(orderId) {
+            const modal = document.getElementById('orderDetailModal');
+            const body = document.getElementById('orderDetailBody');
+            body.innerHTML = '<p style="text-align:center;padding:40px;">Loading...</p>';
+            modal.style.display = 'flex';
+
+            try {
+                const [orderRes, itemsRes] = await Promise.all([
+                    sb.from('orders').select('*').eq('id', orderId).single(),
+                    sb.from('order_items').select('*').eq('order_id', orderId),
+                ]);
+                if (orderRes.error) throw orderRes.error;
+
+                const o = orderRes.data;
+                const items = itemsRes.data || [];
+                const date = new Date(o.created_at).toLocaleString('th-TH');
+                const statusColor = STATUS_COLORS[o.status] || '#999';
+
+                document.getElementById('orderDetailTitle').textContent = 'Order ' + (o.order_number || o.id);
+
+                body.innerHTML = `
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+                        <div>
+                            <div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">Customer</div>
+                            <div style="font-weight:600;">${o.customer_name}</div>
+                            <div style="font-size:13px;color:var(--text-secondary);">${o.customer_phone || ''}</div>
+                            <div style="font-size:13px;color:var(--text-secondary);">${o.customer_email || ''}</div>
+                        </div>
+                        <div>
+                            <div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">Delivery</div>
+                            <div style="font-size:13px;">${o.customer_address || '—'}</div>
+                            <div style="font-size:13px;margin-top:4px;">Method: <strong>${o.shipping_method || '—'}</strong></div>
+                        </div>
+                        <div>
+                            <div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">Status</div>
+                            <span style="display:inline-block;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;background:${statusColor}22;color:${statusColor};border:1px solid ${statusColor}44;">${o.status}</span>
+                        </div>
+                        <div>
+                            <div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">Date</div>
+                            <div style="font-size:13px;">${date}</div>
+                        </div>
+                    </div>
+                    ${o.note ? `<div style="margin-bottom:16px;padding:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;"><div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">Note</div><div style="font-size:13px;">${o.note}</div></div>` : ''}
+                    <h3 style="margin-bottom:12px;">Items (${items.length})</h3>
+                    <table class="data-table" style="margin-bottom:16px;">
+                        <thead><tr><th>Image</th><th>Product</th><th>Size</th><th>Qty</th><th>Price</th></tr></thead>
+                        <tbody>
+                            ${items.map(item => `
+                                <tr>
+                                    <td>${item.image_url ? `<img src="${item.image_url}" style="width:40px;height:40px;object-fit:cover;border-radius:4px;">` : '—'}</td>
+                                    <td>${item.product_name || '—'}</td>
+                                    <td>${item.size || '—'}</td>
+                                    <td>${item.quantity}</td>
+                                    <td>฿ ${((item.unit_price || 0) * item.quantity).toLocaleString()}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                    <div style="text-align:right;font-size:18px;font-weight:700;color:var(--primary);">
+                        Total: ฿ ${(o.total || 0).toLocaleString()}
+                    </div>
+                `;
+            } catch (err) {
+                body.innerHTML = `<p style="color:#ef5350;">Error loading order: ${err.message}</p>`;
+            }
+        }
+
+        function closeOrderDetail() {
+            document.getElementById('orderDetailModal').style.display = 'none';
+        }
+
+        // Close order modal on overlay click
+        document.getElementById('orderDetailModal')?.addEventListener('click', function(e) {
+            if (e.target === this) closeOrderDetail();
+        });
+
+        // Order status filter change
+        document.getElementById('orderStatusFilter')?.addEventListener('change', () => loadOrders());
+
+        // ============================================================================
+        // SETTINGS
+        // ============================================================================
+        async function loadSettings() {
+            try {
+                const { data: seoData } = await sb.from('site_settings').select('value').eq('key', 'seo_homepage').single();
+                if (seoData?.value) {
+                    document.getElementById('seoTitleEn').value = seoData.value.title_en || '';
+                    document.getElementById('seoTitleTh').value = seoData.value.title_th || '';
+                    document.getElementById('seoDescEn').value = seoData.value.description_en || '';
+                    document.getElementById('seoDescTh').value = seoData.value.description_th || '';
+                }
+
+                const { data: heroData } = await sb.from('site_settings').select('value').eq('key', 'homepage_hero').single();
+                if (heroData?.value) {
+                    document.getElementById('heroTitle').value = heroData.value.title || '';
+                    document.getElementById('heroSubtitleEn').value = heroData.value.subtitle_en || '';
+                    document.getElementById('heroSubtitleTh').value = heroData.value.subtitle_th || '';
+                }
+
+                const { data: imageData } = await sb.from('site_settings').select('value').eq('key', 'og_image_favicon').single();
+                if (imageData?.value) {
+                    document.getElementById('ogImageUrl').value = imageData.value.og_image_url || '';
+                    document.getElementById('faviconUrl').value = imageData.value.favicon_url || '';
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        document.getElementById('saveSeoBtn').addEventListener('click', async () => {
+            const value = {
+                title_en: document.getElementById('seoTitleEn').value,
+                title_th: document.getElementById('seoTitleTh').value,
+                description_en: document.getElementById('seoDescEn').value,
+                description_th: document.getElementById('seoDescTh').value
+            };
+
+            try {
+                const { error } = await sb.from('site_settings').upsert({
+                    key: 'seo_homepage',
+                    value,
+                    updated_at: new Date().toISOString()
+                });
+                if (error) throw error;
+                showToast('SEO settings saved', 'success');
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        document.getElementById('saveHeroBtn').addEventListener('click', async () => {
+            const value = {
+                title: document.getElementById('heroTitle').value,
+                subtitle_en: document.getElementById('heroSubtitleEn').value,
+                subtitle_th: document.getElementById('heroSubtitleTh').value
+            };
+
+            try {
+                const { error } = await sb.from('site_settings').upsert({
+                    key: 'homepage_hero',
+                    value,
+                    updated_at: new Date().toISOString()
+                });
+                if (error) throw error;
+                showToast('Hero settings saved', 'success');
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        document.getElementById('saveImageSettingsBtn').addEventListener('click', async () => {
+            const value = {
+                og_image_url: document.getElementById('ogImageUrl').value,
+                favicon_url: document.getElementById('faviconUrl').value
+            };
+
+            try {
+                const { error } = await sb.from('site_settings').upsert({
+                    key: 'og_image_favicon',
+                    value,
+                    updated_at: new Date().toISOString()
+                });
+                if (error) throw error;
+                showToast('Image settings saved', 'success');
+            } catch (error) {
+                showToast(error.message, 'error');
+            }
+        });
+
+        // ============================================================================
+        // 發布部署 (DEPLOY)
+        // ============================================================================
+        let _deployHooks = { tw: '', th: '' };
+
+        async function loadDeploy() {
+            try {
+                // 從 site_settings 取出 deploy hook URL
+                const { data, error } = await sb.from('site_settings')
+                    .select('key, value')
+                    .in('key', ['deploy_hook_tw', 'deploy_hook_th']);
+                if (error) throw error;
+                _deployHooks = { tw: '', th: '' };
+                (data || []).forEach(row => {
+                    if (row.key === 'deploy_hook_tw') _deployHooks.tw = row.value || '';
+                    if (row.key === 'deploy_hook_th') _deployHooks.th = row.value || '';
+                });
+                document.getElementById('deployHookTw').value = _deployHooks.tw;
+                document.getElementById('deployHookTh').value = _deployHooks.th;
+                _refreshDeployButtons();
+                _refreshDeployStatus();
+            } catch (err) {
+                showToast('載入部署設定失敗', 'error');
+                console.error(err);
+            }
+        }
+
+        function _refreshDeployButtons() {
+            document.getElementById('deployTwBtn').disabled  = !_deployHooks.tw;
+            document.getElementById('deployThBtn').disabled  = !_deployHooks.th;
+            document.getElementById('deployAllBtn').disabled = !_deployHooks.tw && !_deployHooks.th;
+        }
+
+        function _refreshDeployStatus() {
+            const fmt = (key) => {
+                const ts = localStorage.getItem('lastDeploy_' + key);
+                if (!ts) return '尚未部署過';
+                const d = new Date(parseInt(ts, 10));
+                return 'Last deployed: ' + d.toLocaleString('th-TH');
+            };
+            document.getElementById('deployTwStatus').textContent = fmt('tw');
+            document.getElementById('deployThStatus').textContent = fmt('th');
+        }
+
+        document.getElementById('saveDeployHooksBtn').addEventListener('click', async () => {
+            const tw = document.getElementById('deployHookTw').value.trim();
+            const th = document.getElementById('deployHookTh').value.trim();
+            try {
+                const updates = [
+                    { key: 'deploy_hook_tw', value: tw, updated_at: new Date().toISOString() },
+                    { key: 'deploy_hook_th', value: th, updated_at: new Date().toISOString() },
+                ];
+                for (const u of updates) {
+                    const { error } = await sb.from('site_settings').upsert(u);
+                    if (error) throw error;
+                }
+                _deployHooks = { tw, th };
+                _refreshDeployButtons();
+                showToast('Deploy hook 設定已儲存', 'success');
+            } catch (err) {
+                showToast(err.message || '儲存失敗', 'error');
+            }
+        });
+
+        async function _triggerDeploy(key) {
+            const url = _deployHooks[key];
+            if (!url) { showToast('尚未設定該站的 deploy hook URL', 'error'); return; }
+            const btn  = document.getElementById('deploy' + key.charAt(0).toUpperCase() + key.slice(1) + 'Btn');
+            const stat = document.getElementById('deploy' + key.charAt(0).toUpperCase() + key.slice(1) + 'Status');
+            const original = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = '部署中…';
+            try {
+                // Vercel deploy hook 是 POST,不需要 body
+                const res = await fetch(url, { method: 'POST' });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                localStorage.setItem('lastDeploy_' + key, String(Date.now()));
+                stat.textContent = '✓ 部署觸發成功,等 Vercel 約 1-2 分鐘建置完。';
+                stat.style.color = '#4ade80';
+                showToast('部署已觸發', 'success');
+            } catch (err) {
+                stat.textContent = '✗ 部署失敗: ' + (err.message || err);
+                stat.style.color = '#f87171';
+                showToast('部署失敗', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = original;
+                _refreshDeployStatus();
+            }
+        }
+
+        document.getElementById('deployTwBtn').addEventListener('click', () => _triggerDeploy('tw'));
+        document.getElementById('deployThBtn').addEventListener('click', () => _triggerDeploy('th'));
+        document.getElementById('deployAllBtn').addEventListener('click', async () => {
+            if (_deployHooks.tw) await _triggerDeploy('tw');
+            if (_deployHooks.th) await _triggerDeploy('th');
+        });
+
+        // ============================================================================
+        // DRAG DROP
+        // ============================================================================
+        function setupDragDrop(tableBodyId, entityType) {
+            const tbody = document.getElementById(tableBodyId);
+            const rows = tbody.querySelectorAll('tr');
+
+            rows.forEach(row => {
+                row.addEventListener('dragstart', (e) => {
+                    draggedRow = row;
+                    row.classList.add('dragging');
+                    e.dataTransfer.effectAllowed = 'move';
+                });
+
+                row.addEventListener('dragend', () => {
+                    row.classList.remove('dragging');
+                });
+
+                row.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = 'move';
+                    if (draggedRow && draggedRow !== row) {
+                        const allRows = Array.from(tbody.querySelectorAll('tr'));
+                        const draggedIndex = allRows.indexOf(draggedRow);
+                        const targetIndex = allRows.indexOf(row);
+
+                        if (draggedIndex < targetIndex) {
+                            row.parentElement.insertBefore(draggedRow, row.nextSibling);
+                        } else {
+                            row.parentElement.insertBefore(draggedRow, row);
+                        }
+                    }
+                });
+            });
+
+            tbody.addEventListener('drop', async (e) => {
+                e.preventDefault();
+                if (!draggedRow) return;
+
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                const updates = rows.map((row, index) => ({
+                    id: row.dataset.id,
+                    sort_order: index
+                }));
+
+                try {
+                    for (const update of updates) {
+                        await sb.from(entityType).update({ sort_order: update.sort_order }).eq('id', update.id);
+                    }
+                    showToast('Order updated', 'success');
+                } catch (error) {
+                    showToast(error.message, 'error');
+                }
+                draggedRow = null;
+            });
+        }
+
+        // ============================================================================
+        // TOAST NOTIFICATIONS
+        // ============================================================================
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.animation = 'slideInRight 0.3s reverse';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // ============================================================================
+        // INITIALIZATION
+        // ============================================================================
+        initAuth();
+    </script>
+</body>
+</html>

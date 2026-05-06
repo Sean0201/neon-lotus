@@ -1,0 +1,2556 @@
+{
+  "brand": {
+    "id": "rich",
+    "name": "RICH",
+    "style": "Vietnamese Streetwear",
+    "color_hex": "#1a1a1a",
+    "description": {
+      "en": "",
+      "th": "",
+      "zh": ""
+    },
+    "meta": {
+      "website": "https://richhn.vn",
+      "location": "Vietnam",
+      "founded": "",
+      "category": "Streetwear"
+    }
+  },
+  "products": [
+    {
+      "id": "rich-src-ao-khoac-bomber-da-moc-cai",
+      "brand_id": "rich",
+      "name": "AK.097 High Neck Leather Bomber Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1850000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_14pYqgTltC.jpeg?v=1768876469",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_14pYqgTltC.jpeg?v=1768876469",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_14pYqgTltC.jpeg?v=1768876469"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_14pYqgTltC.jpeg?v=1768876487",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_14pYqgTltC.jpeg?v=1768876487"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_NBZGBHVwvr.jpeg?v=1768876471",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_NBZGBHVwvr.jpeg?v=1768876471"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_1vwQYgX1hF.jpeg?v=1768876472",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_1vwQYgX1hF.jpeg?v=1768876472"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_jNFgi4NjMJ.jpeg?v=1768876473",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_jNFgi4NjMJ.jpeg?v=1768876473"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_WnalSOuCEH.jpeg?v=1768876474",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_WnalSOuCEH.jpeg?v=1768876474"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_cd33HYfNhU.jpeg?v=1768876475",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_cd33HYfNhU.jpeg?v=1768876475"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260120_14pYqgTltC.jpeg?v=1768876469",
+      "product_url": "https://richhn.vn/ao-khoac-bomber-da-moc-cai-p8968.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260120_x1YfrGDC.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-bomber-da-moc-cai-p8968.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-dai-ong-flare-waxed-machine",
+      "brand_id": "rich",
+      "name": "Quần dài ống flare waxed machine",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 990000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_AdxnzRkOOY.jpeg?v=1768371419",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_AdxnzRkOOY.jpeg?v=1768371419",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_AdxnzRkOOY.jpeg?v=1768371419"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_AdxnzRkOOY.jpeg?v=1768371439",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_AdxnzRkOOY.jpeg?v=1768371439"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_nuX94FhOqc.jpeg?v=1768371422",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_nuX94FhOqc.jpeg?v=1768371422"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_xvzX5ffyMC.jpeg?v=1768371423",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_xvzX5ffyMC.jpeg?v=1768371423"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_bDLnWhhOMG.jpeg?v=1768371424",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_bDLnWhhOMG.jpeg?v=1768371424"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_J2zegAX8Jk.jpeg?v=1768371425",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_J2zegAX8Jk.jpeg?v=1768371425"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_REorfBeRNs.jpeg?v=1768371427",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_REorfBeRNs.jpeg?v=1768371427"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260114_AdxnzRkOOY.jpeg?v=1768371419",
+      "product_url": "https://richhn.vn/quan-dai-ong-flare-waxed-machine-p8946.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/Quan-dai-ong-flare-waxed-machine.jpg?v=1775114939",
+        "source_url": "https://richhn.vn/quan-dai-ong-flare-waxed-machine-p8946.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-da-2-khoa",
+      "brand_id": "rich",
+      "name": "AK.095 Vlad Leather Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1850000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251225_FvgXcRCbjd.jpeg?v=1766679867",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251225_FvgXcRCbjd.jpeg?v=1766679867",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251225_FvgXcRCbjd.jpeg?v=1766679867"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251225_FvgXcRCbjd.jpeg?v=1766679888",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251225_FvgXcRCbjd.jpeg?v=1766679888"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_FjJAu4bPel.jpeg?v=1770114334",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_FjJAu4bPel.jpeg?v=1770114334"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_mSV3fmQRB0.jpeg?v=1770114335",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_mSV3fmQRB0.jpeg?v=1770114335"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_aAVlxIesdu.jpeg?v=1770114336",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_aAVlxIesdu.jpeg?v=1770114336"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251225_FvgXcRCbjd.jpeg?v=1766679867",
+      "product_url": "https://richhn.vn/ao-khoac-da-2-khoa-p8938.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20251230_9ztskSoY.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-da-2-khoa-p8938.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-da-racing-co-long",
+      "brand_id": "rich",
+      "name": "AK.096 Black Shearling Racer Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1850000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "L/XL",
+          "available": true
+        },
+        {
+          "label": "S/M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_9Rpo8X4wh1.jpeg?v=1767926705",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_9Rpo8X4wh1.jpeg?v=1767926705",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_9Rpo8X4wh1.jpeg?v=1767926705"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_9Rpo8X4wh1.jpeg?v=1767926722",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_9Rpo8X4wh1.jpeg?v=1767926722"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_xExYrYFVnN.jpeg?v=1767926706",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_xExYrYFVnN.jpeg?v=1767926706"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_B1drw7EEPt.jpeg?v=1767926708",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_B1drw7EEPt.jpeg?v=1767926708"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_UxWouZdbZc.jpeg?v=1767926709",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_UxWouZdbZc.jpeg?v=1767926709"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_ubW0yxJTUI.jpeg?v=1767926710",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_ubW0yxJTUI.jpeg?v=1767926710"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260109_9Rpo8X4wh1.jpeg?v=1767926705",
+      "product_url": "https://richhn.vn/ao-khoac-da-racing-co-long-p8895.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260111_7wyRfbMP.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-da-racing-co-long-p8895.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-wide-pants-moc-cai",
+      "brand_id": "rich",
+      "name": "QD.123 Mock Double Waist Wide Leg Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1450000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "XS",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251129_CzYnTP9TBa.jpeg?v=1764383446",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251129_CzYnTP9TBa.jpeg?v=1764383446",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251129_CzYnTP9TBa.jpeg?v=1764383446"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251129_CzYnTP9TBa.jpeg?v=1764383468",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251129_CzYnTP9TBa.jpeg?v=1764383468"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_j75pB6VMqL.jpeg?v=1770121010",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_j75pB6VMqL.jpeg?v=1770121010"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_6eMSP0YAoY.jpeg?v=1770121012",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_6eMSP0YAoY.jpeg?v=1770121012"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251129_CzYnTP9TBa.jpeg?v=1764383446",
+      "product_url": "https://richhn.vn/quan-wide-pants-moc-cai-p8873.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_rPvUxCM7.jpg",
+        "source_url": "https://richhn.vn/quan-wide-pants-moc-cai-p8873.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-hoodie-2-mat-da-long",
+      "brand_id": "rich",
+      "name": "AK094 Reversible Faux Fur Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 2050000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251118_YTsnXYivK0.jpeg?v=1763423979",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251118_YTsnXYivK0.jpeg?v=1763423979",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251118_YTsnXYivK0.jpeg?v=1763423979"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251118_YTsnXYivK0.jpeg?v=1763424071",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251118_YTsnXYivK0.jpeg?v=1763424071"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_Rkuum7EgbD.jpeg?v=1770113977",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_Rkuum7EgbD.jpeg?v=1770113977"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_MUIlS96HzO.jpeg?v=1770113978",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_MUIlS96HzO.jpeg?v=1770113978"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_Lb4ZvBezxK.jpeg?v=1770113986",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_Lb4ZvBezxK.jpeg?v=1770113986"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_CQH4eUXEaH.jpeg?v=1770113988",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_CQH4eUXEaH.jpeg?v=1770113988"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_vIt8mLAy9O.jpeg?v=1770113989",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_vIt8mLAy9O.jpeg?v=1770113989"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251118_YTsnXYivK0.jpeg?v=1763423979",
+      "product_url": "https://richhn.vn/ao-khoac-hoodie-2-mat-da-long-p8870.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_6FFD74mN.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-hoodie-2-mat-da-long-p8870.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-da-long-khoa-co-cao-den",
+      "brand_id": "rich",
+      "name": "AK.084B Black Shearling Leather Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1550000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "L/XL",
+          "available": true
+        },
+        {
+          "label": "M/L",
+          "available": true
+        },
+        {
+          "label": "S/M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251205_WQzMeMA55h.jpeg?v=1764941938",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251205_WQzMeMA55h.jpeg?v=1764941938",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251205_WQzMeMA55h.jpeg?v=1764941938"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251205_WQzMeMA55h.jpeg?v=1764942193",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251205_WQzMeMA55h.jpeg?v=1764942193"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_buWoHjhqh6.jpeg?v=1770114554",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_buWoHjhqh6.jpeg?v=1770114554"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_RkHo1qfCB5.jpeg?v=1770114555",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_RkHo1qfCB5.jpeg?v=1770114555"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_snSnfiGFYr.jpeg?v=1770114556",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_snSnfiGFYr.jpeg?v=1770114556"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_cHGdgqQwS5.jpeg?v=1770114557",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_cHGdgqQwS5.jpeg?v=1770114557"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_YbXWRyX0zI.jpeg?v=1770114559",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_YbXWRyX0zI.jpeg?v=1770114559"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251205_WQzMeMA55h.jpeg?v=1764941938",
+      "product_url": "https://richhn.vn/ao-khoac-da-long-khoa-co-cao-den-p8861.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_zdvCr1iQ.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-da-long-khoa-co-cao-den-p8861.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-longsleeve-dinh-tan",
+      "brand_id": "rich",
+      "name": "AD.068 Riveted Cross Slim Longsleeve",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 620000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "L/XL",
+          "available": true
+        },
+        {
+          "label": "S/M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_9vwc3VRUFf.jpeg?v=1762912421",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_9vwc3VRUFf.jpeg?v=1762912421",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_9vwc3VRUFf.jpeg?v=1762912421"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_9vwc3VRUFf.jpeg?v=1762912442",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_9vwc3VRUFf.jpeg?v=1762912442"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_NhYLyWRTaR.jpeg?v=1763620685",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_NhYLyWRTaR.jpeg?v=1763620685"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_F2IIFtt4AC.jpeg?v=1763620687",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_F2IIFtt4AC.jpeg?v=1763620687"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_p0iYOl9YX3.jpeg?v=1763620690",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_p0iYOl9YX3.jpeg?v=1763620690"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_mC3ubinDHh.jpeg?v=1762912424",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_mC3ubinDHh.jpeg?v=1762912424"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_AqSMiaVFW4.jpeg?v=1762912427",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_AqSMiaVFW4.jpeg?v=1762912427"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_tULdnQerpl.jpeg?v=1762912431",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_tULdnQerpl.jpeg?v=1762912431"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251112_9vwc3VRUFf.jpeg?v=1762912421",
+      "product_url": "https://richhn.vn/ao-longsleeve-dinh-tan-p8857.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_8AwQ4qIb.jpg",
+        "source_url": "https://richhn.vn/ao-longsleeve-dinh-tan-p8857.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-long-den-moc-cai",
+      "brand_id": "rich",
+      "name": "AK.093A Blvck Fur Crop Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1800000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "L/XL",
+          "available": true
+        },
+        {
+          "label": "S/M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_o02YmDmWbu.jpeg?v=1762045360",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_o02YmDmWbu.jpeg?v=1762045360",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_o02YmDmWbu.jpeg?v=1762045360"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_o02YmDmWbu.jpeg?v=1762045376",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_o02YmDmWbu.jpeg?v=1762045376"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_00hyeGF5e5.jpeg?v=1763620469",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_00hyeGF5e5.jpeg?v=1763620469"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_ICnpLevH3A.jpeg?v=1763620477",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_ICnpLevH3A.jpeg?v=1763620477"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_a7e7DN4lVG.jpeg?v=1763620475",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_a7e7DN4lVG.jpeg?v=1763620475"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_jVl2y3yqjA.jpeg?v=1763620472",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251120_jVl2y3yqjA.jpeg?v=1763620472"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_3rxKeP4ltz.jpeg?v=1762045365",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_3rxKeP4ltz.jpeg?v=1762045365"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_oP7vtvghIt.jpeg?v=1762045363",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_oP7vtvghIt.jpeg?v=1762045363"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_JS5fzhu4dX.jpeg?v=1762045367",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_JS5fzhu4dX.jpeg?v=1762045367"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251102_o02YmDmWbu.jpeg?v=1762045360",
+      "product_url": "https://richhn.vn/ao-khoac-long-den-moc-cai-p8849.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_VcRwZmYi.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-long-den-moc-cai-p8849.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-longsleeve-dai-tay-cotton-dinh-charm",
+      "brand_id": "rich",
+      "name": "AD.069 Star Charm Longsleeve Top",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 450000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "L/XL",
+          "available": true
+        },
+        {
+          "label": "S/M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_We41umkVML.jpeg?v=1770198184",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_We41umkVML.jpeg?v=1770198184",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_We41umkVML.jpeg?v=1770198184"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_We41umkVML.jpeg?v=1770198196",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_We41umkVML.jpeg?v=1770198196"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_ECwPOukxwY.jpeg?v=1770198185",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_ECwPOukxwY.jpeg?v=1770198185"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_7CZwtjU5d6.jpeg?v=1770198186",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_7CZwtjU5d6.jpeg?v=1770198186"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260204_We41umkVML.jpeg?v=1770198184",
+      "product_url": "https://richhn.vn/ao-longsleeve-dai-tay-cotton-dinh-charm-p8845.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260204_fyOZlMdA.jpg",
+        "source_url": "https://richhn.vn/ao-longsleeve-dai-tay-cotton-dinh-charm-p8845.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-widepants-da",
+      "brand_id": "rich",
+      "name": "QD.122 Wide Leg Boxing Pant",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 950000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251116_OrPC6zZ938.jpeg?v=1763238971",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251116_OrPC6zZ938.jpeg?v=1763238971",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251116_OrPC6zZ938.jpeg?v=1763238971"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251116_OrPC6zZ938.jpeg?v=1766121338",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251116_OrPC6zZ938.jpeg?v=1766121338"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_fWto13bfEc.jpeg?v=1770121056",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_fWto13bfEc.jpeg?v=1770121056"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_TElS1Nbrax.jpeg?v=1770121057",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_TElS1Nbrax.jpeg?v=1770121057"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_8sVj2Ysnf2.jpeg?v=1770121059",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_8sVj2Ysnf2.jpeg?v=1770121059"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_GP20q4zgay.jpeg?v=1770121058",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_GP20q4zgay.jpeg?v=1770121058"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_cdp15XnNZU.jpeg?v=1770121039",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_cdp15XnNZU.jpeg?v=1770121039"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_BBz8Xo2nmw.jpeg?v=1770121042",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_BBz8Xo2nmw.jpeg?v=1770121042"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_ZupeMU2LJe.jpeg?v=1770121040",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_ZupeMU2LJe.jpeg?v=1770121040"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20251116_OrPC6zZ938.jpeg?v=1763238971",
+      "product_url": "https://richhn.vn/quan-widepants-da-p8830.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_5Luk8Irp.jpg",
+        "source_url": "https://richhn.vn/quan-widepants-da-p8830.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-ong-rong-khoa-moi-denim-washes-dirty-120c",
+      "brand_id": "rich",
+      "name": "QD.120C Dirty Washed Knight Wide Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1300000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_hZ5YcZ4iz9.jpeg?v=1754462904",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_hZ5YcZ4iz9.jpeg?v=1754462904",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_hZ5YcZ4iz9.jpeg?v=1754462904"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_hZ5YcZ4iz9.jpeg?v=1754462940",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_hZ5YcZ4iz9.jpeg?v=1754462940"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_21Q3bIw7L3.jpeg?v=1770121177",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_21Q3bIw7L3.jpeg?v=1770121177"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_TEvEIw7D7C.jpeg?v=1770121178",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_TEvEIw7D7C.jpeg?v=1770121178"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_ts741HQbuf.jpeg?v=1770121179",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_ts741HQbuf.jpeg?v=1770121179"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_Emih11zXLG.jpeg?v=1770121180",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_Emih11zXLG.jpeg?v=1770121180"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_hZ5YcZ4iz9.jpeg?v=1754462904",
+      "product_url": "https://richhn.vn/quan-ong-rong-khoa-moi-denim-washes-dirty-120c-p8714.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_Ghzwzw6d.jpg",
+        "source_url": "https://richhn.vn/quan-ong-rong-khoa-moi-denim-washes-dirty-120c-p8714.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-crinkle-denim-stone-washed-bag",
+      "brand_id": "rich",
+      "name": "B02A Crinkle Denim Washed Bag",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1200000
+      },
+      "sizes": [
+        {
+          "label": "FREE",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_8cQkfvmiqR.jpeg?v=1754461537",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_8cQkfvmiqR.jpeg?v=1754461537",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_8cQkfvmiqR.jpeg?v=1754461537"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_SRpeosDkX2.jpeg?v=1754461542",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_SRpeosDkX2.jpeg?v=1754461542"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_v5KW1iCkIC.jpeg?v=1754461547",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_v5KW1iCkIC.jpeg?v=1754461547"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_qjal9tguar.jpeg?v=1754459847",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_qjal9tguar.jpeg?v=1754459847"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_8cQkfvmiqR.jpeg?v=1754461537",
+      "product_url": "https://richhn.vn/crinkle-denim-stone-washed-bag-p8713.html",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://richhn.vn/crinkle-denim-stone-washed-bag-p8713.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-crinkle-leather-bag",
+      "brand_id": "rich",
+      "name": "B02B Crinkle Leather Bag",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1300000
+      },
+      "sizes": [
+        {
+          "label": "FREE",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EPakhY5691.jpeg?v=1754461419",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EPakhY5691.jpeg?v=1754461419",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EPakhY5691.jpeg?v=1754461419"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_WejXEEApfr.jpeg?v=1754461459",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_WejXEEApfr.jpeg?v=1754461459"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_Lwi90M8aaG.jpeg?v=1754461424",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_Lwi90M8aaG.jpeg?v=1754461424"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EPakhY5691.jpeg?v=1754461419",
+      "product_url": "https://richhn.vn/crinkle-leather-bag-p8712.html",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://richhn.vn/crinkle-leather-bag-p8712.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-denim-coc-tay-oversize-black-waxed",
+      "brand_id": "rich",
+      "name": "AS.070A Black Waxed Over Shirt",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 950000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EAkfZ1YEkp.jpeg?v=1754463208",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EAkfZ1YEkp.jpeg?v=1754463208",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EAkfZ1YEkp.jpeg?v=1754463208"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EAkfZ1YEkp.jpeg?v=1754463368",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EAkfZ1YEkp.jpeg?v=1754463368"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_jABTpzCLKb.jpeg?v=1770119989",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_jABTpzCLKb.jpeg?v=1770119989"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_7PicDZAyFN.jpeg?v=1770119990",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_7PicDZAyFN.jpeg?v=1770119990"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_kIj43OnyYK.jpeg?v=1770119991",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_kIj43OnyYK.jpeg?v=1770119991"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_EAkfZ1YEkp.jpeg?v=1754463208",
+      "product_url": "https://richhn.vn/ao-denim-coc-tay-oversize-black-waxed-p8668.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_ZFT4sByX.jpg",
+        "source_url": "https://richhn.vn/ao-denim-coc-tay-oversize-black-waxed-p8668.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-denim-coc-tay-oversize-pepper",
+      "brand_id": "rich",
+      "name": "AS.070B Pepper Washed Over Shirt",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 920000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_W5XPrKaWwz.jpeg?v=1754463880",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_W5XPrKaWwz.jpeg?v=1754463880",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_W5XPrKaWwz.jpeg?v=1754463880"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_W5XPrKaWwz.jpeg?v=1754464027",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_W5XPrKaWwz.jpeg?v=1754464027"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_KUUhywi9rb.jpeg?v=1770120021",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_KUUhywi9rb.jpeg?v=1770120021"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_23DWyoVjuG.jpeg?v=1770120022",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_23DWyoVjuG.jpeg?v=1770120022"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_bzzG9z1Q8I.jpeg?v=1770120023",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_bzzG9z1Q8I.jpeg?v=1770120023"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_fkVK9VgrlL.jpeg?v=1770120024",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_fkVK9VgrlL.jpeg?v=1770120024"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_MWGaZAH7UA.jpeg?v=1770120025",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_MWGaZAH7UA.jpeg?v=1770120025"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_W5XPrKaWwz.jpeg?v=1754463880",
+      "product_url": "https://richhn.vn/ao-denim-coc-tay-oversize-pepper-p8630.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_ZFT4sByX.jpg",
+        "source_url": "https://richhn.vn/ao-denim-coc-tay-oversize-pepper-p8630.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-longsleeve-xuyen-rach",
+      "brand_id": "rich",
+      "name": "AD.067 Ripped Over Knit Top",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 680000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "L/XL",
+          "available": true
+        },
+        {
+          "label": "S/M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_zB8olMWwyL.jpeg?v=1754461914",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_zB8olMWwyL.jpeg?v=1754461914",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_zB8olMWwyL.jpeg?v=1754461914"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_zB8olMWwyL.jpeg?v=1754461950",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_zB8olMWwyL.jpeg?v=1754461950"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_9aUYp05dTK.jpeg?v=1770119693",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_9aUYp05dTK.jpeg?v=1770119693"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_HaHkb34Lr2.jpeg?v=1770119694",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_HaHkb34Lr2.jpeg?v=1770119694"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_eCenGDByxi.jpeg?v=1770119695",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_eCenGDByxi.jpeg?v=1770119695"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_1Vj2T05oBe.jpeg?v=1770119711",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_1Vj2T05oBe.jpeg?v=1770119711"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_CNRdCrxy8m.jpeg?v=1770119712",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_CNRdCrxy8m.jpeg?v=1770119712"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_uY7aclxw7f.jpeg?v=1770119713",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_uY7aclxw7f.jpeg?v=1770119713"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_G4g5RmMZ7k.jpeg?v=1770119714",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_G4g5RmMZ7k.jpeg?v=1770119714"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_zB8olMWwyL.jpeg?v=1754461914",
+      "product_url": "https://richhn.vn/ao-longsleeve-xuyen-rach-p8541.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_i0rHkSZ0.jpg",
+        "source_url": "https://richhn.vn/ao-longsleeve-xuyen-rach-p8541.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-gile-da-logo",
+      "brand_id": "rich",
+      "name": "AK.092 \"R\" Logo Embroidred Puffer Vest",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1650000
+      },
+      "sizes": [
+        {
+          "label": "FREE",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250629_DSXH6QcESw.jpeg?v=1751192333",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250629_DSXH6QcESw.jpeg?v=1751192333",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250629_DSXH6QcESw.jpeg?v=1751192333"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250629_DSXH6QcESw.jpeg?v=1751192345",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250629_DSXH6QcESw.jpeg?v=1751192345"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250629_DSXH6QcESw.jpeg?v=1751192333",
+      "product_url": "https://richhn.vn/ao-khoac-gile-da-logo-p8526.html",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://richhn.vn/ao-khoac-gile-da-logo-p8526.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-knight-denim-ak090-waxed",
+      "brand_id": "rich",
+      "name": "AK.090B Black Waxed Knight Denim Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1350000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_oESRL5RN7r.jpeg?v=1744929555",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_oESRL5RN7r.jpeg?v=1744929555",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_oESRL5RN7r.jpeg?v=1744929555"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_oESRL5RN7r.jpeg?v=1744929588",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_oESRL5RN7r.jpeg?v=1744929588"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_AuskFy0irE.jpeg?v=1770114507",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_AuskFy0irE.jpeg?v=1770114507"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_05rifbj9p0.jpeg?v=1770114508",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_05rifbj9p0.jpeg?v=1770114508"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_g0boWEbO07.jpeg?v=1770114509",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_g0boWEbO07.jpeg?v=1770114509"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_6m9PdePmEk.jpeg?v=1770114510",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_6m9PdePmEk.jpeg?v=1770114510"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_oESRL5RN7r.jpeg?v=1744929555",
+      "product_url": "https://richhn.vn/ao-khoac-knight-denim-ak090-waxed-p8515.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20251230_0JsAgp8I.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-knight-denim-ak090-waxed-p8515.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-ong-rong-khoa-moi-120a-deni",
+      "brand_id": "rich",
+      "name": "QD.120A Knight Wide Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1150000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_NXC9ojQk1o.jpeg?v=1744930503",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_NXC9ojQk1o.jpeg?v=1744930503",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_NXC9ojQk1o.jpeg?v=1744930503"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_NXC9ojQk1o.jpeg?v=1744930531",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_NXC9ojQk1o.jpeg?v=1744930531"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_N0AqTqSS3x.jpeg?v=1744930508",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_N0AqTqSS3x.jpeg?v=1744930508"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_M1ebl9WJaW.jpeg?v=1744930514",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_M1ebl9WJaW.jpeg?v=1744930514"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_JPrdxLQbH5.jpeg?v=1744930521",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_JPrdxLQbH5.jpeg?v=1744930521"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_NXC9ojQk1o.jpeg?v=1744930503",
+      "product_url": "https://richhn.vn/quan-ong-rong-khoa-moi-120a-deni-p8501.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_Ghzwzw6d.jpg",
+        "source_url": "https://richhn.vn/quan-ong-rong-khoa-moi-120a-deni-p8501.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-ong-rong-khoa-moi-120b-waxed-machine",
+      "brand_id": "rich",
+      "name": "QD.120B Waxed Knight Wide Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1300000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_uOpgGyIHuk.jpeg?v=1744930615",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_uOpgGyIHuk.jpeg?v=1744930615",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_uOpgGyIHuk.jpeg?v=1744930615"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_uOpgGyIHuk.jpeg?v=1744930662",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_uOpgGyIHuk.jpeg?v=1744930662"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_V1yz9DaHRO.jpeg?v=1744930630",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_V1yz9DaHRO.jpeg?v=1744930630"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_yMoQxD5dnM.jpeg?v=1744930635",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_yMoQxD5dnM.jpeg?v=1744930635"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_DpNBANaROW.jpeg?v=1744930650",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_DpNBANaROW.jpeg?v=1744930650"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_SiH1bnECc8.jpeg?v=1744930655",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_SiH1bnECc8.jpeg?v=1744930655"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_uOpgGyIHuk.jpeg?v=1744930615",
+      "product_url": "https://richhn.vn/quan-ong-rong-khoa-moi-120b-waxed-machine-p8498.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_Ghzwzw6d.jpg",
+        "source_url": "https://richhn.vn/quan-ong-rong-khoa-moi-120b-waxed-machine-p8498.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-dang-loe-dap-dinh-tan-116-waxed",
+      "brand_id": "rich",
+      "name": "QD.116B Dark Knight Flare Waxed Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1150000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_6VgO20MWgi.jpeg?v=1744930127",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_6VgO20MWgi.jpeg?v=1744930127",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_6VgO20MWgi.jpeg?v=1744930127"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_6VgO20MWgi.jpeg?v=1744930164",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_6VgO20MWgi.jpeg?v=1744930164"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_v0awpMEu4D.jpeg?v=1744930135",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_v0awpMEu4D.jpeg?v=1744930135"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_DwJBOISgTA.jpeg?v=1744930141",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_DwJBOISgTA.jpeg?v=1744930141"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_Rcpwlym6Fv.jpeg?v=1744930147",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_Rcpwlym6Fv.jpeg?v=1744930147"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_6VgO20MWgi.jpeg?v=1744930127",
+      "product_url": "https://richhn.vn/quan-dang-loe-dap-dinh-tan-116-waxed-p8458.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_qt6hnzMC.jpg",
+        "source_url": "https://richhn.vn/quan-dang-loe-dap-dinh-tan-116-waxed-p8458.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-dang-loe-dap-dinh-dinh-tan-116",
+      "brand_id": "rich",
+      "name": "QD.116A Dark Knight Flare Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 950000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_hjniduUmds.jpeg?v=1744930002",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_hjniduUmds.jpeg?v=1744930002",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_hjniduUmds.jpeg?v=1744930002"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_hjniduUmds.jpeg?v=1744930038",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_hjniduUmds.jpeg?v=1744930038"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_0QqfPudnal.jpeg?v=1744930006",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_0QqfPudnal.jpeg?v=1744930006"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_TsNr3F19SD.jpeg?v=1744930013",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_TsNr3F19SD.jpeg?v=1744930013"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_U9vSVyqBzV.jpeg?v=1744930018",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_U9vSVyqBzV.jpeg?v=1744930018"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_ShmjeQcI2f.jpeg?v=1744930022",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_ShmjeQcI2f.jpeg?v=1744930022"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_hjniduUmds.jpeg?v=1744930002",
+      "product_url": "https://richhn.vn/quan-dang-loe-dap-dinh-dinh-tan-116-p8453.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_qt6hnzMC.jpg",
+        "source_url": "https://richhn.vn/quan-dang-loe-dap-dinh-dinh-tan-116-p8453.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-wide-pants-ong-cong-red-waxed",
+      "brand_id": "rich",
+      "name": "QD.115D Blood Waxed S-Wide Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1100000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M/L",
+          "available": true
+        },
+        {
+          "label": "XS",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_pRfDe8qR9j.jpeg?v=1735308717",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_pRfDe8qR9j.jpeg?v=1735308717",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_pRfDe8qR9j.jpeg?v=1735308717"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_pRfDe8qR9j.jpeg?v=1735308737",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_pRfDe8qR9j.jpeg?v=1735308737"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_ikMj8cJV01.jpeg?v=1735308720",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_ikMj8cJV01.jpeg?v=1735308720"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_JwZ9Bw8K2G.jpeg?v=1735308722",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_JwZ9Bw8K2G.jpeg?v=1735308722"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_qQ47z9zoCW.jpeg?v=1735308725",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_qQ47z9zoCW.jpeg?v=1735308725"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_4PqmMFLfuu.jpeg?v=1735308728",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_4PqmMFLfuu.jpeg?v=1735308728"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_pRfDe8qR9j.jpeg?v=1735308717",
+      "product_url": "https://richhn.vn/quan-wide-pants-ong-cong-red-waxed-p8352.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_AA2B2gbE.jpg",
+        "source_url": "https://richhn.vn/quan-wide-pants-ong-cong-red-waxed-p8352.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-wide-pants-ong-cong-smoke-waxed",
+      "brand_id": "rich",
+      "name": "QD.115C Smoke Waxed S-Wide Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1050000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M/L",
+          "available": true
+        },
+        {
+          "label": "XS",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_ZosnJn0185.jpeg?v=1735653669",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_ZosnJn0185.jpeg?v=1735653669",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_ZosnJn0185.jpeg?v=1735653669"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_ZosnJn0185.jpeg?v=1735653681",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_ZosnJn0185.jpeg?v=1735653681"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_DoePZi8eWw.jpeg?v=1735653671",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_DoePZi8eWw.jpeg?v=1735653671"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_5qpI413HHF.jpeg?v=1735653673",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_5qpI413HHF.jpeg?v=1735653673"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_ZosnJn0185.jpeg?v=1735653669",
+      "product_url": "https://richhn.vn/quan-wide-pants-ong-cong-smoke-waxed-p8348.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_AA2B2gbE.jpg",
+        "source_url": "https://richhn.vn/quan-wide-pants-ong-cong-smoke-waxed-p8348.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-denim-khuy-logo-smoke-waxed",
+      "brand_id": "rich",
+      "name": "AK.085C Smoke Waxed Denim Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1100000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_k4DEzm9hHM.jpeg?v=1735653517",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_k4DEzm9hHM.jpeg?v=1735653517",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_k4DEzm9hHM.jpeg?v=1735653517"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_k4DEzm9hHM.jpeg?v=1735653540",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_k4DEzm9hHM.jpeg?v=1735653540"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_NNj8Vvv13n.jpeg?v=1770119572",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_NNj8Vvv13n.jpeg?v=1770119572"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_qybxtuztxR.jpeg?v=1770119574",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_qybxtuztxR.jpeg?v=1770119574"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_PBbqHgUWKf.jpeg?v=1770119574",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_PBbqHgUWKf.jpeg?v=1770119574"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_1Xg6zxZPkg.jpeg?v=1770119576",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_1Xg6zxZPkg.jpeg?v=1770119576"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_aJPPJL6Wrr.jpeg?v=1770119577",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_aJPPJL6Wrr.jpeg?v=1770119577"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_k4DEzm9hHM.jpeg?v=1735653517",
+      "product_url": "https://richhn.vn/ao-khoac-denim-khuy-logo-smoke-waxed-p8342.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20251230_1DLk0HKn.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-denim-khuy-logo-smoke-waxed-p8342.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-denim-khuy-logo-black-waxed",
+      "brand_id": "rich",
+      "name": "AK.085B Black Waxed Denim Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1100000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_YmVcWLJNZZ.jpeg?v=1735653394",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_YmVcWLJNZZ.jpeg?v=1735653394",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_YmVcWLJNZZ.jpeg?v=1735653394"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_YmVcWLJNZZ.jpeg?v=1735653418",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_YmVcWLJNZZ.jpeg?v=1735653418"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_2dqDcNPCbX.jpeg?v=1735653398",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_2dqDcNPCbX.jpeg?v=1735653398"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_Oe7qxDOELw.jpeg?v=1735653400",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_Oe7qxDOELw.jpeg?v=1735653400"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_7ci4JBWS9Y.jpeg?v=1735653403",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_7ci4JBWS9Y.jpeg?v=1735653403"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_H3xNM0Q3Ne.jpeg?v=1735653405",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_H3xNM0Q3Ne.jpeg?v=1735653405"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_YmVcWLJNZZ.jpeg?v=1735653394",
+      "product_url": "https://richhn.vn/ao-khoac-denim-khuy-logo-black-waxed-p8336.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20251230_1DLk0HKn.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-denim-khuy-logo-black-waxed-p8336.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-denim-khuy-logo-red-waxed",
+      "brand_id": "rich",
+      "name": "AK.085D Blood Waxed Denim Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1100000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_P7zunSAGSj.jpeg?v=1735308834",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_P7zunSAGSj.jpeg?v=1735308834",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_P7zunSAGSj.jpeg?v=1735308834"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_P7zunSAGSj.jpeg?v=1735308866",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_P7zunSAGSj.jpeg?v=1735308866"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_JwZ9Bw8K2G.jpeg?v=1735308722",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_JwZ9Bw8K2G.jpeg?v=1735308722"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_qQ47z9zoCW.jpeg?v=1735308725",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_qQ47z9zoCW.jpeg?v=1735308725"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_gOPKbuR7Rd.jpeg?v=1735308840",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_gOPKbuR7Rd.jpeg?v=1735308840"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_4PqmMFLfuu.jpeg?v=1735308728",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_4PqmMFLfuu.jpeg?v=1735308728"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_ZkFCdqV6Bh.jpeg?v=1735308846",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_ZkFCdqV6Bh.jpeg?v=1735308846"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241227_P7zunSAGSj.jpeg?v=1735308834",
+      "product_url": "https://richhn.vn/ao-khoac-denim-khuy-logo-red-waxed-p8330.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20251230_1DLk0HKn.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-denim-khuy-logo-red-waxed-p8330.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-wide-pants-ong-cong-black-waxed",
+      "brand_id": "rich",
+      "name": "QD.115B Black Waxed S-Wide Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1050000
+      },
+      "sizes": [
+        {
+          "label": "L/XL",
+          "available": true
+        },
+        {
+          "label": "M/L",
+          "available": true
+        },
+        {
+          "label": "XS",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_CyANgZygOT.jpeg?v=1735653606",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_CyANgZygOT.jpeg?v=1735653606",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_CyANgZygOT.jpeg?v=1735653606"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_CyANgZygOT.jpeg?v=1735653620",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_CyANgZygOT.jpeg?v=1735653620"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_PWVkNh9Ete.jpeg?v=1735653608",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_PWVkNh9Ete.jpeg?v=1735653608"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_2yMAOUSIlx.jpeg?v=1735653610",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_2yMAOUSIlx.jpeg?v=1735653610"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_831V4nD3JP.jpeg?v=1735653613",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_831V4nD3JP.jpeg?v=1735653613"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241231_CyANgZygOT.jpeg?v=1735653606",
+      "product_url": "https://richhn.vn/quan-wide-pants-ong-cong-black-waxed-p8288.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_AA2B2gbE.jpg",
+        "source_url": "https://richhn.vn/quan-wide-pants-ong-cong-black-waxed-p8288.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-wide-pants-ong-cong-black",
+      "brand_id": "rich",
+      "name": "QD.115 S-Wide Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 850000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M/L",
+          "available": true
+        },
+        {
+          "label": "XS",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241108_slVRt9Hi3O.jpeg?v=1731017056",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241108_slVRt9Hi3O.jpeg?v=1731017056",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241108_slVRt9Hi3O.jpeg?v=1731017056"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241108_slVRt9Hi3O.jpeg?v=1731017074",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241108_slVRt9Hi3O.jpeg?v=1731017074"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_3wgRt0ktOG.jpeg?v=1770121268",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_3wgRt0ktOG.jpeg?v=1770121268"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_A9O49ruZfv.jpeg?v=1770121269",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_A9O49ruZfv.jpeg?v=1770121269"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241108_slVRt9Hi3O.jpeg?v=1731017056",
+      "product_url": "https://richhn.vn/quan-wide-pants-ong-cong-black-p8254.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_AA2B2gbE.jpg",
+        "source_url": "https://richhn.vn/quan-wide-pants-ong-cong-black-p8254.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-khoac-denim-khuy-logo-black",
+      "brand_id": "rich",
+      "name": "AK.085A Denim Jacket",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 900000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241123_wyFnlO75Ij.jpeg?v=1732315151",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241123_wyFnlO75Ij.jpeg?v=1732315151",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241123_wyFnlO75Ij.jpeg?v=1732315151"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241123_wyFnlO75Ij.jpeg?v=1732315230",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241123_wyFnlO75Ij.jpeg?v=1732315230"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_tAQYf1Gxxv.jpeg?v=1770119603",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_tAQYf1Gxxv.jpeg?v=1770119603"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_ECs4HnIKau.jpeg?v=1770119605",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_ECs4HnIKau.jpeg?v=1770119605"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241123_wyFnlO75Ij.jpeg?v=1732315151",
+      "product_url": "https://richhn.vn/ao-khoac-denim-khuy-logo-black-p8282.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20251230_1DLk0HKn.jpg",
+        "source_url": "https://richhn.vn/ao-khoac-denim-khuy-logo-black-p8282.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-mu-luoi-gan-noi",
+      "brand_id": "rich",
+      "name": "AH.024 Mesh Hoodie",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 480000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241001_94D8jtffbh.jpeg?v=1727748622",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241001_94D8jtffbh.jpeg?v=1727748622",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241001_94D8jtffbh.jpeg?v=1727748622"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241001_94D8jtffbh.jpeg?v=1727748674",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241001_94D8jtffbh.jpeg?v=1727748674"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_8m7IB3HN52.jpeg?v=1770119895",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_8m7IB3HN52.jpeg?v=1770119895"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_aVsDtJdY8a.jpeg?v=1770119897",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_aVsDtJdY8a.jpeg?v=1770119897"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_hFpmYbLwF5.jpeg?v=1770119898",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_hFpmYbLwF5.jpeg?v=1770119898"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_VEnAm4pCR6.jpeg?v=1770119899",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_VEnAm4pCR6.jpeg?v=1770119899"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20241001_94D8jtffbh.jpeg?v=1727748622",
+      "product_url": "https://richhn.vn/ao-mu-luoi-gan-noi-p8223.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_nbgM7a8v.jpg",
+        "source_url": "https://richhn.vn/ao-mu-luoi-gan-noi-p8223.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-mu-drknss-sociaty-denim-washed-hat",
+      "brand_id": "rich",
+      "name": "M03 Denim Washed Dark Society Cap",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 580000
+      },
+      "sizes": [
+        {
+          "label": "FREE",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_ZrJBV4eqmF.jpeg?v=1754461164",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_ZrJBV4eqmF.jpeg?v=1754461164",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_ZrJBV4eqmF.jpeg?v=1754461164"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_mNfre4H7li.jpeg?v=1754461168",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_mNfre4H7li.jpeg?v=1754461168"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_a7tRC3YK2R.jpeg?v=1754461174",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_a7tRC3YK2R.jpeg?v=1754461174"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_wHm7JsXMnp.jpeg?v=1754461178",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_wHm7JsXMnp.jpeg?v=1754461178"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_ZrJBV4eqmF.jpeg?v=1754461164",
+      "product_url": "https://richhn.vn/mu-drknss-sociaty-denim-washed-hat-p8717.html",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://richhn.vn/mu-drknss-sociaty-denim-washed-hat-p8717.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-ao-denim-coc-tay-oversize-blue",
+      "brand_id": "rich",
+      "name": "AS.070C Denim Washed Over Shirt",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 950000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_OkjK2es8WZ.jpeg?v=1754463584",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_OkjK2es8WZ.jpeg?v=1754463584",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_OkjK2es8WZ.jpeg?v=1754463584"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_OkjK2es8WZ.jpeg?v=1754463710",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_OkjK2es8WZ.jpeg?v=1754463710"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_YWjI1c2p2W.jpeg?v=1770119958",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_YWjI1c2p2W.jpeg?v=1770119958"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_IPlgjYhWMy.jpeg?v=1770119958",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_IPlgjYhWMy.jpeg?v=1770119958"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_MbpwUbHLLk.jpeg?v=1770119960",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_MbpwUbHLLk.jpeg?v=1770119960"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_fg97lk89jr.jpeg?v=1770119961",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_fg97lk89jr.jpeg?v=1770119961"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_wHm7JsXMnp.jpeg?v=1754461178",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_wHm7JsXMnp.jpeg?v=1754461178"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250806_OkjK2es8WZ.jpeg?v=1754463584",
+      "product_url": "https://richhn.vn/ao-denim-coc-tay-oversize-blue-p8680.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_ZFT4sByX.jpg",
+        "source_url": "https://richhn.vn/ao-denim-coc-tay-oversize-blue-p8680.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-dang-loe-tui-hop-117-wash",
+      "brand_id": "rich",
+      "name": "QD.117 Grey Wash Cargo Flare Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1050000
+      },
+      "sizes": [
+        {
+          "label": "XXL",
+          "available": true
+        },
+        {
+          "label": "L/XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_CDZnLPTvYB.jpeg?v=1744930256",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_CDZnLPTvYB.jpeg?v=1744930256",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_CDZnLPTvYB.jpeg?v=1744930256"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_CDZnLPTvYB.jpeg?v=1744930284",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_CDZnLPTvYB.jpeg?v=1744930284"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_5Ya9ZesVuN.jpeg?v=1744930263",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_5Ya9ZesVuN.jpeg?v=1744930263"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_5aGfVNA36C.jpeg?v=1744930269",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_5aGfVNA36C.jpeg?v=1744930269"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_JD9Tzsm1W9.jpeg?v=1744930276",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_JD9Tzsm1W9.jpeg?v=1744930276"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_CDZnLPTvYB.jpeg?v=1744930256",
+      "product_url": "https://richhn.vn/quan-dang-loe-tui-hop-117-wash-p8491.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_djbHU82b.jpg",
+        "source_url": "https://richhn.vn/quan-dang-loe-tui-hop-117-wash-p8491.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-quan-tum-wash-pepper",
+      "brand_id": "rich",
+      "name": "QD.121 Grey Wash Denim Wide Pants",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 900000
+      },
+      "sizes": [
+        {
+          "label": "XL",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_AplZyVuOSz.jpeg?v=1744930764",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_AplZyVuOSz.jpeg?v=1744930764",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_AplZyVuOSz.jpeg?v=1744930764"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_AplZyVuOSz.jpeg?v=1744930805",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_AplZyVuOSz.jpeg?v=1744930805"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_JTh4V5MFIp.jpeg?v=1770121216",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_JTh4V5MFIp.jpeg?v=1770121216"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_VjDTfSARdP.jpeg?v=1770121217",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_VjDTfSARdP.jpeg?v=1770121217"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_GggKEFj2GA.jpeg?v=1770121218",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_GggKEFj2GA.jpeg?v=1770121218"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_f7EIjJ0Ecm.jpeg?v=1770121220",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20260203_f7EIjJ0Ecm.jpeg?v=1770121220"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20250418_AplZyVuOSz.jpeg?v=1744930764",
+      "product_url": "https://richhn.vn/quan-tum-wash-pepper-p8488.html",
+      "size_chart": {
+        "image_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/content/20260102_GeJ53SVb.jpg",
+        "source_url": "https://richhn.vn/quan-tum-wash-pepper-p8488.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "rich-src-tui-cop-nho-da-nhan",
+      "brand_id": "rich",
+      "name": "ACCPK04 Wrinkled Leather Bag",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 560000
+      },
+      "sizes": [
+        {
+          "label": "FREE",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_ALtnbr0fnc.jpeg?v=1712522020",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_ALtnbr0fnc.jpeg?v=1712522020",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_ALtnbr0fnc.jpeg?v=1712522020"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_ROw5f0ekZ1.jpeg?v=1712522023",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_ROw5f0ekZ1.jpeg?v=1712522023"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_p3EftK0vSo.jpeg?v=1712522027",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_p3EftK0vSo.jpeg?v=1712522027"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_YwPVj6toTq.jpeg?v=1712522030",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_YwPVj6toTq.jpeg?v=1712522030"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_bp3cQU6dlN.jpeg?v=1712522035",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_bp3cQU6dlN.jpeg?v=1712522035"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_K0GZ6PEViA.jpeg?v=1712522038",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_K0GZ6PEViA.jpeg?v=1712522038"
+          },
+          {
+            "type": "detail",
+            "url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_lup6RcL0hA.jpeg?v=1712522040",
+            "original_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_lup6RcL0hA.jpeg?v=1712522040"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://pos.nvncdn.com/e3f4f1-219731/ps/20240408_ALtnbr0fnc.jpeg?v=1712522020",
+      "product_url": "https://richhn.vn/tui-cop-nho-da-nhan-p7550.html",
+      "size_chart": {
+        "image_url": "",
+        "source_url": "https://richhn.vn/tui-cop-nho-da-nhan-p7550.html",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    }
+  ]
+}

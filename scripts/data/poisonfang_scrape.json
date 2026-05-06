@@ -1,0 +1,1647 @@
+{
+  "brand": {
+    "id": "poison-fang",
+    "name": "POISON FANG",
+    "style": "Vietnamese Streetwear",
+    "color_hex": "#1a1a1a",
+    "description": {
+      "en": "",
+      "th": "",
+      "zh": ""
+    },
+    "meta": {
+      "website": "https://poisonfang.com",
+      "location": "Vietnam",
+      "founded": "",
+      "category": "Streetwear"
+    }
+  },
+  "products": [
+    {
+      "id": "pf-src-siren-tender-cropped-shirt",
+      "brand_id": "poison-fang",
+      "name": "SIREN TENDER CROPPED SHIRT",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 690000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/04/1-1-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/1-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/1-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/2-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/2-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/3-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/3-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/4-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/4-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/5-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/5-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/6-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/6-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/7-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/7-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/8-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/8-1-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/04/1-1-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/siren-tender-cropped-shirt/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/04/PSF_SIZE-CHART-08-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/siren-tender-cropped-shirt/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-poisoned-embroidery-oversized-shirt",
+      "brand_id": "poison-fang",
+      "name": "POISONED EMBROIDERY OVERSIZED SHIRT",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 730000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/04/1-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/2-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/2-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/04/11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/04/11-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/04/1-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/poisoned-embroidery-oversized-shirt/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/04/PSF_SIZE-CHART-09-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/poisoned-embroidery-oversized-shirt/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-yes-baby-tee",
+      "brand_id": "poison-fang",
+      "name": "YES BABY TEE",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 430000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-19-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-19-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-19-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-20-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-20-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-19-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-19-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-18-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-18-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-17-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-17-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-17-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-17-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-17-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-17-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-17-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-17-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/11-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/11-4-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-19-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/yes-baby-tee/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-03-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/yes-baby-tee/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-varang-baby-tee",
+      "brand_id": "poison-fang",
+      "name": "VARANG BABY TEE",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 430000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-18-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-18-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-18-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-19-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-19-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-18-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-18-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-17-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-17-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-16-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-16-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-16-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-16-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-16-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-16-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-16-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-16-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-11-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-18-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/varang-baby-tee/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-02-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/varang-baby-tee/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-unicorn-glitter-longsleeves",
+      "brand_id": "poison-fang",
+      "name": "UNICORN GLITTER LONGSLEEVES",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 600000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-17-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-17-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-17-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-18-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-18-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-17-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-17-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-16-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-16-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-13-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-17-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/unicorn-glitter-longsleeves/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-07-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/unicorn-glitter-longsleeves/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-toronto-shrug-embroidery-polo",
+      "brand_id": "poison-fang",
+      "name": "TORONTO SHRUG EMBROIDERY POLO",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 640000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-16-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-16-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-16-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-17-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-17-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-16-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-16-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-10-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-16-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/toronto-shrug-embroidery-polo/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-10-1-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/toronto-shrug-embroidery-polo/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-the-fang-boxy-tee",
+      "brand_id": "poison-fang",
+      "name": "THE FANG BOXY TEE",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 530000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-15-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-16-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-16-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-13-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-13-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-13-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-13-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-9-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-15-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/the-fang-boxy-tee/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-04-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/the-fang-boxy-tee/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-the-fang-biker-jeans",
+      "brand_id": "poison-fang",
+      "name": "THE FANG BIKER JEANS",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1140000
+      },
+      "sizes": [
+        {
+          "label": "1",
+          "available": true
+        },
+        {
+          "label": "2",
+          "available": true
+        },
+        {
+          "label": "3",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-14-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-15-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-15-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-13-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/11-3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/11-3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/12-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/12-1-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-14-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/the-fang-biker-jeans/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-16-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/the-fang-biker-jeans/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-the-castle-unbalanced-tee",
+      "brand_id": "poison-fang",
+      "name": "THE CASTLE UNBALANCED TEE",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 580000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-13-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-13-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-14-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-14-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-13-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-7-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-13-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/the-castle-unbalanced-tee/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-06-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/the-castle-unbalanced-tee/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-rivets-embroidery-baby-tee",
+      "brand_id": "poison-fang",
+      "name": "RIVETS EMBROIDERY BABY TEE",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 460000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-12-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-13-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-13-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-6-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-12-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/rivets-embroidery-baby-tee/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-01-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/rivets-embroidery-baby-tee/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-rivet-logo-cropped-shirt",
+      "brand_id": "poison-fang",
+      "name": "RIVET LOGO CROPPED SHIRT",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 710000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-11-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-12-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/11-2-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/11-2-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-11-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/rivet-logo-cropped-shirt/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-08-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/rivet-logo-cropped-shirt/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-quadra-corset",
+      "brand_id": "poison-fang",
+      "name": "QUADRA CORSET",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 1390000
+      },
+      "sizes": [
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-10-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-11-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-4-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-10-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/quadra-corset/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-11-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/quadra-corset/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-psf-hybrid-shorts",
+      "brand_id": "poison-fang",
+      "name": "PSF HYBRID SHORTS",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 690000
+      },
+      "sizes": [
+        {
+          "label": "1",
+          "available": true
+        },
+        {
+          "label": "2",
+          "available": true
+        },
+        {
+          "label": "3",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-9-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-5-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-9-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/psf-hybrid-shorts/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-14-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/psf-hybrid-shorts/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-nowhere-unbalanced-tee",
+      "brand_id": "poison-fang",
+      "name": "NOWHERE UNBALANCED TEE",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 580000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-8-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-9-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-9-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-6-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-8-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/nowhere-unbalanced-tee/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-05-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/nowhere-unbalanced-tee/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-cyber-distressed-jogger",
+      "brand_id": "poison-fang",
+      "name": "CYBER DISTRESSED JOGGER",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1080000
+      },
+      "sizes": [
+        {
+          "label": "1",
+          "available": true
+        },
+        {
+          "label": "2",
+          "available": true
+        },
+        {
+          "label": "3",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-7-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-8-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-8-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/11-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/11-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/12-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/12-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-7-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/cyber-distressed-jogger/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-12-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/cyber-distressed-jogger/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-cyber-curve-loose-fit-jeans",
+      "brand_id": "poison-fang",
+      "name": "CYBER CURVE LOOSE FIT JEANS",
+      "tag": "BOTTOM",
+      "category": "BOTTOM",
+      "price": {
+        "vnd": 1340000
+      },
+      "sizes": [
+        {
+          "label": "1",
+          "available": true
+        },
+        {
+          "label": "2",
+          "available": true
+        },
+        {
+          "label": "3",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-6-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-7-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-7-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-2-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-2-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-6-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/cyber-curve-loose-fit-jeans/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-13-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/cyber-curve-loose-fit-jeans/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-chaos-embroidery-longsleeves",
+      "brand_id": "poison-fang",
+      "name": "CHAOS EMBROIDERY LONGSLEEVES",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 630000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-5-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-6-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-6-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-2-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-2-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-1-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-5-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/chaos-embroidery-longsleeves/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-15-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/chaos-embroidery-longsleeves/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    },
+    {
+      "id": "pf-src-anchor-oversized-shirt",
+      "brand_id": "poison-fang",
+      "name": "ANCHOR OVERSIZED SHIRT",
+      "tag": "",
+      "category": "OTHER",
+      "price": {
+        "vnd": 680000
+      },
+      "sizes": [
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        }
+      ],
+      "images": {
+        "cover": "https://poisonfang.com/wp-content/uploads/2026/01/1-4-scaled.jpg",
+        "gallery": [
+          {
+            "type": "source",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/1-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/2-5-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/2-5-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/3-4-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/3-4-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/4-3-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/4-3-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/5-2-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/5-2-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/6-2-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/6-2-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/7-2-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/7-2-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/8-2-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/8-2-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/9-1-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/9-1-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/10-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/10-scaled.jpg"
+          },
+          {
+            "type": "detail",
+            "url": "https://poisonfang.com/wp-content/uploads/2026/01/11-scaled.jpg",
+            "original_url": "https://poisonfang.com/wp-content/uploads/2026/01/11-scaled.jpg"
+          }
+        ]
+      },
+      "sold_out": false,
+      "needs_review": false,
+      "original_cover_url": "https://poisonfang.com/wp-content/uploads/2026/01/1-4-scaled.jpg",
+      "product_url": "https://poisonfang.com/product/anchor-oversized-shirt/",
+      "size_chart": {
+        "image_url": "https://poisonfang.com/wp-content/uploads/2026/01/PSF_SIZE-CHART-09-scaled.jpg",
+        "source_url": "https://poisonfang.com/product/anchor-oversized-shirt/",
+        "headers": [],
+        "rows": [],
+        "raw_vn": ""
+      }
+    }
+  ]
+}
